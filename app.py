@@ -1,17 +1,19 @@
 import os
 import json
-import streamlit as st
-import numpy as np
-import faiss
 import urllib.parse
+import requests
+import numpy as np
+import streamlit as st
+import faiss
 from sentence_transformers import SentenceTransformer
-from tqdm import tqdm
 from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lex_rank import LexRankSummarizer
 import nltk
 
-# Ensure tokenizer data is present
+# =========================================
+# INITIAL SETUP
+# =========================================
 try:
     nltk.data.find("tokenizers/punkt")
 except LookupError:
@@ -23,12 +25,13 @@ except LookupError:
 # =========================================
 MODEL_NAME = "all-MiniLM-L6-v2"
 JSDELIVR_BASE = "https://cdn.jsdelivr.net/gh/rydrbot/go-search-app-final@main/pdfs"
-JSON_FOLDER = "/content/drive/MyDrive/ICT_Project_IntelligentGOSearch/json_files"  # change if needed
+MANIFEST_URL = "https://raw.githubusercontent.com/rydrbot/go-search-app-final/main/file_manifest.json"
+JSON_BASE_URL = "https://raw.githubusercontent.com/rydrbot/go-search-app-final/main/json_files"
 INDEX_PATH = "go_index_v2.faiss"
 META_PATH = "metadata_v2.json"
 
 # =========================================
-# LOAD COMPONENTS
+# LOAD CORE COMPONENTS
 # =========================================
 @st.cache_resource
 def load_components():
@@ -36,124 +39,112 @@ def load_components():
     with open(META_PATH, "r", encoding="utf-8") as f:
         metadata = json.load(f)
     model = SentenceTransformer(MODEL_NAME)
-    return index, metadata, model
+    # Load manifest
+    resp = requests.get(MANIFEST_URL)
+    if resp.status_code != 200:
+        st.error("⚠️ Could not load file_manifest.json from GitHub.")
+        return index, metadata, model, {}
+    manifest = resp.json()
+    return index, metadata, model, manifest
 
-index, metadata, model = load_components()
+index, metadata, model, manifest = load_components()
 
 # =========================================
 # SEARCH FUNCTION
 # =========================================
 def search(query, top_k=5):
     query_emb = model.encode([query], convert_to_numpy=True, normalize_embeddings=True)
-    query_emb = query_emb / np.linalg.norm(query_emb, axis=1, keepdims=True)
     similarities, indices = index.search(query_emb.astype("float32"), top_k)
-
     results = []
     for idx, sim in zip(indices[0], similarities[0]):
         if idx >= len(metadata):
             continue
         doc = metadata[idx]
-        pdf_file = doc.get("file_name", "").replace("_raw.txt", ".pdf")
+        pdf_file = doc.get("file_name", "")
         pdf_file_encoded = urllib.parse.quote(pdf_file)
         pdf_link = f"{JSDELIVR_BASE}/{pdf_file_encoded}"
         results.append({
             "file_name": pdf_file,
-            "page_number": doc.get("page_number", ""),
             "similarity": round(float(sim), 4),
             "pdf_link": pdf_link
         })
     return results
 
 # =========================================
-# LOAD JSON FOR SELECTED DOCUMENT
+# LOAD TEXT FROM JSON USING MANIFEST
 # =========================================
-def get_text_from_json(file_name):
-    """Find and load JSON file from GitHub json_files folder (flexible matching)."""
-    base_url = "https://raw.githubusercontent.com/rydrbot/go-search-app-final/main/json_files"
-    import requests
+def get_text_from_manifest(file_name):
+    # Find manifest entry matching this PDF
+    entry = next((v for v in manifest.values() if v["pdf"].lower() == file_name.lower()), None)
+    if not entry or not entry.get("json"):
+        return None, f"⚠️ No JSON linked for '{file_name}' in manifest."
 
-    # Sanitize input
-    file_stem = file_name.lower().replace(".pdf", "").replace("copy of", "").strip()
-    file_stem = file_stem.replace("  ", " ")
+    json_url = f"{JSON_BASE_URL}/{urllib.parse.quote(entry['json'])}"
+    resp = requests.get(json_url)
+    if resp.status_code != 200:
+        return None, f"⚠️ Could not fetch JSON from {json_url}"
 
-    # Try direct
-    urls_to_try = [
-        f"{base_url}/{urllib.parse.quote(file_name.replace('.pdf', '.json'))}",
-        f"{base_url}/{urllib.parse.quote(file_stem)}.json"
-    ]
-
-    # Optionally fetch list of all JSON files to fuzzy match
     try:
-        repo_api = "https://api.github.com/repos/rydrbot/go-search-app-final/contents/json_files"
-        response = requests.get(repo_api)
-        if response.status_code == 200:
-            json_list = [item["name"] for item in response.json() if item["name"].endswith(".json")]
-            match = next((j for j in json_list if file_stem in j.lower()), None)
-            if match:
-                urls_to_try.append(f"{base_url}/{urllib.parse.quote(match)}")
-    except Exception:
-        pass
-
-    # Try all possible URLs
-    for url in urls_to_try:
-        resp = requests.get(url)
-        if resp.status_code == 200:
-            try:
-                data = json.loads(resp.text)
-                pages = data.get("pages", [])
-                combined_text = " ".join([
-                    p.get("translated_text", "") or p.get("original_text", "")
-                    for p in pages if p.get("translated_text") or p.get("original_text")
-                ])
-                return combined_text.strip(), None
-            except Exception as e:
-                return None, f"⚠️ JSON parsing error: {e}"
-
-    return None, f"⚠️ No matching JSON found for '{file_name}'. Tried: {urls_to_try[-1]}"
+        data = json.loads(resp.text)
+        pages = data.get("pages", [])
+        combined_text = " ".join([
+            p.get("translated_text", "") or p.get("original_text", "")
+            for p in pages if p.get("translated_text") or p.get("original_text")
+        ])
+        if not combined_text.strip():
+            return None, "⚠️ JSON found, but contains no readable text."
+        return combined_text.strip(), f"✅ Using JSON: {entry['json']}"
+    except Exception as e:
+        return None, f"⚠️ JSON parsing error: {e}"
 
 # =========================================
-# LEXRANK FACTUAL SUMMARY
+# SUMMARIZER
 # =========================================
-def factual_summary(text, sentence_count=7):
-    if not text.strip():
-        return "⚠️ No text available for summarization."
+def summarize_text(text, sentence_count=7):
     parser = PlaintextParser.from_string(text, Tokenizer("english"))
     summarizer = LexRankSummarizer()
     summary_sentences = summarizer(parser.document, sentence_count)
-    return " ".join(str(s) for s in summary_sentences) or text[:800]
+    summary = " ".join(str(s) for s in summary_sentences)
+    return summary if summary else text[:800]
 
 # =========================================
 # STREAMLIT UI
 # =========================================
-st.set_page_config(page_title="GO Search (v11)", layout="wide")
+st.set_page_config(page_title="GO Search – Final", layout="wide")
 
-st.title("📑 Government Order Semantic Search (v11)")
-st.write("Now with instant JSON-based summaries (no OCR or translation delay).")
+st.title("📑 Government Order Semantic Search (Final Version)")
+st.markdown(
+    "Search across Government Orders with instant, factual summaries loaded from preprocessed JSON files. "
+    "No OCR or translation delay."
+)
 
 query = st.text_input("Enter your search query (English):", "")
-top_k = st.slider("Number of results:", 1, 10, 3)
+top_k = st.slider("Number of results:", 1, 10, 5)
 
 st.sidebar.header("📄 Document Summary")
-st.sidebar.info("Click 🧠 to generate summary instantly from preprocessed JSON data.")
+st.sidebar.info("Click 🧠 to generate instant summary from linked JSON text.")
 
+# =========================================
+# SEARCH + SUMMARIZE FLOW
+# =========================================
 if query:
     results = search(query, top_k=top_k)
     st.write(f"### 🔎 Results for: `{query}`")
 
     for i, r in enumerate(results, 1):
         with st.container():
-            st.markdown(f"**📄 {i}. File:** [{r['file_name']}]({r['pdf_link']})")
-            st.markdown(f"**Page:** {r['page_number']} | **Similarity:** {r['similarity']:.4f}")
+            st.markdown(f"**📄 {i}. [{r['file_name']}]({r['pdf_link']})**")
+            st.markdown(f"**Similarity:** {r['similarity']:.4f}")
 
-            if st.button(f"🧠 Summarize: {r['file_name']}", key=f"btn_{i}"):
-                with st.spinner("Loading preprocessed text..."):
-                    text, err = get_text_from_json(r["file_name"])
-                    if err:
-                        st.sidebar.warning(err)
+            if st.button(f"🧠 Summarize {r['file_name']}", key=f"btn_{i}"):
+                with st.spinner("Fetching JSON text..."):
+                    text, info = get_text_from_manifest(r["file_name"])
+                    if not text:
+                        st.sidebar.warning(info)
                     else:
-                        summary = factual_summary(text)
+                        summary = summarize_text(text)
                         st.sidebar.markdown(f"### {r['file_name']}")
+                        st.sidebar.success(info)
                         st.sidebar.write(summary)
 
-            st.markdown(f"[📎 Open PDF]({r['pdf_link']})")
             st.markdown("---")
