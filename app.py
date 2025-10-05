@@ -5,6 +5,7 @@ import numpy as np
 import faiss
 import urllib.parse
 from sentence_transformers import SentenceTransformer
+from transformers import pipeline
 from PyPDF2 import PdfReader
 from tqdm import tqdm
 
@@ -12,8 +13,8 @@ from tqdm import tqdm
 # CONFIG
 # =========================================
 MODEL_NAME = "all-MiniLM-L6-v2"
+SUMMARY_MODEL = "facebook/bart-large-cnn"
 JSDELIVR_BASE = "https://cdn.jsdelivr.net/gh/rydrbot/go-search-app-final@main/pdfs"
-
 INDEX_PATH = "go_index_v2.faiss"
 META_PATH = "metadata_v2.json"
 
@@ -26,9 +27,10 @@ def load_components():
     with open(META_PATH, "r", encoding="utf-8") as f:
         metadata = json.load(f)
     model = SentenceTransformer(MODEL_NAME)
-    return index, metadata, model
+    summarizer = pipeline("summarization", model=SUMMARY_MODEL)
+    return index, metadata, model, summarizer
 
-index, metadata, model = load_components()
+index, metadata, model, summarizer = load_components()
 
 # =========================================
 # SEARCH FUNCTION
@@ -57,42 +59,75 @@ def search(query, top_k=5):
 
 
 # =========================================
-# SIDEBAR – DOCUMENT SUMMARIES
+# SEMANTIC SUMMARIZER
 # =========================================
-st.sidebar.header("📄 Document Summaries")
-if metadata:
-    doc_names = sorted(list(set([d["file_name"] for d in metadata])))
-    selected_doc = st.sidebar.selectbox("Select a document to view summary:", doc_names)
+def semantic_summary(text, summarizer, max_tokens=800):
+    # Split long text into manageable chunks (~1000 tokens each)
+    parts = []
+    sentences = text.split(". ")
+    chunk, count = "", 0
+    for s in sentences:
+        chunk += s + ". "
+        count += len(s.split())
+        if count > 600:
+            parts.append(chunk)
+            chunk, count = "", 0
+    if chunk:
+        parts.append(chunk)
 
-    if selected_doc:
-        doc_entries = [d for d in metadata if d["file_name"] == selected_doc]
-        st.sidebar.markdown(f"**Total Segments:** {len(doc_entries)}")
-        st.sidebar.markdown(f"**Languages:** {', '.join(set([d.get('language', 'unknown') for d in doc_entries]))}")
-
-        # Simple summary by taking most frequent key sentences
-        combined_text = " ".join([t.get("text", "") for t in doc_entries[:20]])
-        summary = combined_text[:700] + "..." if len(combined_text) > 700 else combined_text
-        st.sidebar.markdown("**Summary Preview:**")
-        st.sidebar.write(summary if summary else "No summary available.")
+    summaries = []
+    for part in parts[:3]:  # Limit to 3 chunks for performance
+        try:
+            summary = summarizer(part, max_length=130, min_length=40, do_sample=False)[0]["summary_text"]
+            summaries.append(summary)
+        except Exception as e:
+            continue
+    return " ".join(summaries) if summaries else text[:600]
 
 
 # =========================================
-# MAIN SEARCH AREA
+# STREAMLIT UI
 # =========================================
-st.set_page_config(page_title="GO Search (v3)", layout="wide")
-st.title("📑 Government Order Semantic Search (v3)")
-st.write("Enhanced version — Upload new documents, search instantly, and explore summaries.")
+st.set_page_config(page_title="GO Search (v5)", layout="wide")
+
+st.title("📑 Government Order Semantic Search (v5)")
+st.write("Search across Government Orders — with semantic summaries and dynamic sidebar context.")
 
 query = st.text_input("Enter your search query (English):", "")
 top_k = st.slider("Number of results:", 1, 10, 3)
 
+# Sidebar placeholder
+st.sidebar.header("📄 Document Summary")
+st.sidebar.info("Click '🧠 Summarize' under a result to view its summary here.")
+
+# Session state
+if "selected_doc" not in st.session_state:
+    st.session_state.selected_doc = None
+if "summary_text" not in st.session_state:
+    st.session_state.summary_text = ""
+
+# =========================================
+# SEARCH RESULTS + INTERACTION
+# =========================================
 if query:
     results = search(query, top_k=top_k)
     st.write(f"### 🔎 Results for: `{query}`")
-    for r in results:
+
+    for i, r in enumerate(results, 1):
         with st.container():
-            st.markdown(f"**📄 File:** {r['file_name']} | **Page:** {r['page_number']}")
-            st.markdown(f"**Similarity:** {r['similarity']}")
+            st.markdown(f"**📄 {i}. File:** [{r['file_name']}]({r['pdf_link']})")
+            st.markdown(f"**Page:** {r['page_number']} | **Similarity:** {r['similarity']:.4f}")
+
+            if st.button(f"🧠 Summarize {r['file_name']}", key=f"btn_{i}"):
+                st.session_state.selected_doc = r['file_name']
+                doc_chunks = [d for d in metadata if d["file_name"] == r["file_name"]]
+                combined_text = " ".join(
+                    [t.get("text", "") or t.get("translated_text", "") or "" for t in doc_chunks]
+                )
+                st.session_state.summary_text = semantic_summary(combined_text, summarizer)
+                st.sidebar.markdown(f"### {r['file_name']}")
+                st.sidebar.write(st.session_state.summary_text)
+
             st.markdown(f"[📎 Open PDF]({r['pdf_link']})")
             st.markdown("---")
 
@@ -117,7 +152,8 @@ if uploaded_pdf is not None:
                 "file_name": uploaded_pdf.name,
                 "category": "uploaded",
                 "page_number": i + 1,
-                "language": "en"
+                "language": "en",
+                "text": text.strip()
             })
 
         # Generate embeddings
