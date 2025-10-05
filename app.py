@@ -42,17 +42,24 @@ META_PATH = "metadata_v2.json"
 # LOAD MANIFEST
 # =========================================
 def load_manifest():
-    """Try to load file_manifest.json from main or master."""
+    """Load manifest and show success only once."""
+    if "manifest_loaded" in st.session_state:
+        for branch in ["main", "master"]:
+            url = f"{BASE_RAW}/{branch}/file_manifest.json"
+            r = requests.get(url)
+            if r.status_code == 200:
+                return r.json()
+        return {}
+
     for branch in ["main", "master"]:
         url = f"{BASE_RAW}/{branch}/file_manifest.json"
         r = requests.get(url)
         if r.status_code == 200:
-            st.sidebar.success(f"✅ Loaded manifest from {branch} branch.")
+            st.session_state["manifest_loaded"] = True
+            st.toast(f"✅ Manifest loaded from {branch} branch")  # small temporary pop-up
             return r.json()
-    st.sidebar.error("⚠️ Could not load file_manifest.json from GitHub. "
-                     "Check that the repo is public and the file is in the root directory.")
+    st.sidebar.error("⚠️ Could not load file_manifest.json from GitHub.")
     return {}
-
 # =========================================
 # LOAD CORE COMPONENTS
 # =========================================
