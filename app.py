@@ -11,6 +11,7 @@ from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lex_rank import LexRankSummarizer
 import nltk
 from difflib import get_close_matches
+from datetime import datetime
 
 # =========================================
 # INITIAL SETUP
@@ -26,10 +27,10 @@ except LookupError:
 # =========================================
 MODEL_NAME = "all-MiniLM-L6-v2"
 
-# Your GitHub setup
+# --- GitHub setup ---
 GITHUB_USER = "rydrbot"
 GITHUB_REPO = "test"               # repo where file_manifest.json + json_files live
-PDF_REPO = "go-search-app-final"   # repo hosting PDFs for jsDelivr access
+PDF_REPO = "go-search-app-final"   # repo hosting PDFs for jsDelivr links
 
 BASE_RAW = f"https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}"
 BASE_API = f"https://api.github.com/repos/{GITHUB_USER}/{GITHUB_REPO}/contents/json_files"
@@ -39,25 +40,23 @@ INDEX_PATH = "go_index_v2.faiss"
 META_PATH = "metadata_v2.json"
 
 # =========================================
-# LOAD MANIFEST
+# SILENT MANIFEST LOADER
 # =========================================
 def load_manifest():
-    """Silently load file_manifest.json from main or master branch."""
+    """Load file_manifest.json silently, no Streamlit messages."""
     manifest_data = None
     for branch in ["main", "master"]:
         url = f"{BASE_RAW}/{branch}/file_manifest.json"
         r = requests.get(url)
         if r.status_code == 200:
-            # Log to console (visible only in logs, not Streamlit UI)
-            print(f"✅ Loaded manifest from {branch} branch.")
+            print(f"[{datetime.now()}] Manifest loaded successfully from '{branch}' branch.")
             manifest_data = r.json()
             break
 
     if not manifest_data:
-        # Only show error if manifest failed to load
         st.sidebar.error(
             "⚠️ Could not load file_manifest.json from GitHub.\n"
-            "Check that the repo is public and that file_manifest.json is in the repo root."
+            "Ensure the repo is public and file_manifest.json is in the repo root."
         )
         manifest_data = {}
 
@@ -66,6 +65,8 @@ def load_manifest():
 # =========================================
 # LOAD CORE COMPONENTS
 # =========================================
+st.cache_resource.clear()  # ensure old cached messages are removed
+
 @st.cache_resource
 def load_components():
     index = faiss.read_index(INDEX_PATH)
@@ -99,7 +100,7 @@ def search(query, top_k=5):
     return results
 
 # =========================================
-# LOAD TEXT FROM JSON USING MANIFEST + FALLBACK
+# FETCH JSON CONTENT (WITH FALLBACK)
 # =========================================
 def get_text_from_manifest(file_name):
     """Fetch JSON text via manifest; fall back to fuzzy GitHub match if needed."""
@@ -112,9 +113,9 @@ def get_text_from_manifest(file_name):
 
     expected_json = entry.get("json")
     if not expected_json:
-        return None, f"⚠️ No JSON name listed for '{file_name}' in manifest."
+        return None, f"⚠️ No JSON listed for '{file_name}' in manifest."
 
-    # Try main and master branches
+    # Try exact name on both branches
     for branch in ["main", "master"]:
         json_url = f"{BASE_RAW}/{branch}/json_files/{urllib.parse.quote(expected_json)}"
         resp = requests.get(json_url)
@@ -132,7 +133,7 @@ def get_text_from_manifest(file_name):
             except Exception as e:
                 return None, f"⚠️ JSON parsing error: {e}"
 
-    # Fallback: fuzzy match JSON filename using GitHub API
+    # Fallback: fuzzy match using GitHub API
     alt_resp = requests.get(BASE_API)
     if alt_resp.status_code == 200:
         try:
@@ -169,12 +170,12 @@ def summarize_text(text, sentence_count=7):
 # =========================================
 # STREAMLIT UI
 # =========================================
-st.set_page_config(page_title="GO Search – Final (Auto-Fix JSON)", layout="wide")
+st.set_page_config(page_title="GO Search – Clean Final", layout="wide")
 
-st.title("📑 Government Order Semantic Search – Smart JSON Matching")
+st.title("📑 Government Order Semantic Search – Final (Silent + Smart)")
 st.markdown(
     "Search across Government Orders with instant summaries from preprocessed JSON files. "
-    "Automatically finds correct JSON even if filenames differ slightly."
+    "Manifest loading and JSON matching are now fully automatic and silent."
 )
 
 query = st.text_input("Enter your search query (English):", "")
@@ -184,7 +185,7 @@ st.sidebar.header("📄 Document Summary")
 st.sidebar.info("Click 🧠 to generate instant summary from linked JSON text.")
 
 # =========================================
-# SEARCH + SUMMARIZE FLOW
+# MAIN FLOW
 # =========================================
 if query:
     results = search(query, top_k=top_k)
@@ -203,7 +204,6 @@ if query:
                     else:
                         summary = summarize_text(text)
                         st.sidebar.markdown(f"### {r['file_name']}")
-                        st.sidebar.success(info)
                         st.sidebar.write(summary)
 
             st.markdown("---")
