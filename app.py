@@ -246,7 +246,7 @@ st.markdown(
 # =========================================
 # MAIN APP CONTENT
 # =========================================
-query = st.text_input("Enter your search query (English):", "")
+query = st.text_input("Enter your search query :", "")
 top_k = st.slider("Number of results:", 1, 10, 5)
 
 st.sidebar.header("📄 Document Summary")
@@ -260,7 +260,7 @@ if query:
             st.markdown(f"**📄 {i}. [{r['file_name']}]({r['pdf_link']})**")
             st.markdown(f"**Similarity:** {r['similarity']:.4f}")
 
-            if st.button(f"🧠 Summarize {r['file_name']}", key=f"btn_{i}"):
+            if st.button(f"Click to Summarize {r['file_name']}", key=f"btn_{i}"):
                 with st.spinner("Fetching JSON text..."):
                     text, info = get_text_from_manifest(r["file_name"])
                     if not text:
