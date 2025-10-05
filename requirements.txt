@@ -1,0 +1,8 @@
+streamlit
+sentence-transformers
+faiss-cpu
+numpy
+tqdm
+json5
+protobuf
+watchdog
