@@ -258,7 +258,9 @@ if query:
     for i, r in enumerate(results, 1):
         with st.container():
             st.markdown(f"**📄 {i}. [{r['file_name']}]({r['pdf_link']})**")
-            st.markdown(f"**Similarity:** {r['similarity']:.4f}")
+            #st.markdown(f"**Similarity:** {r['similarity']:.4f}")
+            st.markdown(f"**Relevance Rank:** {i}")
+
 
             if st.button(f"Click to Summarize {r['file_name']}", key=f"btn_{i}"):
                 with st.spinner("Fetching JSON text..."):
