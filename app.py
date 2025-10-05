@@ -181,24 +181,38 @@ st.markdown(
     """
     <style>
     .app-header {
-        text-align: center;
-        padding-bottom: 0.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         border-bottom: 1px solid #ddd;
-    }
-    .app-header img {
-        height: 85px;
+        padding-bottom: 0.5rem;
         margin-bottom: 0.5rem;
     }
-    .app-header h1 {
+    .header-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+    .header-row img {
+        height: 75px;
+    }
+    .header-text h1 {
         font-size: 1.9rem;
         color: #1f4e79;
-        font-weight: 700;
-        margin-bottom: 0;
+        font-weight: 800;
+        margin: 0;
     }
-    .app-header p {
+    .header-text p {
         font-size: 1rem;
-        color: #555;
-        margin-top: -5px;
+        color: #444;
+        margin-top: 0.1rem;
+    }
+    .tagline {
+        font-size: 1rem;
+        color: #666;
+        text-align: center;
+        margin-top: 0.3rem;
     }
     </style>
     """,
@@ -208,16 +222,21 @@ st.markdown(
 st.markdown(
     f"""
     <div class="app-header">
-        <a href="https://itmission.kerala.gov.in" target="_blank">
-            <img src="{LOGO_URL}" alt="Kerala IT Mission Logo">
-        </a>
-        <h1> Government Order Search </h1>
-        <p>Empowering Governance through Accessible Information</p>
+        <div class="header-row">
+            <a href="https://itmission.kerala.gov.in" target="_blank">
+                <img src="{LOGO_URL}" alt="Kerala IT Mission Logo">
+            </a>
+            <div class="header-text">
+                <h1>Government Order Search</h1>
+                <p>Kerala State IT Mission<br>
+                Department of Electronics & Information Technology</p>
+            </div>
+        </div>
+        <div class="tagline">Empowering Governance through Accessible Information</div>
     </div>
     """,
     unsafe_allow_html=True,
 )
-
 # =========================================
 # MAIN APP CONTENT
 # =========================================
