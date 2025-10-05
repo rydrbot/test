@@ -1,0 +1,16 @@
+{
+  "file_name": "G.O.(Rt) No. 49-E&ITD.pdf",
+  "category": "image_english",
+  "pages": [
+    {
+      "page_number": 1,
+      "original_text": "GOVERNMENT OF KERALA Abstract Electronics & Information Technology Department- COVID-19- Security Audit by CERT-In Empanelled agency of the data stored in the web server of Amazon Cloud - Sanctioned  Orders issued ELECTRONICS & INFORMATION TECHNOLOGY (B) DEPARTMENT G.O. (Rt.) No.49/2020/ITD Dated, Thiruvananthapuram, 21.04.2020. Read:- GO(Ms) No:8/2019-ITD dated 22.04.2019. ORDER In the context of the out break of Corona Virus Disease (COVID-19) Government are taking ample efforts to contain the spread of Disease through a host of measures. For this, various Government Departments/agencies are collecting data related with COVID-19. Government have found it utmost necessary to analyse the above data collected by using data analytics techniques and tools. 2. Information Technology Department have made a presentation on processing and utilisation of data for the containment activities of the COVID -19, before the review meeting chaired by the Hon: Chief Minister and the meeting entrusted Electronics & IT Department to take further steps for data analytics solution for the purpose. 3. The data collected in connection with COVID-19 pandemic are being stored in the web server of Amazon Cloud for processing as part of containment activities. Government felt it necessary to ensure the security of the data collected and captured in the Cloud System. 4. In the above circumstances, the Director, Kerala State IT Mission (KSITM) is authorized to entrust a CERT-In empanelled IT security auditing agency for doing the security audit of the data stored in the Amazon cloud platform in-line with the guidelines issued vide GO read above. 5. The Director, KSITM shall execute a Non-Disclosure Agreement with the entrusted agency before commencing the audit work, which shall include conditions to ensure security of the data shared for audit purpose. 6. The Director, KSITM shall meet the expenditure in this regard from the relevant Head of Account under KSITM (By order of the Governor) VINOD G . Joint Secretary to Government To The Director, Kerala State IT Mission, Thiruvananthapuram. The Principal Accountant General (G&SSA) Kerala, Thiruvananthapuram. The Principal Accountant General (A & E) Kerala, Thiruvananthapuram, The I&PRD, Web & New media Stock file / Office copy ForWatded / By Order on Scanned by CamScanner",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    }
+  ]
+}

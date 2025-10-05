@@ -1,0 +1,60 @@
+{
+  "file_name": "Cloud Hosting FAQ_1.pdf",
+  "category": "text_english",
+  "pages": [
+    {
+      "page_number": 1,
+      "original_text": "Kerala State IT Mission, ICT Campus, Vellayambalam, Trivandrum 695 033, Kerala, India. Tel : +91 471 2726881 , 2314307 Web : www.itmission.kerala.gov.in KERALA STATE IT MISSION ICT Campus, Vellayambalam, Trivandrum 695 033. Phone: 0471 2726881, 2314307, 2725646. Fax: +91 471 2314284 . STATE DATA CENTRE -1&2 CLOUD HOSTING FREQUENTLY ASKED QUESTIONS",
+      "translated_text": "",
+      "language_detected": "id",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 2,
+      "original_text": "Kerala State IT Mission, ICT Campus, Vellayambalam, Trivandrum 695 033, Kerala, India. Tel : +91 471 2726881 , 2314307 Web : www.itmission.kerala.gov.in 1. What is cloud? Cloud computing is convenient, on -demand access to a shared pool of configurable computing resources such as servers, networks, storage , applications and services that can be rapidly provisioned with minimal management effort or service provider interaction. 2. What solution is implemented in KSDC to support Cloud Infrastructure? Is it based on any open source solution? The major virtualization platform offered from KSDC is RHEV and VMware. The RHEV is an open source but in order to obtain RedHat technical support a subscription package needs to b e purchased. The VMware Software is entirely propitiatory and also requires licensing. 3. What is the current infrastructure available in the cloud at KSDC ? Servers hosted with VMware and RHEV hypervisors connected to a common storage and network pool are u sed for setting up the cloud solution. 4. Is any expansion planned in the near future? The expansion plan is resource utilization dependent. 5. Can the departments add new hardware to the existing cloud? The cloud solution is scalable. However, departments are provided VMs from the common resource pool so additional hardware will become part of the common resource pool. 6. Can the departments add the existing hardware to the existing cloud? To add any existing hardware to the cloud the hardware s hould be compatible and additional licenses may be required.",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 3,
+      "original_text": "Kerala State IT Mission, ICT Campus, Vellayambalam, Trivandrum 695 033, Kerala, India. Tel : +91 471 2726881 , 2314307 Web : www.itmission.kerala.gov.in 7. Are there any specification wise restrictions in the hardware which can be added to the cloud? The specifications need to meet the LIST of hardware recommended by OEM. 8. Can the ex isting applications hosted in KSDC be moved to cloud? The cloud provides a virtual infrastructure and the rest remains the same so they can be hosted on cloud. 9. Are any changes in the applications to be made for moving to cloud? In general the environmen t change is from physical to virtual and rest remains the same, so changes are case to case specific. 10. What is the backup procedure for the applications hosted in the cloud? The existing backup policies/procedure will apply for the backup. 11. Is there any s eparate storage for the cloud? Storage is provided from the existing storage available in SDC, a separate LUN is allocated for the Cloud. 12. What happens if my VM crashes? By Default SDC will not take the backup of any Cloud hosted VMs until and unless it is requested by the concerned department . The SDC have tape level backup with a retention period of 30 days with daily and incremental backup policies. The departments need to duly fill and submit the SDC backup request form if they would like to configure Cloud VM tape level backup. SDC has also, the facility to take snapshots/clone of the VM and the same need to request from the department end before the VM crashes. 13. What is the restoration process in case of any VM / Hardware failures? VM can be restored using the snapshot/clone/SDC backup/any restore policy. Server hardware is in clustered mode; faulty hardware will be moved out for maintenance and re-added to the cluster once issue is fixed.",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 4,
+      "original_text": "Kerala State IT Mission, ICT Campus, Vellayambalam, Trivandrum 695 033, Kerala, India. Tel : +91 471 2726881 , 2314307 Web : www.itmission.kerala.gov.in 14. Is any downtime required for restoration? The d owntime is dependent on the restoration processes chosen. 15. Is load balancing possible? Yes. 16. What is the security of the application/data in the cloud? Cloud environment is placed under the existing SDC firewall and other security devices so the current security polices applies to the cloud environment. 17. Is VM scaling possible? Yes 18. Is any downtime required for VM upgrading / downgrading? This is OEM specific and the OS should support this feature. 19. Can we delete a created VM? Yes, it can be done from the admin end once we get a confirmation from client. 20. What is decommissioning of VM? Decommissioning means complete removal of the VM and its associated data which is not recoverable from the cloud environment. 21. Can we retrieve the data after decommissioning of the VM? Decommissioning is removing the VM permanently, so necessary backups and caution should be exercised before performing this action.",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 5,
+      "original_text": "Kerala State IT Mission, ICT Campus, Vellayambalam, Trivandrum 695 033, Kerala, India. Tel : +91 471 2726881 , 2314307 Web : www.itmission.kerala.gov.in 22. What are the hypervisors supported? The current solution is depl oyed on VMware & RHEV hypervisors . 23. Is any specific licensing required to be provided by the departments? The ap plications specific licenses (eg: Oracle DB, MSSQL DB) to be provided by departments . For windows based OS license should be procured from the department end. 24. Can machine critical applications be hosted in the cloud? Yes, there is no difference in OS environment; this can be decided on a case to case basis. 25. How are the resources shared in the cloud? The resources are added to a common resource pool and are allocated virtually by the cloud solution. 26. Will the application hosted on cloud face any network bandwidth issues due to sharing? The network bandwidth extended to cloud is allocated for the current SDC network infrastructure. Any i ssue occurring in the network infrastructure will affect the cloud network. 27. Is the cloud infrastructure DR enabled? DR for Cloud is yet to be decided. 28. Will I have to do modifications in the application if it is to be hosted on any other cloud solution? The changes are case to case specific.",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 6,
+      "original_text": "Kerala State IT Mission, ICT Campus, Vellayambalam, Trivandrum 695 033, Kerala, India. Tel : +91 471 2726881 , 2314307 Web : www.itmission.kerala.gov.in 29. Can the application hosted in Co -Location and Co -Hosted environments be migrated into Cloud? Yes, a new cloud VM can be provisioned as per the specification requested by the department . All the conf iguration part needs to be performed by the department themselves. Data migration is case to case specific. 30. What happens if any hardware in the cloud fails? Host servers are configured in failover mode, in any such event the load is shifted to the other server. 31. How can I access my cloud VMs in SDC for management and administration? The departments need to submit duly filled firewall access request form for enabling access to these VMs. The source IP addresses, Destination IP address, Ports/Port Range, Duration need to clearly mention in the firewall access request from. 32. How can I make my application hosted in SDC Cloud to public? As per the security policy it is mandatory that all the Cloud applications should undergo Security Audit by authoriz ed agencies (CERT -IN empanelled agencies) and present audit clearance certificate to SDC before going to live. 33. My application in the SDC cloud is currently live it but my domain name is not mapped to its public IP. To whom should I need to contact for D NS mapping? DNS mapping for domains are needed to be performed from the department side by contacting concerned DNS authorities and SDC have no roles until a valid DNS delegation request is received.",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    }
+  ]
+}

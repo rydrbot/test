@@ -1,0 +1,294 @@
+{
+  "file_name": "GuideLine for QCBS Process.pdf",
+  "category": "text_english",
+  "pages": [
+    {
+      "page_number": 1,
+      "original_text": "Prototype Document For QCBS / QBS Template Document Control Customer Name NIC Chennai Document Name Prototype Document Document Version No 1.0 Document Reference Author Kannabiran Author E-mail kannabiran.nic@gmail.com Document Creation Date 09 February 2021 Document Review Date Document Release Date Document modified Date Document Review Date Document Release Date Document Review Sl NoName of Reviewer Review TypeReview DateReview StatusReviewer E-mail 1.Mr. Manivannan Review History Sl NoChanges Description Modified By Modified Date",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 2,
+      "original_text": "Prototype Document for QCBS Template Table of Contents 1Purpose............................................................................................................... 3 2Methods for Selecting the Bidder ............................................................................ 3 2.1Quality and Cost Based Selection ..................................................................... 3 2.2Quality Based Selection .................................................................................. 3 3Evaluation of Technical Proposals ............................................................................ 3 3.1Receipt of Proposals ....................................................................................... 3 3.2Opening of Technical Proposals ........................................................................ 4 3.3Evaluation of Technical Proposals ..................................................................... 4 3.3.1Experience of the Bidder ........................................................................... 6 3.3.2Adequacy of Methodology and Work Plan .................................................... 6 3.3.3Qualifications and Competence of Staff ....................................................... 7 3.3.4Scoring System and Minimum Technical Score ............................................. 7 3.3.5Setting the Grades for Experience of the Bidder ........................................... 9 3.3.6Setting the Grades for Adequacy of Methodology and Work Plan ..................10 3.3.7Setting the Grades for Qualifications and Competence of Staff .....................12 3.3.8Completion of Evaluation of Technical Proposals ......................................... 14 3.4Results of Evaluation of Technical Proposals ..................................................... 18 4Evaluation of Financial Proposals ........................................................................... 18 4.1Public Opening of Financial Proposals .............................................................. 18 4.2Evaluation of Financial Proposals and Determination of Financial Score ...............18 4.3Determination of Total Score and Ranking of Proposals ..................................... 19 4.3.1Ranking of Proposals .............................................................................. 20 4.4Final Results of Evaluation of Proposals ........................................................... 22 5Screen Shots...................................................................................................... 22 5.1QCBS Template Creation ............................................................................... 22 5.2Tender Creation with QCBS Flow .................................................................... 25 5.3Bid Submission for QCBS Flow ....................................................................... 27 5.4Technical Evaluation for QCBS Flow ................................................................ 29 5.5Financial Evaluation for QCBS Flow ................................................................. 30 Page 2 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 3,
+      "original_text": "Prototype Document for QCBS Template 1Purpose Purpose of this document is to explain the features of Quality and Cost Based Selection (QCBS) process. This document discusses the flow of the new QCBS process. 2Methods for Selecting the Bidder The methods that are used for selecting the bidder are as follows: 2.1Quality and Cost Based Selection Quality and Cost Based Selection, a method that takes into account the quality of the proposal and the cost of the services, is the commonly recommended method for the selection of bidder. However, for cases where QCBS is not the most appropriate, other methods of selection are applied. 2.2Quality Based Selection Quality Based Selection (QBS) is a method based on evaluating only the quality of the technical proposals and the subsequent negotiation of the financial terms and the contract with the highest ranked bidder. QBS should be applied only for the following types of assignments: Complex or highly specialized assignments for which it is difficult to define in the tender documents and the required input from the bidder Assignments where the downstream impact is so large that the quality of the service is of overriding importance for the outcome of the project (for example, engineering design of major infrastructure) Assignments that can be carried out in substantially different ways such that financial proposals maybe difficult to compare Assignments including supervision of large and complex construction works for which it is particularly important to take safety measures 3Evaluation of Technical Proposals Technical evaluation process includes the following steps: 3.1Receipt of Proposals The technical and financial proposals shall be submitted in separate sealed envelopes at the same time. The financial proposals shall remain sealed until evaluation of the technical proposals is completed. Page 3 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 4,
+      "original_text": "Prototype Document for QCBS Template 3.2Opening of Technical Proposals The technical proposals shall be opened on the bid opening date. Any proposal received by the tender inviting authority after the deadline for submission shall be returned unopened. 3.3Evaluation of Technical Proposals The evaluation of technical proposals is summarized in this Chapter. The criteria for the evaluation of technical proposals shall normally include the following items: Experience of the bidder: Bidders general experience and record in the field covered by the tender document Adequacy of methodology and work plan: Adequacy of the proposed approach, methodology and work plan Qualifications and competence of staff: Experience and records of the staff members to be assigned to the work. The criterion shall be further divided into the following sub-criteria: General qualifications: This includes education, length of experience, types of position held, and length of service with the firm, etc Suitability for the project: This includes experience of performing the duties which will be assigned to them in the project Familiarity with the language and the conditions of the country: Familiarity with the language and the conditions of the country in which the work is to be performed or experience in similar environments. The technical evaluation report shall normally give detailed information on the following items, supplementing the summary evaluation sheet: Evaluation Committee or other similar organization, if any, responsible for the evaluation, and the domestic laws, ordinances or orders which govern the establishment and/or functioning of the Committee or other similar organization Evaluation criteria and relative weight distribution, with reasons for adopting each criterion and the basis for deciding the weight distribution Rating: Reason for arriving at the rating given for each item for each firm A proposal shall be rejected at the stage of evaluation of the technical proposals, if the technical proposal fails to achieve the minimum technical score or is considered non- responsive to the invitation requirements. Additional criteria may be applied depending on the nature of the assignment. In such case, additional criteria may include, but not limited to, the following: Suitability of transfer of knowledge: Suitability of the transfer of knowledge (training) programs Page 4 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 5,
+      "original_text": "Prototype Document for QCBS Template Support facilities and organization: Support facilities and organization of the bidder including support resources at Head office Proposal presentation: Overall quality of the presentation of the proposal The weight distribution of additional criteria should be determined by taking into account their relative importance to the criteria Experience of the bidder, Adequacy of methodology and work plan, and Qualifications and competence of staff, and each additional criterion should normally not exceed 10 points out of 100 points. Table below shows the general examples for the range of points allocated to the criteria on a scale of 1 to 100. The actual weight may be adjusted to the characteristics of the specific project. The points allocated to each evaluation criterion and sub-criterion should be specified. Table 1: Point Distribution of Evaluation Criteria for Technical Proposals Evaluation Criteria Points (weights) a.Experience of the bidder 10 to 20 b.Adequacy of methodology and work plan 20 to 50 c.Qualifications and competence of staff 30 to 60 d.Suitability of the transfer  optional Normally not exceed 10 e.Support facilities and organization  optional Normally not exceed 10 f.Proposal presentation  optional Normally not exceed 10 Total 100 The evaluation criteria other than (c), i.e., (a), (b), (d), (e) and (f) may also be divided into sub-criteria, but such division should be limited only to the essential factors. The use of excessively detailed lists of sub-criteria may render the evaluation a mechanical exercise more than a professional assessment of the proposals. It is recommended that the number of sub-criteria be kept to a minimum (typically no more than three for each criterion) and that no fewer than three points be allocated to each sub-criterion. Table below summarizes the evaluation criteria and sample sub-criteria. Table 2: Evaluation Criteria and Sample Sub-criteria for Technical Proposals Evaluation CriteriaEvaluation Sub-criteria (select a maximum of three) a.Experience of the bidder i.Experience of projects of comparable size, complexity and technical specialty ii.Experience in developing projects under comparable conditions Page 5 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 6,
+      "original_text": "Prototype Document for QCBS Template Evaluation CriteriaEvaluation Sub-criteria (select a maximum of three) iii.Experience in similar projects b.Adequacy of methodology and work plan i.Technical Approach and methodology ii.Work plan iii.Organization and staffing c.Qualifications and competence of staffi.General qualifications ii.Suitability for the project iii.Certifications etc d.Suitability of the transfer  optional i.Relevance of program ii.Training approach and methodology iii.Qualifications of experts and trainers e.Support facilities and organization  optional i.Relevance of support facilities and organization ii.Support approach and methodology iii.Qualifications of support specialists f.Proposal presentation  optional i.Intellectual and technical soundness ii.Organization and completeness 3.3.1Experience of the Bidder The relative importance of the criterion on bidders general experience and record in the field covered by the tender documents will vary according to the type of consulting services to be performed. In general, points allocated to the criterion should be 20 points at a maximum. 3.3.2Adequacy of Methodology and Work Plan The criterion on adequacy of the proposed approach, methodology and work plan should be evaluated carefully as it is the key factors for evaluating the proposals. Sub-criteria for evaluating this component of the proposal should include the following: Technical approach and methodology Work plan Organization and staffing Page 6 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 7,
+      "original_text": "Prototype Document for QCBS Template 3.3.3Qualifications and Competence of Staff Concern authority should evaluate the experience and record of the staff members proposed to the assignment based on the qualifications and experience stated in their curriculum vitae (CV). When evaluating staff members, only those conducting essential part of the assignment are recommended to be evaluated. Evaluating staff members with relatively low importance is not recommended, because the relative importance of the essential members will decrease. The qualifications and competence of staff shall be evaluated using the following three sub- criteria to be set up according to the required qualifications and tasks for each position: General qualifications: This includes education, length of experience, types of position held, and length of service with the bidder, etc. Suitability for the project: This includes experiences of performing the duties which will be assigned to them in the project Familiarity with the language and the conditions of the country: Familiarity with the language and the conditions of the country in which the work is to be performed or experience in similar environments A sample range of percentage for the above sub-criteria is shown in table below. Table 3: Sample Range of Percentage in Point Distribution of Staff Qualification and Competence Sub criteria Sub-criteria Range of percentage General qualifications 20  30 Suitability for the project 50  60 Familiarity with the language and the conditions of the country 10  20 Total 100 The weight or percentage of the points allocated to each member of staff should be determined by examining its expertise and/or role in the assignment. In general, the Team Leader should be given more weight than any other experts. 3.3.4Scoring System and Minimum Technical Score 3.3.4.1Scoring System The detailed scoring method is illustrated in figure below, by giving a sample evaluation for adequacy of methodology and work plan. Page 7 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 8,
+      "original_text": "Prototype Document for QCBS Template Figure 1: Scouring System As mentioned earlier, each criterion has been allocated the points in the range of 1 to 100. Each percentage rating is multiplied by the points assigned to the relevant criterion or sub- criterion to obtain the final score. An example is shown below: Points of experience of the bidder: 10 points (out of 100 points) Grade (% rating) of bidder As proposal: Good level (90%) Score of bidder A's experience of the bidder: 10 points  90%  9 points It is recommended that the rating scale of the level of responsiveness be divided into a number of discrete grades. While scoring, it is a good practice to estimate the responsiveness on a percentage scale based on the following grades: Page 8 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 9,
+      "original_text": "Prototype Document for QCBS Template Grade (level of responsiveness) Poor Below Average Average Good Excellent 3.3.4.2Minimum Technical Score Minimum technical score is normally recommended that a minimum technical score be determined in the range of 70 to 80 points out of 100 points for each case depending on the nature of the assignment. Any change of the minimum technical score during the evaluation process shall not be allowed. When QCBS is applied, moreover, it is important to secure that financial proposals must be compared only among the proposals achieving the minimum qualifying technical score in order to maintain the acceptable level of quality. 3.3.5Setting the Grades for Experience of the Bidder Since all bidders are on the Short List based on their experience, they are not normally rated at less than \"Average\", that is not less than 70%. The recommended grades and percentage rating for the bidders general experience and record in the field covered by the tender documents are shown in table below. Table 4: Recommended Grades and Percentage of Rating for the Experience of the Bidder Grade Percentage rating Average 70% Good 90% Excellent 100% 3.3.5.1Defining the Grades Sample definitions of each grade are given below. Note : Sample definitions are examples and introduced for reference purpose only. Excellent: The bidder has outstanding experience in respect of: Page 9 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 10,
+      "original_text": "Prototype Document for QCBS Template Projects of a similar nature with the complexity and technical specialty of the assignment Projects of a comparable in size (e.g. volume of man-months, volume of contract amount, etc.) Projects in a region or a country with physical and institutional conditions similar to those of the project location Good: The bidder has experience in respect to all three aspects mentioned above but experience in one aspect could be considered insufficient. Average: The bidder has experience in respect to all three aspects mentioned above but experience in two or more aspects could be considered insufficient. 3.3.6Setting the Grades for Adequacy of Methodology and Work Plan The recommended grades and percentage rating for the adequacy of the proposed approach, methodology and work plan are shown in table below. Table 5: Recommended Grades and Percentage Rating for the Adequacy of Methodology and Work Plan Grade Percentage rating Poor 0% Below Average 40% Average 70% Good 90% Excellent 100% 3.3.6.1Defining the Grades The sub-criteria for evaluating this component of the proposal should usually include the following: Technical Approach and methodology Work plan Organization and staffing Sample definitions of each grade are introduced below: Note : Sample definitions are examples and introduced for reference purpose only. Technical approach and methodology Excellent: The bidder properly understands the current situation, draws attention to all main issues related to the assignment and raises other Page 10 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 11,
+      "original_text": "Prototype Document for QCBS Template important issues that have not been considered in the tender documents. The proposal details ways to solve all issues by using advanced and innovative approach and methodology. Good: The bidder properly understands the current situation and the main issues related to the assignment. The approach and methodology to solve the issues are discussed in detail. Average: The bidder understands the requirement indicated in the tender documents. The approach and methodology to solve the issues are consistent. However, the approach and methodology are standard and not discussed in detail or not specifically tailored to the assignment. Below Average: The bidder does not have a proper understanding of the points given in the tender documents and the issues are not appropriately discussed. The approach and methodology do not have consistency and are inappropriately presented. Poor: The bidder misunderstands the requirement indicated in the tender documents and important aspects of the scope of consulting services. Approach and methodology do not comply with the requirement in the tender documents. Work plan Excellent: In addition to the requirements stated below under Good, the proposal includes an impressive presentation of the work plan for efficient execution of the assignment. The proposed work plan is consistent with the approach and methodology. Good: The work plan responds well to the points given in the tender documents. The timing and duration of all activities are appropriate and consistent with the assignment output, and the interrelation between various activities is realistic and consistent with the proposed approach and methodology. Average: The work plan responds to the tender document and all required activities are indicated in the activity schedule, but they are not detailed. Below Average: Some activities required in the tender documents are omitted in the work plan or the timing and duration of activities are not appropriate. There are minor inconsistencies between timing, assignment output, and proposed approach and methodology. Poor: There are major inconsistencies between the requirements in the tender documents and the proposed work plan. Organization and staffing Excellent: In addition to the requirements stated below under Good, the proposal includes an impressive presentation of a well thought out organization and staffing plan. The proposed team is well integrated and has good support organization. Page 11 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 12,
+      "original_text": "Prototype Document for QCBS Template Good: The organization chart and staffing schedule is complete and detailed, and the technical level and composition of the staffing arrangements are very well balanced. The definition of duties and responsibilities are very clear. The staffing schedule is consistent with the work plan and the timing and duration of each staffs assignment are adequate. Average: The proposed organization and staffing arrangement is complete and detailed enough to meet all the requirements of the tender document. Below Average: The proposed organization and staffing arrangement is not detailed and the assignment schedule of each staff is not adequate. For instance, there are inconsistencies between the staffing schedule and the required output. The organization and staffing arrangement is not tailored to the proposed approach, methodology and work plan. Poor: The organization and staffing arrangement is not responsive to the requirement of the tender document at all. It is assumed that the required output cannot be appropriately prepared within the period of the assignment. 3.3.7Setting the Grades for Qualifications and Competence of Staff The recommended grades and percentage rating for the experience and records of the staff members to be assigned to the work are shown in table below. Table 6: Recommended Grades and Percentage Rating for the Qualifications and Competence of Staff Grade Percentage rating Poor 0% Below Average 40% Average 70% Good 90% Excellent 100% 3.3.7.1Defining the Grades The sub-criteria for evaluating this component of the proposal shall include the following: General qualifications (education, length of experience, types of position held, length of service with the firm, etc. Suitability for the project (experiences of performing the duties which will be assigned to them in the project Familiarity with the language and the conditions of the country in which the work is to be performed or experience in similar environments. Sample definitions of each grade are enumerated below: Page 12 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 13,
+      "original_text": "Prototype Document for QCBS Template Note : Sample definitions are examples and introduced for reference purpose only. General qualifications Excellent: The proposed expert has 20 years or more of professional experience and an educational background or a professional qualification in the field of assignment. Good: The proposed expert has 15 years or more of professional experience and an educational background or professional qualification in the field of assignment. Average: The proposed expert has 10 years or more of professional experience and educational background or a professional qualification in the field of assignment. Below Average: The proposed expert has less than 10 years of professional experience but has an educational background or a professional qualification in the field of assignment. Poor: The proposed expert has less than 3 years of professional experience and does not have an educational background or a professional qualification in the field of assignment. Note : Required years of professional experience will be determined for each case depending on the nature of the assignment. Suitability for the project Excellent: In addition to the requirements stated below under Good, the majority of the proposed expert's experience on previous assignments in the past 10 years has been in positions similar to the one proposed for the assignment. Good: The proposed expert has held positions similar to the one proposed for the assignment in more than 3 projects of a similar nature in the past 10 years. Average: The proposed expert has held positions similar to the one proposed for the assignment in 2 projects of a similar nature in the past 10 years. Below Average: The proposed expert has held positions similar to the one proposed for the assignment in at least 1 project of a similar nature in the past 10 years. Poor: The proposed expert does not have any experience in holding positions similar to the one proposed for the assignment in the past 10 years. Familiarity with the language and the conditions of the country Excellent: The proposed expert has experience working in the country of the assignment or the surrounding countries with cultural, administrative, and Page 13 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 14,
+      "original_text": "Prototype Document for QCBS Template governmental organizations similar to the ones of the country of the assignment for more than 3 years in total. Good: The proposed expert has experience working in the country of the assignment or the surrounding countries with cultural, administrative, and governmental organizations similar to the ones of the country of the assignment for 2 years or more but less than 3 years in total. Average: The proposed expert has experience working in the country of the assignment or the surrounding countries with cultural, administrative, and governmental organizations similar to the ones of the country of the assignment for 1 year or more but less than 2 years in total. Below Average: The proposed expert has experience working in the country of the assignment or the surrounding countries with cultural, administrative, and governmental organizations similar to the ones of the country of the assignment for less than 1 year in total. Poor: The proposed expert does not have any experience working in the country for the assignment or the surrounding countries with cultural, administrative, and governmental organizations similar to the ones of the country of the assignment. 3.3.8Completion of Evaluation of Technical Proposals The evaluation results of technical proposals are detailed in an evaluation report including a summary technical evaluation sheet and evaluation sheets for staff members of each bidder. After the technical quality is evaluated, bidders whose technical proposals did not meet the minimum qualifying score, or were considered non-responsive to the invitation requirements, will be advised and their financial proposals will be returned unopened. An example of a completed summary technical evaluation sheet is shown in table below. Table 7: Summary Technical Evaluation Sheet Bidder XXX YYY ZZZ Evaluation Criteria Points (P) Rating (R)%Score (P X R)Rating (R)%Score (P X R)Rating (R)%Score (P X R) IBidder's general experience and record in the field covered by the tender documents2014.40 19.20 18.80 i.Experience of projects of comparable size, complexity and technical specialty8705.6907.21008.0 ii.Experience in the projects under comparable conditions8907.21008.0907.2 Page 14 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 15,
+      "original_text": "Prototype Document for QCBS Template Bidder XXX YYY ZZZ Evaluation Criteria Points (P) Rating (R)%Score (P X R)Rating (R)%Score (P X R)Rating (R)%Score (P X R) iii.Experience in local projects4401.61004.0903.6 IIAdequacy of the proposed approach, methodology and work plan30 19.20 25.80 23.40 i.Technical Approach and Methodology12708.49010.8708.4 ii.Work plan 12708.49010.89010.8 iii.Organization and staffing6402.4704.2704.2 IIIExperience and records of the staff members to be assigned to the work50 35.30 43.48 39.52 Client Location i.Team leader 1511.10 13.80 12.90 ii.Road engineer 76.02 7.00 6.30 iii.Transport economist 53.20 4.10 3.50 iv.Environment specialist53.50 4.10 3.70 Bidder location Page 15 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 16,
+      "original_text": "Prototype Document for QCBS Template Bidder XXX YYY ZZZ Evaluation Criteria Points (P) Rating (R)%Score (P X R)Rating (R)%Score (P X R)Rating (R)%Score (P X R) i.Road engineer 64.44 5.52 4.80 ii.Transport economist 42.96 2.96 3.12 iii.Environment specialist42.24 2.96 2.96 iv.Social specialist 41.84 3.04 2.24 Total 100 68.90 88.48 81.72 Notes : The rating and score of each member of staff based on the three sub- criteria are shown in the technical evaluation sheet for staff members, and the relevant scores are transferred to the summary technical evaluation sheet. The minimum technical score is 70 point, in this example. Bidder XXX, who fails to achieve the minimum technical score, is rejected at the stage of evaluation of the technical proposals. Evaluation sheets for staff members are prepared for each bidder to show the evaluation results based on the three sub-criteria on qualifications and competence of staff. The score of each expert in the evaluation sheet for staff members of each bidder is transferred to the summary technical evaluation sheet. An example of a completed evaluation sheet for staff members of Bidder YYY is shown in table below. Table 8: Evaluation Sheet for Staff Members Page 16 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 17,
+      "original_text": "Prototype Document for QCBS Template Bidder YYY Sub-criteria General qualifications (20%)Suitability for the project (60%)Familiarity with the language and the conditions of the country (20%)Sub total Position Total Poin ts Poin ts (P) Ratin g (R) %Scor e (P X R)Poin ts (P)Ratin g (R) %Scor e (P X R)Poin ts (P)Ratin g (R) %Scor e (P X R) Client Location i.Team leader153.01003.009.0908.103.0902.7013.8 0 ii.Road engineer71.41001.404.21004.201.41001.407.00 iii.Transport economist51.0700.703.0902.701.0700.704.10 iv.Environment specialist51.0700.703.0902.701.0700.704.10 Bidder location i.Road engineer61.2901.083.6903.241.21001.205.52 ii.Transport economist40.8700.562.4701.680.8900.722.96 iii.Environment specialist40.8700.562.4701.680.8900.722.96 iv.Social specialist40.8700.562.4701.680.8900.722.96 Sub total 50 8.5625.9 88.9443.4 8 Page 17 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 18,
+      "original_text": "Prototype Document for QCBS Template 3.4Results of Evaluation of Technical Proposals The results of evaluation of the technical proposals shall be reviewed and concurred by the concern authority. In the case of QCBS, review and concurrence shall be given before public opening of the financial proposals. 4Evaluation of Financial Proposals Financial evaluation process includes the following steps: 4.1Public Opening of Financial Proposals The bidders who have secured the minimum qualifying technical score will be advised of the location, date, and time for opening of the financial proposals. The financial proposals shall be opened publicly in the presence of the bidders who choose to attend. The name of the bidders, the technical quality scores, and the proposed prices shall be announced and recorded. 4.2Evaluation of Financial Proposals and Determination of Financial Score In determining the financial score, the evaluator shall review the congruency of the technical and financial proposals, make adjustments as appropriate, and correct arithmetical or computational errors. The lowest evaluated financial proposal will receive the maximum score of 100 points. The score for each other financial proposal is inversely proportional to its evaluated total price. With regard to the issues of local taxes, for the purpose of evaluation, cost shall exclude local identifiable indirect taxes (all indirect taxes levied on the contract invoices, at National, State (or Provincial) and Municipal levels) on the contract and income tax payable to the country of the concern authority on the remuneration of services rendered in the country of the concern authority by non-resident staff of the bidder, as indicated in the Guidelines. During the verification process, financial proposals are first checked for compliance with the Data Sheet. Each financial proposal must include provisional sums and contingencies in the amounts specified on the Data Sheet and must be exclusive of local taxes, and the validity period of the proposals must accord with the validity period set down in the Data Sheet. A review is then made to ensure that the figures provided in each financial proposal are consistent with the details of the corresponding technical proposal (e.g., personnel schedule inputs, number and duration of field trips, applicable per Diems, etc.). The following are taken into account to ensure a fair competition among price proposals: If the inputs shown in the financial proposal for any expert do not match those shown on the personnel schedule in the technical proposal, the personnel schedule inputs shall prevail and adjustments will be made to the financial proposal accordingly. Page 18 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 19,
+      "original_text": "Prototype Document for QCBS Template If an expert included in the technical proposal is omitted from the GFP, then the cost of that expert is included in the bidders financial proposal at the highest rate for that position among all the financial proposals. When QCBS is applied, a minimum of man-months required for bidders at client place and bidders place is included in the Data Sheet. If the total client and/or bidder inputs shown on the personnel schedule are below those indicated in the Data Sheet, an adjustment will be made for the missing man-months using the highest remuneration rate per month. If the number of trips and per diems calculated from the personnel schedule does not match the quantities for these items shown in the GFP, adjustments will be made to the GFP inputs in accordance with the personnel schedule. Finally, a review is made for computational errors, and the final amount is considered as the gross evaluated financial proposal (GEFP) . GEFPs will be converted into net evaluated financial proposals (NEFPs) . NEFPs include only variable cost items such as remuneration and reimbursable expenses. Fixed cost items such as provisional sums and contingencies are not included. NEFPs are calculated by subtracting the provisional sums and contingencies (non-competitive components) shown in the Data Sheet from the GEFPs, and by converting to a single currency using the selling rates of exchange, source and date indicated in the Data Sheet. 4.3Determination of Total Score and Ranking of Proposals The lowest NEFP is then given a maximum score of 100 points. This is then used as a basis to calculate the score of the other financial proposals. The financial score for each proposal is inversely proportional to its NEFP, that is, the higher the NEFP, the lower the financial score. The financial score is computed as follows: Financial Score NEFP of the lowest priced proposal = 100 points Each other NEFP =100 points xNEFP of the lowest priced proposal NEFP of the proposal under considerations An example is shown below: NEFP of lowest priced proposal = INR 80 Lakhs NEFP of second lowest priced proposal = INR 85 Lakhs Financial score of the lowest priced NEFP = 100 points Page 19 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 20,
+      "original_text": "Prototype Document for QCBS Template Financial score of the second lowest priced NEFP= 100 Points XINR 80 Lakhs = 94.12 points INR 85 Lakhs Using this methodology, all proposals are given a financial score. 4.3.1Ranking of Proposals The total score shall be obtained by weighting and adding the technical and financial scores; this will determine the overall ranking of the bidders proposals. The weight for the cost shall be chosen, taking into account the complexity of the assignment and the relative importance of quality. It shall normally be 20%. If financial proposals contain unreasonably low price, the authority should ask the concerned bidder for clarification of such an offer and should receive answers from the bidder to ensure appropriate execution during the contract stage, before concluding the evaluation. The total score is computed as follows: Total Score Technical score x Weight + Financial score x Weight An example is shown below: Weight for quality: 80%, Weight for cost: 20% Minimum qualifying technical score: 70 points Technical score Bidder XXX: [Technical score] 68.90 points ===> disqualified Bidder YYY: [Technical score] 88.48 points, [NEFP] INR 85 Lakhs Bidder ZZZ: [Technical score] 81.72 points, [NEFP] INR 80 Lakhs In this case, the total score of Bidder No. 2 and Bidder No. 3 are computed as follows: Financial Score Bidder YYY: 94.12 points Bidder ZZZ: 100.00 points Total Score Bidder YYY: 88.48 points x 80% + 94.12 points x 20% = 89.61 points Bidder ZZZ: 81.72 points x 80% + 100.00 points x 20% = 85.38 points Once the final scores for each proposal have been calculated, they can be ranked from highest to lowest. In the event two or more proposals have the same scores in the final Page 20 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 21,
+      "original_text": "Prototype Document for QCBS Template ranking of proposals, the proposal with the highest technical score will be ranked higher and the next highest technical score will be ranked lower. After the final ranking, the highest- ranked bidder will be invited for contract. The final evaluation results are summarized in an evaluation sheet. An example of a completed summary evaluation sheet is shown in table below. Table 9: Summary Evaluation Sheet Bidde rTechnica l Score (T)Weigh t (W)T x WPric eFinancia l Score (F)Weigh t (W)F x WTotal Scor eRankin g XXX68.900.8------ YYY88.480.870.7 8INR 85 Lakh s94.120.218.8 289.611 ZZZ 81.720.865.3 8 INR 80 Lakh s100.000.220.0 085.382 Note : Bidder XXX who fails to achieve the minimum technical score is rejected at the stage of evaluation of the technical proposals. 4.4Final Results of Evaluation of Proposals The final results of evaluation of proposals shall be reviewed and concurred by the concern authority before initiating contract with the highest-ranked bidder. Page 21 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 22,
+      "original_text": "Prototype Document for QCBS Template 5Screen Shots Proposed and modified screen shots for the QCBS process changes are as follows: 5.1QCBS Template Creation Proposed and modified screen shots for the QCBS template creation are as follows: Figure 2: Dashboard screen with QCBS Template tab In the dashboard screen, user needs to click the newly introduced QCBS Template tab on the left pane of the dashboard screen to fill the QCBS template details. When user clicks this tab, application displays the Master Template screen with fields to fill QCBS template details. Page 22 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 23,
+      "original_text": "Prototype Document for QCBS Template Figure 3: Master Template screen with the newly introduced QCBS fields In the master template screen, user needs to fill the following fields as a part of QCBS flow: Minimum Technical Score: Minimum technical score be determined in the range of 70 to 80 points out of 100 points for each case depending on the nature of the assignment. Any change of the minimum technical score during the evaluation process shall not be allowed. It is important to secure that financial proposals must be compared only among the proposals achieving the minimum qualifying technical score in order to maintain the acceptable level of quality. A proposal shall be rejected at the stage of evaluation of the technical proposals, if the technical proposal fails to achieve the minimum technical score Technical and Financial Ratio: This is the ratio between the technical and financial scores to conclude the final score. For example if the technical and financial ration is 80:20, then the weight for quality is 80% and weight for cost is 20%. The total score shall be obtained by weighting and adding the technical and financial scores; this will determine the overall ranking of the bidders proposals. The weight for the cost shall be chosen, taking into account the complexity of the assignment and the relative importance of quality. It shall normally be 20%. Points (Weights): The weight distribution of criteria should be determined by taking into account their relative importance to the various criteria like Experience of the bidder, Adequacy of methodology and work plan, and Qualifications and competence of staff, and each additional criterion should normally not exceed 10 points out of 100 points. Page 23 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 24,
+      "original_text": "Prototype Document for QCBS Template After filling the required fields and saving the details, application displays the View Detail Template screen. Figure 4: View Detail Template screen with the newly introduced QCBS fields In the view detail template screen, application auto populates Minimum Technical Score, Technical Financial Ratio, and Points (Weights) along with the other details displayed in the screen. Page 24 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 25,
+      "original_text": "Prototype Document for QCBS Template 5.2Tender Creation with QCBS Flow Proposed and modified screen shots for creating the tender with QCBS flow are as follows: Figure 5: Basic Details tab with the newly introduced QCBS fields In the basic details screen of tender creation, as a part of QCBS flow user needs to select the Form of Contract as QCBS from the drop down menu. Note : Ensure that you select the Yes option for the Should allow General Technical Evaluation field to proceed with QCBS flow. Page 25 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 26,
+      "original_text": "Prototype Document for QCBS Template The next screen modified as a part of QCBS flow is Tender List > Work Item Details as shown below. Figure 6: Work Item Details tab with the newly introduced QCBS fields In the tender list > work item details screen, for the Template Name field , user need to click the Add button corresponding to it. Application displays all the QCBS templates in a pop up window. Select the required QCBS template. Page 26 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 27,
+      "original_text": "Prototype Document for QCBS Template 5.3Bid Submission for QCBS Flow Proposed and modified screen shots for bid submission with QCBS flow are as follows: Figure 7: Bidder Technical Details screen with the newly introduced QCBS fields In the bidder technical details screen, application auto populates Minimum Technical Score, Technical Financial Ratio, and Points (Weights) , user cannot modify these fields. User can only fill the existing editable fields. Page 27 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 28,
+      "original_text": "Prototype Document for QCBS Template The next screen modified as a part of QCBS flow is View Bidder Technical Details as shown below. Figure 8: View Bidder Technical Details screen with the newly introduced QCBS fields In the view bidder technical details screen, application auto populates Minimum Technical Score, Technical Financial Ratio, and Points (Weights) along with the other details displayed in the screen. Page 28 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 29,
+      "original_text": "Prototype Document for QCBS Template 5.4Technical Evaluation for QCBS Flow Proposed and modified screen shots for technical evaluation of QCBS flow are as follows: Figure 9: Auto Technical Evaluations Details screen with the newly introduced QCBS fields In the auto technical evaluation screen, application auto populates Minimum Technical Score, Technical Financial Ratio, and Points (Weights) , user cannot modify these fields, whereas user can select the Marks for the details submitted by the bidder. Marks: Marks are also known as rating. Marks are given by the evaluator based on various criteria like education, length of experience, types of position held, and length of service with the firm, etc. It is recommended that the rating scale of the level of responsiveness be divided into a number of discrete grades. Page 29 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 30,
+      "original_text": "Prototype Document for QCBS Template The next screen modified as a part of QCBS flow is View Auto Technical Evaluation Details as shown below. Figure 10: View Auto Technical Evaluation Details screen with the newly introduced QCBS fields In the view auto technical evaluation details screen, application auto populates Minimum Technical Score, Technical Financial Ratio, and Points (Weights) along with the other details displayed in the screen. 5.5Financial Evaluation for QCBS Flow Proposed and modified screen shots for financial evaluation of QCBS flow is as follows: Notes : In QCBS flow, system accepts all bidders who have scored minimum technical score. In case of QBS flow, system will accept only the highest technical scorer. System will reject others though they crossed the minimum tech score. In case of multiple highest technical scorers, system will accept those scorers for financial opening. Page 30 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 31,
+      "original_text": "Prototype Document for QCBS Template Figure 11: Bid Opening (Financial) screen with the newly introduced QCBS fields In the bid opening > bids list screen, as a part of QCBS flow, new link called Generate QCBS Chart. User needs to click this new link to generate the QCBS chart. System generates the QCBS comparative chart as shown in the below figures. Note : The Generate QCBS Chart link is enabled / displayed only after clicking the Generate BOQ Comparative Chart link. Page 31 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 32,
+      "original_text": "Prototype Document for QCBS Template Figure 12: QCBS comparative chart  1 Figure 13: QCBS comparative chart  2 Page 32 of 32",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    }
+  ]
+}

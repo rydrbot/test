@@ -1,0 +1,836 @@
+{
+  "file_name": "BOQ - GeM Guidelines.pdf",
+  "category": "image_english",
+  "pages": [
+    {
+      "page_number": 1,
+      "original_text": "",
+      "translated_text": "",
+      "language_detected": "unknown",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 2,
+      "original_text": "Introduction > It was observed that number of Buyers across Ministries have requirement to Publish larger number of items involving detailed Price breakup.Bunching method though available would be troublesome and time consuming for the Buyer. >To cater to larger contracts including EPC based structured contracts, BOQ based bidding has become the need of the hour.",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 3,
+      "original_text": "Purpose and objective > BOQ based bidding has been introduced to enable Buyer to analyze Item wise Price breakup in a larger contract/project. > Primary useful for EPC kind of Jobs and other turnkey job where the Supply of line items to be procured are more however Total value wise Evaluation is required and the Job is to be ordered to One Seller (L1 -overall). >This application shall be useful for both Product & Services. Many different type of services related to a Project /Job can be clubbed together.",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 4,
+      "original_text": "Background and present scenerio - > Earlier Scenario- 1.While bunch bidding is indeed available for the Buyer(s) for Multiple products to be combined together , Excel Upload of BOM/BOQ (Bill of material/quantity) makes it more easy to use and maintain. 2.In Turkey Jobs where line items can exceed 50,100 or even 500 , bunching of such many line items could be difficult for a Buyer as each time he/she has to select the catalog which has to be present or may not be available. 3. Also category needs to be made available for each and every item if not present , to add is process could be time consuming. > Present Scenario- 1. The use of Excel uploading is user friendly where the details of Products like model,make,HSN code,GST % appears under one roof ((The BOQ Sheet) 2.In Turkey Jobs where line items can exceed 50,100 or even more this excel feature is simple and easy to manage for both Buyers and Seller/Bidders. 3.ltems can be incorporated in the excel format irrespective of the item being registered under a category by Buyer or Seller having not uploaded the catalog",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 5,
+      "original_text": "Value addition - >1.Easy to use/upload/download extensive line items along with their price break up (GST%)/make/model/HSN code details for both Buyer/Seller. >2.Benefit of price break up shall help Buyer to monitor price hike for the same project. Tapping the escalations shall over all help maintain check on individual prices where the Quantity changes are foreseen. Price reduction and over all controlling the Project cost shall be advantageous with this feature deployed. >3.Result shall also be seen in reduction of human effort and ease of operation in Engineering driven Projects including services. >4.GeM could be able to bring in more Buyer usage owing to this feature and generally the Cost involved value wise shall benefit its business as well as increasing the number of buyer participation in Tender Publishing. Result more Revenue for Gem so also the goodwill.",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 6,
+      "original_text": "sls neg eae seca =. GeM Advantages GeM Exclusive FAQs Contact Us Rate a Seller Se An ee a Shri Narendra Modi Hon'ble Prime Minister of India  The crisis the world is facing today teaches us that way forward is - Atmanirbhar Bharat (A self-reliant india) |, Rich Listing of Products / Integrated Payment its agieet ccult Leiter Cop ese) Rr a Aa LV lore oy Ease of Selling",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 7,
+      "original_text": "Bids Sign Up experience the Marketplace Login in to Government e Marketplace | GeM Need help with your Login ? rE Ee 4 Pape hot ath tC se B tae C tie Rn a that WOKSFG asl reat) aM eos oie lee (ee ia) Call: 1-1800-419-3436 / 1-1800-102-3436 ( 8 am - 8 pm Mon to Sat ) e entere Enter your User ID and =aus log captcha and click on Submit. WEB INFO ABOUT GeM NEWS & EVENTS RESOURCES TRAINING NEED HELP ?",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 8,
+      "original_text": "iT Sign Up Login in to Government e Marketplace | GeM Te a on Submit to continue. Rel eBid Agents and experts available on a single platform ready to help you eeneeeeneeee Contact Us Email. helpdesk-gem[atigov[dotjin er] Ltt ae Sl WEST lee ieee eee: etme en Coes Forgot your GeM password ? Reset GeM Password",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 9,
+      "original_text": "Dashboard Market site) CATEGORIES All Catego Products > n Parameters are now mandatory Bid requirement: Buyers can now choose both Golden and Non-Golden Parameters for defining the Bid Requirements. eerees 1pose a non-golden parameter as a mandatory specification for their Bids Browse All Categories @ category and on ~~~ t* ~ while creating bid (with values as selected by the Buyer or better than that), erall item specific. ase note that the Non Golden Parameters which are not specifically selected Browse All Products carded from bid a ict with any of the allowed values for such non-golden parameters. If buyer 3n parameter a pa ted values while creating bid, else GEM system would presume that buyer has BOQ Based Bidding arameter and will jected for such non selected parameter. Itis-also. to he noted hat the values of the reference product are no longer part of the bid and only allowed values will be part of bid. For Golden parameters, by default GEM would incorporate all values that are better than the reference product's values in the bid. Buyer can select and allow any more values that he feels appropriate so that the bid is as generic as possible to attract maximum competition. Similarly for Buyer chosen non-golden parameters also, reference product's value and better values would be allowed by default and Buyer can add more values of his choice. Sellers would now need to mandatorily comply with complete Bid specifications to proceed with Bid participation. Since bidders will now be pre-filtered and allowed to offer only those products which are matching with allowed values of Golden as well as Non-Golden parameters (Buyer selected), there would now be no need for Buyer's to check or reject any bid on the ground of specification mis-match as far as GeM catalogues are concerned.\" GeM facilitates procurement POSHAN S eu for POSHAN ABHIYAAN cy | Scheme for Holistic Nounshment",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 10,
+      "original_text": "ba e GeM Dashboard Ela Purchase Requisitions | (2) Akhil Jindal e Marketplace Pe Q Shopping Cart js ( Aa j = CATEGORIES All Categories NOTIFICATIONS Add BOQ Item",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 11,
+      "original_text": "* GeM Dashboard Ea stl) Purchase Requisitions | @) PN amelie ts) e Marketplace = CATEGORIES All Categories Q Shopping Cart NOTIFICATIONS Add BOQ Item  Choose Consignees ADD CONSIGNEE",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 12,
+      "original_text": "acts as dummy, actual consignee present in BOQ sheet Boq excel sheet to contain detailed qty hence here selection is 1 Delivery Location State Delivery Location Quantity DELHI Nitin Sahni, AutoTestBuyer1, Central De v eT",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 13,
+      "original_text": "GeM e Marketplace Dashboard Waa aU Cette hi om acre Ue Lee ats $2) Akhil Jindal CATEGORIES All Categories NOTIFICATIONS + Add BOQ Item  Choose Consignees > Choose Related Categories v egories for the BoQ item. These will be used for notifying the relevant se for better participation ES",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 14,
+      "original_text": "Search & Select Categories Available On GeM --Select Level 1 Category-- v Buyer shall get to add 3 categories nearest/closest to the subject Items present as multiple line items. Notifications shall go to such respective Sellers on Tender Publish.",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 15,
+      "original_text": "Search & Select Categories Available On GeM Bear ch Category Information Technology Broadc v Computer Equipment and Acces v Computers Desktop Computers Selected Categories: Desktop Computers",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 16,
+      "original_text": "= CATEGORIES All Categories Q Shopping Cart = Buyer uploads detailed specifications in the form of PDF File Nomireari : Add BOQ Item  Choose Consignees > Choose Related Categories > Upload Item Specification Document v Item Specification Document: No file chosen CHOOSE FILE ok",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 17,
+      "original_text": "ee Shopping Cart  Open F a  & | > ThisPC > Documents Organize  New folder = a e ge Quick access @ OneDrive -- v WD This Pc PDF [BM Desktop BOQ document > |=} Documents y Downloads ; d Music  Pictures ; B Videos hes ACER (C:) we, ACER DATA (D:) ~~ oo Network 6 Homegroup CHOOSE FILE File name; | Adobe Acrobat Document a eo eT",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 18,
+      "original_text": "Add BOQ Item # Choose Consignees Choose Related Categories Related Categories: Desktop Computers Please select relevant categories for the BoQ item. These will be used for notifying the relevant sellers for better participation. ADD CATEGORIES Upload Item Specification Document Item Specification Document: BOQ document.pdf ADD ITEM > v v CHOOSE FILE Add item to cart",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 19,
+      "original_text": "SHOPPING CART - INTENT OF BUYING: BID BOQ Unbranded BOQ ITEM tem Added On 09.04.2021 Price On Demand VIEW ALL CART PROCEED TO CHECKOUT",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 20,
+      "original_text": "mc yo Government . e Marketplace Dashboard El ULC mel eeu | Cue)  CATEGORIES All Categories Q Shopping Cart GS NOTIFICATIONS + SHOPPING CART Product Title Unit Price Quantity Sub Total Unbranded BOQ NA 1 Price on Demand B O Q Item Added on 09.04.2021 | 10 pays Lert BOQ Specification Document ITEM X Delete |e v v WEB INFO ABOUT GeM NEWS & EVENTS RESOURCES TRAINING NEED HELP ?",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 21,
+      "original_text": "",
+      "translated_text": "",
+      "language_detected": "unknown",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 22,
+      "original_text": "@ Dark Mode eels. ae eee Skip to Main Content 1800-419-3436 Shelpdesk-gemfat]gov[dotlin | Need Help? + .) =, NY Dashboard Market sho) Purchase Requisitions OI ee 1) e Marketplace CREATE BID SPECIFICATIONS 1. Specifications tems BOQ (1) WEB INFO ABOUT GeM NEWS & EVENTS RESOURCES TRAINING NEED HELP ?",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 23,
+      "original_text": "BTsalaverclen M1 = af etag sel ettelpc) i? PN einer Download Specifications - already uploaded during earlier stage BOQ document after filling details 1. Specifications Items (1) | Specification for BOQ Specification Document Sample BOQ Document Upload Filled BOQ Document & Download & Download | Choose file No file chosen o Please review your specifications  Download sample BOQ document and fill item data as required before uploading the same  Click here to download your consignees/reporting officers  The BoQ excel will be validated by system at the time of upload. Excels not validated by system will not be accepted and buyers/sellers will not be able to proceed further. Hence Buyers and sellers are advised to strictly adhere to the type of values and length allowed for each column.  Buyer to download consignee ID from GeM and mention the same in column F  Amaximum of 500 items(Including those outside the BoQ sheet, if any) can be added in the Bid. a a i a a a a i i Nn Be a a I aon I rn ae ee a a ae at a i ee et ea 8",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 24,
+      "original_text": "File Edit View Insert Format Tools Data Window Help = *SG-F O - ON BP ASAEA OL hs Very anle)(-mace)aan . Slur be VeLmnTel B/J/ UV &e# eam BRXYEBB EE O-B-A-| 20 ra] 22 23 a4 25 26 27 * tk /Me@eZT@ 0@-6-e-B-B-x- @ wg |",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 25,
+      "original_text": "/  a: |  ; i a INSULATION TESTER 10KV 0 B Pressue Gauaged-10 kg/sqcm ae nehagaur@digitalindia.gov.in- Air cooled single phase 10KVA_ oN dbuyerp UPS re ___ Oil coold Three phase SOKVA  sadhe@mailinator.com Instrumentation Cable Multicore ! ceobuyern  Sheets (Sheed [Shees7SCSCSCSCSSSSSSSSSSS rrr rrr > iRi\\/meZTS\\O-@-e-B-B-x- Rwy",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 26,
+      "original_text": "Note consignee id and Zip copied from the consignee sheet arket Bids Purchase Requisitions (()) Akhil Jindal CREATE BID o_ 3 S bs s SPECIFICATIONS 1. Specifications Items (1) | | Specification for BOQ | Specification Document Sample BOQ Document Upload Filled BOQ Document & Download & Download | Choose file | No file chosen o Please review your specifications Download samnle ROO document anc fill item data as required before uploading the same o The BoQ excel will be validated by system at the time of upload. Excels not validated by system will not be accepted and buyers/sellers will not be able to proceed further. Hence Buyers and sellers are advised to strictly adhere to the type of values and length allowed for each column.  Buyer to download consignee ID from GeM and mention the same in column F  Amaximum of 500 items(Including those outside the BoQ sheet, if any) can be added in the Bid. a a i a a a a i i Nn Be a a I aon I rn ae ee a a ae at a i ee et eo",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 27,
+      "original_text": "SSS SSS a a ere entre Sara a ee SS File Edit View Insert Format Tools Data Window Help B-B-HaBB6A Fs KSO-S oH CNN MD MCHGTOL Mery Cation vin vy BJ Ui&ce ame BHURBee O-B-A-|y 1 Indhumathi Dhakshinamurthi 6 CGO COMPLEX ND 0001 Radha $ Chauhan 6 CGO COMPLEX ND jhghj BCD Bhopal EEVAN TARA , NEW DELHI! 6 CGO COMPLEX ND Sri nagar 6 CGO COMPLEX ND __ 560001 Jithendhirakumar Rangasamy 6 CGO COMPLEX ND 10 Ierapnresigainda gous __ 234532 neha gaur 242tervite 345234 Hari Mohan gdfsesdigsdfgsdfsg 44 > Worksheet a Ri /mMOLTS/O-O-o-B-B-k- MWe",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 28,
+      "original_text": "Open 4 (5 > ThisPC > Documents Organize  New folder Name we Quick access !)] BOQ final sheet @ OneDrive [&) BOQ document GD This PC [Desktop | Documents } Downloads Music =) Pictures BB Videos She ACER (C:) we ACER DATA (D:) o Network @ Homegroup Date modified 08-04-20: 21 09:43... 27-01-2021 04:17... v1] | Search Documents 2 Market Bids Purchase Requisitions (ue Type Size Microsoft Office E... 10 KB Adobe Acrobat D... 116 KB File name: | BOQ final sheet v ||) | All Files & Download oo 0 0 Please review your specifications Download sample BOQ document and fill item data as required before uploading the same Click here to download your consignees/reporting officer The BoQ excel will be validated by system at the time of upload. Excels not validated by system will not be accepted and buyers/sellers will not be able to proceed & Download No file chosen further. Hence Buyers and sellers are advised to strictly adhere to the type of values and length allowed for each column.",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 29,
+      "original_text": "oo . OD OO TCS CSI SPECIFICATIONS ONSIGNEES/REPORTING DETAILS EMD/EPBG DETA Spr ITTING rR VERIFY OTP/ESIGN & PUBLISH 1. Specifications Items (1) BOQ (1) | Specification for BOQ & Download & Download BOQ final sheet.xlsx Please review your specifications Download sample BOQ document and fill item data as required before uploading the same Click here to download your consignees/reporting officers& The BoQ excel will be validated by system at the time of upload. Excels not validated by system will not be accepted and buyers/sellers will not be able to proceed further. Hence Buyers and sellers are advised to strictly adhere to the type of values and length allowed for each column.  Buyer to download consignee ID from GeM and mention the same in column F  Amaximum of 500 items(Including those outside the BoQ sheet, if any) can be added in the Bid.  The BoQ Template should not be modified/edited by the buyer or seller. Bids are liable to be rejected by buyer if any seller is found to have done so. Buyer and sellers are required to fill only relevant details) Columns A to H to be filled by buyer. Column |, J, K, L, M to be filled by seller.  The consignee details will be picked up from the uploaded Bod file by the buyer. oo 90 86 Save",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 30,
+      "original_text": "Dashboard Eat Bids Vico nch ioe soe lel te) ps ane) CREATE BID SPECIFICATIONS 1. Specifications Items (1) BOQ (1) WEB INFO ABOUT GeM NEWS & EVENTS RESOURCES TRAINING NEED HELP ?",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 31,
+      "original_text": "Consignee Address: Delivery date appears as Dummy (Advisory note-For actual refer BOQ Document in 1.specifications) Below values are not to be considered consignee address delivery date as actual details to be captured from BOQ document. POLO] UTE NINTH] OO] BU EF) Items (1) Bog (1) Consignees/Reporting Officer and Quantity S.No. Consignee/Reporting Officer Address Quantity Delivery Days (Max: 365 days) 1 Yuvraj Thakur abc place of Chandigarh , 110010 1 15 Manage Your Consignees For The Bid: e Add to existing consignees/reporting officer from registered consignees/reporting officer in system. e Add new consignees/reporting officer. Py e Buyers are requested to select appropriate delivery period. e If inspection of store being proposed against the bid, then pragmatic delivery period should be fixed by buying authority keeping in view the nature of testing and examination of store. e Advisory-Please refer attached BOQ document for detailed consignee list and delivery period.",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 32,
+      "original_text": "@ Dark Mode Font Size A- A At SRC VET Meet aE :[0eee a eee) B helpdesk-gem[at]gov{dotlin Need Help ? ~ td sb GeM Dashboard Market Bids Purchase Requisitions () Akhil Jindal - rt CONSIGNEE/REPORTING OFFICER ADDITION CONSIGNEES/REPORTING OFFICER 1. Specifications v 2. Consignees/Reporting Officer Items (1) BOQ (1) WEB INFO ABOUT GeM NEWS & EVENTS RESOURCES TRAINING NEED HELP ?",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 33,
+      "original_text": "HOME / BID DETAILS Consignee/Reporting Officer details have been updated successfully. x e_____e_____e___e_____@____e___e SPECIFICATIONS CONSIGNEES/REPORTING DETAILS OFFICER 1. Specifications a 2. Consignees/Reporting Officer  Bid Start Date / Time Will Be Defaulted To The Date/Time When Bid Is Published Bid Duration @ Select Days * Days (Number Of Days) Bid End Date / Time 00-00-0000 00:00 Edit Time (Select Duration Between 09:00 To 21:00) Bid Opening Date / Time @ 00-00-0000 00:00 Bid Life Cycle (From Publish Date) @ 90 Days Bid Offer Validity (From End Date) @ 30 v Days",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 34,
+      "original_text": "Consignee/Reporting Officer details have been updated successfully. SPECIFICATIONS CONSIGNEES/REPORTING DETAILS OFFICER 3. Details Bid Start Date / Time Will Be Defaulted To The Date/Time When Bid Is Published Bid Duration * @ (Number Of Days) 10 Bid End Date / Time (Select Duration Between 09:00 To 21:00) 19-04-2021 12:00 PM Edit Time Bid Opening Date / Time @ 19-04-2021 12:30 PM Bid Life Cycle (From Publish Date) @ * 8H Bid Offer Validity (From End Date) @ * Do You Want To Take This Bid To RA Post Technical  Yes @ No Evaluation? @* * Days",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 35,
+      "original_text": "CYGIUGuUUlis By Time To Be Allowed To The Seller For Technical Clarifications During Technical Evaluation @ Bid Estimated Value @ Whether Price Variation Applicable? Note : Order with Price Variation Clause applicability can only be created by Others/offline payment method. Advisory : The submitted values shall be considered for EMD and Bid eligibility criteria as published in the Bid document. Terms Of Delivery Free Delivery At Site (At Consignee/Reporting Officer's Place) | Participant Eligibility Criterion (To be verified by the buyer at the time of technical evaluation) Bidder Annual Turn Over (In Lakhs) @ Years Of Past Experience Required @ 0 0 | Additional Criterion (To be verified by the buyer at the time of technical evaluation) Average Annual Turn Over Of OEM (In Lakhs) @ Past Performance (In Percentage) @",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 36,
+      "original_text": "ge Price variation Whether Price Variation Applicable? @ Yes  No Price Variation Clause Enter Price Variation Cl Upload Price Variation Clause Document Choose file | No file chosen",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 37,
+      "original_text": "Compliance to BOQ specs/Supporting Documents(Deviations if any taken by Seller) Option to select the same with documents required from seller TO BE SELECTED as in Normal Bid creation process. 10 Ten Lakh Rupees Only Document Required From Seller @ Yes  No Do You Want To Give Exemption To Oj es @ No Verified MSE? @ Do You Want To Give Exemption To QO Yes @ No Verified Startups? @ Please ensure Compliance of DoE OM dated 25.07.2016 in this regard. (View Order) For encrypting and decrypting this Bid, we use secure key pairs linked to your account. Your Account already has a key pair associated with it. Please click on Save to proceed. Additional Doc 3 (Requested in ATC) Additional Doc 4 (Requested in ATC) Compliance of BoQ specification and supporting document wv il",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 38,
+      "original_text": "Terms Of Delivery Free Delivery At Site (At Consignee/Reporting Officer's Place) | Participant Eligibility Criterion (To be verified by the buyer at the time of technical evaluation) Bidder Annual Turn Over (In Lakhs) @ Years Of Past Experience Required @ 0 0 | Additional Criterion (To be verified by the buyer at the time of technical evaluation) Average Annual Turn Over Of OEM (In Lakhs) @ Past Performance (In Percentage) @ 0 0 Document Required From Seller  Yes @ No Do You Want To Give Exemption To  Yes @ No Verified MSE? @ Do You Want To Give Exemption To  ies @ No Verified Startups? @ Please ensure Compliance of DoE OM dated 25.07.2016 in this regard. (View Order For encrypting and decrypting this Bid, we use secure key pairs linked to your account. Your Account already has a key pair associated with it. Please click on Save to proceed.",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 39,
+      "original_text": "3.Details @& 4. EMD/ePBG Details Quantity: 1 Reference Price (In INR): 1,500,000.00/- EMD EMD Required OyYes @No Note: 1. EMDis allowed only for Bid Value greater than 5 Lakhs. 2. The role of Advisory Bank is to verify the SFMS of the EMD and ePBG during bid verification of the seller. So, you are advised to select any bank and seller may chose any bank account for ePBG and EMD. 3. Department of Expenditure has issued instructions not to insist on EMD. GeM Has enabled taking Bid Securing Declaration as per DoE OM. Please ensure compliance of DoE OM 12.11.2020 (View order) 4. The EMD % will be applicable for each schedule/group selected during Bid creation. ePBG ePBG Required OvYes @No Note: 1. _EPBG is allowed only for Bid Value greater than 5 Lakhs. 2. The role of Advisory Bank is to verify the SFMS of the EMD and ePBG during bid verification of the seller. So, you are advised to select any bank and seller may chose any bank account for ePBG and EMD. 3. Department of Expenditure has issued instructions to keep reduced Performance Security @3%. Please ensure compliance of DoE OM 12.11.2020 (View order) (eo)",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 40,
+      "original_text": "Splitting can not be applied ! 1. Specifications 2. Consignees/Reporting Officer@ 3. Details @ 4. EMD/ePBG Details & 5. Splitting @ 6. T&C | Tie etits lice) Click on group tabs provided and select clauses to add as Additional Terms and Conditions (ATC)",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 41,
+      "original_text": "4. EMD/ePBG Details 4 sd 5. Splitting @ 6. T&C Additional Terms and Conditions (* Click on the appropriate Group below to add the ATC specific to that Group ) Scope of Supply Turnover OEM Purchase Preference (Centre) Service & Support Inspection Certificates Warranty eet ei Purchase Preference (State) Sample Clause Buyback for Non PFMS / Non GPA Past Project Experience Forms of EMD and PBG Pe LUNITUMa tet ce eel a eo Arlee Le) Financial Criteria Buyer Added Bid Specific ATC Bidder/ Supplier/ Organization/ Proprietor/ ANY of the Director(s) shall not be banned or suspended or black listed by any Government / Public Sector Undertaking / Corporate organization or convicted in any Court of Law across India or declared Bankrupt or insolvent. A self declaration certificate must be uploaded in the GeM portal under Bidders Official Letter Head",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 42,
+      "original_text": "Dashboard Market Bids Purchase Requisitions () Akhil Jindal BID FINALIZATION VERIFY OTP/ESIGN & PUBLISH 1. Specifications Pre Moya -4al- 3154180) At OU aes 3.Details @& 4. EMD/ePBG Details @& 5. Splitting @ 6.T&C & 7. Verify OTP/eSign & Publish Please validate all the data before proceeding to verify OTP. [ | agree to the Terms & Condition of GeM.",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 43,
+      "original_text": "3. Details @ 4. EMD/ePBG Details @ 5. Splitting @ oan Gam 04 7. Verify OTP/eSign & Publish Please validate all the data before proceeding to verify OTP. | agree to the Terms & Condition of GeM. Bid Document OR OR",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 44,
+      "original_text": "Please enter the OTP that has sent to your registered mobile Not received OTP in 9:43 minutes?",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 45,
+      "original_text": "Skip to Main Content @ 1800-419-3436 Mitr Ler eli iio Need Help? + tee Cd Purchase Requisitions ec Your Bid GEM/2021/B/73317 has been published successfully Published Bids (996) PublishedRAs(113)  Draft Bids/RAs(6) _ Bid to RAs (83) FILTER BY + cy Bid NO: GEM/2021/B/73317 jtem(s): BOQ Notification(S Start Date: 05-04-2021 15:48:11 Specification(S Bid Document & End Date: 15-04-2021 18:00:00 Total Participations : 0 View Representation Bid Status : Active Remaining Days @ :40 & Open Bid Published Ended Finalized Beterest ei uerd NO: GEM/2021/8/73282",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 46,
+      "original_text": "",
+      "translated_text": "",
+      "language_detected": "unknown",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 47,
+      "original_text": ">Go to List of Bids. Search engine available for Item selection BOQ as well as Gem Bid/RA number as per Normal flow. > Tender displayed as usual with Participate icon > Incase of bunch bidding if Seller has loaded catalogue against such defined category then he/she allowed to Participate else Participation shall be restricted.",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 48,
+      "original_text": "sls neg eae seca =. GeM Advantages GeM Exclusive FAQs Contact Us Rate a Seller Se An ee a Shri Narendra Modi Hon'ble Prime Minister of India  The crisis the world is facing today teaches us that way forward is - Atmanirbhar Bharat (A self-reliant india) |, Rich Listing of Products / Integrated Payment its agieet ccult Leiter Cop ese) Rr a Aa LV lore oy Ease of Selling",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 49,
+      "original_text": "Bids Sign Up experience the Marketplace Login in to Government e Marketplace | GeM Need help with your Login ? rE Ee 4 Pape hot ath tC se B tae C tie Rn a that WOKSFG asl reat) aM eos oie lee (ee ia) Call: 1-1800-419-3436 / 1-1800-102-3436 ( 8 am - 8 pm Mon to Sat ) e entere Enter your User ID and =aus log captcha and click on Submit. WEB INFO ABOUT GeM NEWS & EVENTS RESOURCES TRAINING NEED HELP ?",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 50,
+      "original_text": "iT Sign Up Login in to Government e Marketplace | GeM Te a on Submit to continue. Rel eBid Agents and experts available on a single platform ready to help you eeneeeeneeee Contact Us Email. helpdesk-gem[atigov[dotjin er] Ltt ae Sl WEST lee ieee eee: etme en Coes Forgot your GeM password ? Reset GeM Password",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 51,
+      "original_text": "TECHNICAL BID OFFER PRICE UPLOAD DOCUMENTS EMO & EPEG VERIFY OTP | Bid Requirement BID DETAILS ~ | Add/Update Offer TECHNICAL BID Ms ltem-1 BOQ (1) Participate javascriptvoidi0)",
+      "translated_text": "",
+      "language_detected": "ca",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 52,
+      "original_text": "| Add/Update Offer TECHNICAL BID 34 Item -1 BOQ (1) Participate Download BoQ | confirm that the offered product meets the requirements defined in the BoQ file. eV Tae em ela tc The BoQ excel will be validated by system at the time of upload. Excels not validated by system will not be accepted and buyers/sellers will not be able to proceed further. Hence Buyers and sellers are advised to strictly adhere to the type of values and length allowed for each column. The BoQ Template should not be modified/edited by the buyer or seller. Bids are liable to be rejected by buyer if any seller is found to have done so. Buyer and sellers are required to fill only relevant details. Columns A to H to be filled by buyer. Column |, J, K, L, M to be filled by seller.",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 53,
+      "original_text": "SBR OE Ni By __ Your Offerings Pa aeal eile @ ss Add/Update Offer Os aaa Specify the offer price at per unit level for below item(s). Price Is inclusive of all taxes Seller can Download the BOQ document BOQ : Choose File | No file chosen Seller proceeds to Offer Price ne Download BoQ Total price Please note that this bid will be subjected to a GeM transaction charge of 0.5% (plus GST) of the total order value, in case the final order value exceeds INR 30 Lacs WEB INFO ABOUT GeM NEWS & EVENTS RESOURCES TRAINING NEED HELP ? ah Newennom fie Handhes M",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 54,
+      "original_text": "Seller Uploads the BOQ File with Price break up ,GST, Model, Brand details. Total value gets automatically calculated. 1, TECHNICAL BID | Add/Update Offer Oe aa ae . Specify the offer price at per unit level for below item(s), Price is inclusive of all taxes B00 : Choose File | No file chosen File Uploaded: 16176338878353_2084770, xis.enc (BoQ Item)  No file chose: Download BoQ 1440000 alee tt Ue Balle: Please note that this bid will be subjected to a GeM transaction charge of 0.5% (plus GST) of the total order value, in case the final order value exceeds INR 30 Lacs",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 55,
+      "original_text": "Price Per Unit(INR) Total Price (INR) 1440000 1440000.00 Sub Total 1440000.00 Total Price: 1440000.00 (INR)",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 56,
+      "original_text": "aise a |) @ 18:1 bidplus.gemorion.org says Your financial quote will be encrypted now, Chick Ok to proceed or Cancel to change your quote. ea aaa ea Cancel Specify the offer price at per unit level for below item(s). Price is inclusive of all taxes Add/Update Offer B00 : c Fie | sisi sti File Uploaded: 16176338878353_2084770,xls.enc (Bod item)  Download BoQ 1440000 SHOW ESTIMATION PRICE Your price will be encrypted with buyer public key, Now you will not be able to view your price. This can be open with Buyer private key, Please note that this bid will be subjected to a GeM transaction charge of 0.5% (plus GST) of the total order value, in case the final order value exceeds INR 30 Lacs",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 57,
+      "original_text": "Deviation Sheet Item Number item Title Item Description Instruments T&M INSULATION TESTER 10KV C&l Pressue Gauage0-10 kg/sq cm UPS -Sub station Air cooled single phase 10KVA UPS- Control room Oil coold Three phase SOKVA 5 instrumentation Cable Multicore Deviation taken on above specifications Seller Offered specs Range 0-10 Range 0-12 KG/SQ KG/SQ cm cm Accuracy 0.1% | Accuracy-0.5% Aircooled 10 | Air cooled 10-15 KVA KVA selectable Rest remaining same and confirmed.",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 58,
+      "original_text": "Compliance Of BoQ Specification And Supporting Document:\" @ Bid Category Are you manufacturing MSE for this product?\" MSE Category Certificate Please Note: 1) Sellers providing wrong self-ceclaration for MSE or Mil status or EMD exemption document with respect to the Bid will be ladle for disablement, without any further notice. Deviation sheet OF Seller pdt B0Q Oyves @No File uploaded: 1617634102.pdf 2) Sellers, please note that furnishing of incorrect/ misleading MSE or Mil declarations for seeking EMD exemptions and MSE or Mil purchase preference in Bids is a violation of GeM Terms and Conditions and such sellers may be disabled from doing any further transactions on GeM, without any further notice. WEB INFO Terms of Use Webdsate Policies Document Help Site Map Wed information Manager ABOUT GeM introduction to GeM Statistics Right to information Analytics New on GoM NEWS & EVENTS Newsroom Gallery Notifications CCM Schedule Foruns GeM Handdook OM's/Circwlars Terms and Conditions Policies/Manuals Miscefaneous TRAINING LMS Training Calendar Trawming Module Facilitators Download GeM Logo | NEED HELP ? FAQS Video Guades Raise-a Ticket Comact Us Careers",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 59,
+      "original_text": "Please enter the OTP that has sent to your registered mobile 1234 Not received OTP in 9:55 minutes?",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 60,
+      "original_text": "SELLER PARTICIPATION TECHNICAL BID OFFER PRICE UPLOAD DOCUMENTS EMD & EPG VERIFY OTP TI ee Tynes arty Ame Pal aenll = aah hates iter ial eS) HAs Participation Status: Participated re Te Bid Requirement BID DETAILS - Your Offerings aia ete 8) 2. OFFER PRICE . 3, UPLOAD DOCUMENTS 4, EMD & EPBG sd Ry a a)",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 61,
+      "original_text": "",
+      "translated_text": "",
+      "language_detected": "unknown",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 62,
+      "original_text": "Bid Number: GEM/2021/B/73317 Bid Status: Active Bid Start Date / Time: 05-04-2021 15:48:11 Consignees/Reporting Officer / Delivery Quantity | Bid End Date / Time: 05-04-2021 17:39:25 eid Bid Life Cycle (From Publish Date); 90 (Days) Bid Opening Date / Time; 15-04-2021 18:30:00 Bid Validity (From End Date): 30 (Days) Competent Authority Document: View Buyer Details Name: Mans! Jawa Ministry: Ministry Of Heavy Industries And Public Organisation: Bharat Heavy Electricals Limited Address: 560001,Gemtest23@Gmall ComMansi EetPrses (Bhel Jawa,BANGALORE,6 CGO COMPLEX Department: Department Of Heavy Industry Office: 10020009-Cffp Haridwar ND,KARNATAKA India Cancel Bid",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 63,
+      "original_text": "HOME / Compare Sellers Bid Number : GEM/2021/8/73317 Total Participations : 1 ; Oe \" 809 (1) Compare Specification ( Showing 1 of 1 sellers ) ani at: Cio) <> eae Cisse gy Buyer Specification Document KYOCERA DOCUMENT SOLUTIONS INDIA PRIVATE LIMITED BOQ Vownioad NA",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 64,
+      "original_text": "Technical Specifications Comparison Bid Number : GEM/2021/8/73317 eae Seller Name ; KYOCERA DOCUMENT SOLUTIONS INDIA PRIVATE LIMITED Buyer Specification Document Download Advisory: 1) For BoQ item, please look at the specification and supporting document uploaded by seller for technical evaluation purposes and proceed accordingly. Seller Undertaking: 1) | have read the clause regarding restrictions on procurement from a bidder of a country which shares a land border with India; | certify that this Seller / Service Provider / Bidder is not from such a country or if it is from such a country, it has been registered with the Competent Authority and the evidence of valid registration by the Competent Authority will be submitted to the Buyer on demand. | hereby certify that this Seller / Service Provider / Bidder fulfills all requirements in this regard and is eligible to be considered for procurement on GeM. | understand that any false declaration and non-compliance of this would be a ground for immediate termination of the contract and further legal action in accordance with the laws. 2) | hereby undertake not to withdraw or modify or impair or derogate from the bid in any respect within the period of validity of this bid. | undertake that the information / documents furnished in this bid are not false, misleading or forged. | also undertake to furnish requisite performance security / PBG within stipulated time required as per GeM bid / RA conditions. | understand that GeM has the right to debar me from GeM portal as per GeM GTC and GeM Incident Management Policy for violation of this declaration / undertaking Close",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 65,
+      "original_text": "Technical Specifications Comparison Bid Number : GEM/2021/B/73317 Seller Name : KYOCERA DOCUMENT SOLUTIONS INDIA PRIVATE LIMITED Add Comment BOQ _ ttem\\Category Buyer Specification Document Offered Specification Document BOQ Download Advisory: 1) For BoQ item, please look at the specification and supporting document uploaded by seller for technical evaluation purposes and proceed accordingly. Seller Undertaking: 1) | have read the clause regarding restrictions on procurement from a bidder of a country which shares a land border with India; | certify that this Seller / Service Provider / Bidder is not from such a country or if it is from such a country, it has been registered with the Competent Authority and the evidence of valid registration by the Competent Authority will be submitted to the Buyer on demand. | hereby certify that this Seller / Service Provider / Bidder fulfills all requirements in this regard and is eligible to be considered for procurement on GeM, | understand that any false declaration and non-compliance of this would be a ground for immediate termination of the contract and further legal action in -",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 66,
+      "original_text": "o______-__--__ 99 BID DETAILS TECHNICAL EVALUATION 1. Bid Item(s) DETAILS ts: 2. TECHNICAL EVALUATION  el Wa TNO 1 KYOCERA DOCUMENT @ . 05-04-2021 Qualified View Documents & Verify Specifications SOLUTIONS INDIA 20:31:35 Seek Ciarifications v PRIVATELIMITED  Pigase Note: 1) Verify all the products offered, technically evaluate the product specification offered by the seller to open financial Bid 2) Please verify genuineness of any EMD receipt uploaded offline 3) Buyers should disqualify any Seflers submitting incorrect MSE certificates or EMD Exemption document with respect to the Bid and may raise incidents for disablement of the Sellers furnishing wrong information 4) As per para 7.3.5 on (Clarification of Bids/Shortfall Documents) of the Manual for Procurement of Goods 2017, issued by Ministry of Finance, Department of Expenditure, Duting evaluation and comparison of bids, the purchaser may, at Nis discretion, ask the bidder for clarifications on the bid. The request for clarification shall be given asking the tenderer to respond by a specified date. If the tenderer does not comply or respond by the date, his tender will be ladle to be rejected. Depending on the outcome, such tenders are to be ignored or considered further. No change in prices or substance of the bid shail be sought, offered or permitted. No post bid clarification at the initiative of the bidder shall De entertained. The shortfall information / cocuments should be sought only in case of historical documents which pre-existed at the time of the tender opening and which have not undergone change since then. So far as the submission of documents is concerned with regard to qualification criteria, after submission of the tender, only related shortfall documents should be asked for and considered. For example. if the bidder has submitted a supply order without its completion / performance Certificate, the certificate can be asked for and considered, However, no new supply order should be asked for so as to qualify the bidder Advisory: Buyer should upload Competent Authority Approval as this Bid/RA has received participations from less than 3 sellers and 2 OEM/Brands.",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 67,
+      "original_text": "Competent Authority Approval Required Please upload Competent Authority Approval as this Bid/RA has received participations from less than 3 sellers and 2 OEM/Brands (Max size: 2MB, Type. POF)",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 68,
+      "original_text": "2. TECHNICAL EVALUATION  List Of Sellers Participated SRR Outs tet 1 KYOCERA DOCUMENT @ ; 05-04-2021 Qualified View Documents & Verify Specifications SOLUTIONS INDIA 20:31:35 Seek Clarifications v PRIVATELIMITED  Please Note: 1) Verify all the products offered, technically evaluate the product specification offered by the seller to open financial Bid, 2) Please verify genuineness of any EMD receipt uploaded offline. 3) Buyers should disqualify any Sellers submitting Incorrect MSE certificates or EMD Exemption document with respect to the Bid and may raise incidents for disablement of the Sellers furnishing wrong information. 4) As per para 7.3.5 on (Clarification of Bids/Shortfall Documents) of the Manual for Procurement of Goods 2017, issued by Ministry of Finance, Department of Expenditure, During evaluation and comparison of bids, the purchaser may, at his discretion, ask the bidder for clarifications on the bid. The request for clarification shall be given asking the tenderer to respond by a specified date. If the tenderer does not comply or respond by the date, His tender will be liable to be rejected. Depending on the outcome, such tenders are to be ignored or considered further. No change in prices or substance of the bid shall be sought, offered or permitted. No post bid clarification at the initiative of the bidder shall be entertained. The shortfall information / documents should be sought only in case of historical documents which pre-existed at the time of the tender opening and which have not undergone change since then, So far as the submission of documents is concerned with regard to qualification criteria, after submission of the tender, only related shortfall documents should be asked for and considered. For example, if the bidder has submitted 3 supply order without its completion / performance certificate, the certificate can be asked for and considered. However, no new supply order should be asked for so as to qualify the bidder, Cancel Bid Confirm Technical Evaluation And Notify Bidders",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 69,
+      "original_text": "1 KYOCERA DOCUMENT 05-04-2021 Qualified@ View Documents & Verify Specifications SOLUTIONS INDIA 20:31:38 Seek Clarifications  PRIVATE LIMITED = Please Note: 1) Verity all the products offered, technically evaluate the product specification offered by the seller to open financial Bid 2) Please verify genuineness of any EMD receipt uploaded offline 3) Buyers should disqualify any Sellers submitting incorrect MSE certificates or EMD Exemption document with respect to the Bid and may raise incidents for disablement of the Sellers furnishing wrong information. 4) As per para 7.3.5 on (Clarification of Bids/Shortfall Documents) of the Manual for Procurement of Goods 2017, issued by Ministry of Finance, Department of Expenditure, During evaluation and comparison of bids, the purchaser may, at his discretion, ask the bidder for clarifications on the bid. The request for clarification shall be given asking the tenderer to respond by a specified date. If the tenderer does not comply or respond by the date, his tender will be liable to be rejected. Depending on the outcome, such tenders are to be ignored or considered further, No change in prices or substance Of the bid shall be sought, offered or permitted. No post bid clarification at the initiative of the bidder shall be entertained. The shortfall information / documents should be sought only in case of historical documents which pre-existed at the time of the tender opening and which have not undergone change since then. So far as the submission of documents is concerned with regard to qualification criteria, after submission of the tender, only related shortfall documents should be asked for and considered. For example, if the bidder has submitted a supply order without its completion / performance certificate, the certificate can be asked for and considered. However, no new supply order should be asked for so as to qualify the bidder. vn WEB INFO ABOUT GeM NEWS & EVENTS RESOURCES TRAINING EED HELP ? Terms of Use introduction to GeM Newsroom GeM Handbook LMS FAQs Website Policies Statistics Gallery OM's/Circulars Tramning Calendar Video Guides",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 70,
+      "original_text": "3, FINANCIAL EVALUATION Advisory: 1, To view complete list of sellers in Financial evaluation, please click on Open & Award Current L1 S.No. Seller Name Offered Item MSE Status Total Price Rank Detail 1 tenvenvane Item Categories : B00 N/A 2 1440000.00 ul Detail Actions @ 1. Request for Price match with L1. Price match requests will be initiated from the buyer pane! and sent to eligible(MSE/MIl/Others in case of split Bid) sellers. 2. Allocate quantity to be awarded. Allocation of quantity to eligible MSE & Mil seller will have to done by the buyer as per his judgement as per MSE-MIl policy. 3. Offer Validity extension - Buyer and L1 sellers can mutually extend the offer validity online. 4. LifeCyle Extension - Buyer can extend the Lifecycle upto 730 Days after uploading approval from CA. 5. Cancel Bid - Buyer has an option to cancel the Bid before award of bid. Cancel Bid Create Order",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 71,
+      "original_text": "Pre aG al Gea ROL Ee) ~ 3. FINANCIAL EVALUATION  List Of Technically Qualified Sellers S.No. Seller Name Offered item MSE Status Total Price Rank Detail 1 KYOCERA DOCUMENT SOLUTIONS Item Categories - BOQ N/A 2 1440000.00 ul INMA DRIVATE | MITE a Detail NEGOTIATE with L1 SIMILAR PROCESS as in Normal Bid flow 1, Request for Price match with L1, Price match requests will be initiated from the buyer panel and sent to eligible(MSE/MIl/Others in case of split Bid) sellers. 2. Allocate quantity to be awarded. Allocation of quantity to eligible MSE & Mil seller will have to done by the buyer as per his judgement as per MSE-MIl policy. 3. Offer Validity extension - Buyer and L1 sellers can mutually extend the offer validity online. 4. LifeCyle Extension - Buyer can extend the Lifecycle upto 730 Days after uploading approval from CA. 5. Cancel Bid - Buyer has an option to cancel the Bid before award of bid Cancel Bid Seek Offer Validity Extension Need to Negotiate with L-1? Create Order",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 72,
+      "original_text": "Enable Negotiation CVC Guidelines Confirmation (i) As post tender negotiations could often Such exceptional situations would include, fr Are you sure you want to request L1 seller for price negotiation? justification and details of such negotiations) 1, except in certain exceptional situations. e is suspicion of a cartel formation. The (ii) In cases where a decision is taken to qo are urgent and a re-tender for the entire requirement would delay the availability of the] Id be permitted with L-1 bidder(s) for the supply of a bare minimum quantity, The bala(ice aliantity should however he nroctired exneditiouisly throudh a re-tender folowing the normal tendering process. (iii) Negotiations should not be allowed to be misused as a tool for bargaining with L-1 with dubious intentions or lead to delays in decision-making. Convincing reasons must be recorded by the authority recommending negotiations. Competent authority should exercise due diligence while accepting a tender or ordering negotiations or calling for a re-tender. (iv) Counter-offers to L-1, in order to arrive at an acceptable price, shall amount to negotiations. However, any counter-offer thereafter to L-2, L-3, etc., (at the rates accepted by L-1) in case of splitting of quantities, as pre-disclosed in the tender, shall not be deemed to be a negotiation Reason For Negotiation :* CVC Guidelines not applicable and Proposed Negotiation is governed by the Rules / Guidelines applicable to Buyer Organization  Download undertaking certificate ORS SOP TRS AERIS CORR [ Choose File | GeM-Bidding-2084409 BID DOCUMENT pdf | confirm the reason for negotiation as selected above and confirm that the Buyer is solely responsible for compliance of CVC quidelines and / or procurement Guidelines of Buying Organization and has secured approval of competent authority for negotiation after apprising the Competent Authority about CVC guidelines. L1 NEGOTIATION WITHSELLER (Max 5 times buyer can exercise this negotiation , process-Max time frame allowed for sellerto respond 72 hrs) Cancel",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 73,
+      "original_text": "yds Gem ~~ e Marketplace Efficient + 7 Seller response on price negotiation",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 74,
+      "original_text": "e C fi: bidplus.gemorion.org 5 * @ Incognito 4 helpdesk-gemfat}govidotlin oes ae Da Font Size A- A Skip to Main Content Ee Pea ace kis) GeM Dale es Popes ae Ela ee ae} Shek) Mal iepe cis iat laid be eet a RAVI SAINI RAVI SAINI RA Service Bids/RA Bunch Bids/RA FILTER BY | Q | BID NO: GEM/2021/8/73317 Status Bid/RA Status: / heniS): BOQ Department Name And Address: Start Date: 05-04-20 46-Pr Quantity Required: | End Date: 05-04-2021 08:37:-Pm Technical Status: Qua'ified @ Bharat Heavy Electricals Limited Le e Part 8 View BID Results BID NO: GEM/2021/8/73331 Status: f E Bid/RA Status: Act tendS): Computer Mouse Or Trackballs Department Name And Address: Quantity Required: 12000",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 75,
+      "original_text": "G eee culellelmalce, Online L1 Negotiation Your Percentage : 100% Category Quantity Current Unit Price 1 ~ 1440000,000 (Total Bo Price) Download Previous BoQ Sub Total Cancel New Unit Price Total Price | Choose File | No file chosen Z 1440000.00 File Uploaded: 16176372406584_2084770.xls 1330000 % 1440000.00 eee ee ei",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 76,
+      "original_text": "> C . a@ bidplus.gemorionorg/bidd 4 s) Tete tt Y eae Font Size A- A A+ aR ae Peco 9-3436 1 2sk-gemiat}govidotlin Need Help 7?   m P , GeM Pope ge ET ta et ne) Bids  ab epost ae ten) Catalogue RAVI SAINI RAVI SAINI  1. BID DETAILS - GEM/2021/B/73317 No. Seller Name Offered item Participated On MSE/MIl Status Status Specification Clarifications Challenge/Representation ERAC MEN 05-04-2021 N/A Qualified @ View View N/A 3. FINANCIAL EVALUATION",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 77,
+      "original_text": "PRP ae eaC a Pura ee Soe 2. TECHNICAL EVALUATION ss List Of Sellers Qualified Financially 1 KYOCERA DOCUMENT SOLUTIONS INDIA PRIVATE LIMITED WEB INFO Terms of Use Website Policies Document Help Site Map  Web information Manager ABOUT GeM Introduct onto GeM Statistics Right to Information Analytics New on GeM BRAND GeM Offered item ttem Categories 800 NEWS & EVENTS Newsroom TESTIMONIALS RESOURCES GeM Handbook OMs/Citculars Terms and Conditions Policies/Manuals eral ne Miscellaneous MoUs TRAINING LMS Training Calendar Training Module Facilitators Download GeM Logo Video Guides Raise-a Ticket",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 78,
+      "original_text": "Bids/RA Service Bids/RA Bunch Bids/RA FILTER BY Cover search terms Cero aanenice Bid/RA Status: Active hem(S): BOO Department Name And Address: Start Date: 05-04-2021 03:48. Pm Quantity Required: | Ministry Of Heavy Industries And Public Enterprises End Date: 05-04-2021 08:37.Pm Department Of Heavy industry Technical Status: Qualified # 10020009-Ctfp Haridwar Bharat Heavy Electricals Limited_ $ BIO Document Participated Document Update Final Price Subrtted _____e___ TECHPOCAL EVALUATION FINANCIAL EVALUATION ton Status: Financial Evaluation Bid/RA Status: Active hem($): Computer Mouse Or Trackballs Department Name And Address: Start Date: 05-04-2021 0625.Pm Quantity Required: 12000 Manistry Of Commerce And Industry End Date: 05-04-2021 07:18 Pm Department Of industrial Policy And Promotion Technical State (hialified a Litera Pawan New Malni Offire Of Chiat Cantenitar At 4.810 Necument",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 79,
+      "original_text": "yds Gem ~~ e Marketplace Efficient + 7 buyer response after submission by seller",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 80,
+      "original_text": "3, FINANCIAL EVALUATION List Of Technically Qualified Sellers S.No. Seller Name Offered item MSE Status Total Price Rank Detail 1 KYOCERA DOCUMENT SOLUTIONS Item Categories - 800 N/A % 1330000.00 ui Detail INDIA PRIVATE LIMITED  Actions @ 1. Request for Price match with L1. Price match requests will be initiated from the buyer panel and sent to eligible(MSE/MIl/Others in case of split Bid) sellers. 2. Allocate quantity to be awarded. Allocation of quantity to eligible MSE & Mil seller will have to done by the buyer as per his judgement as per MSE-MIl policy 3. Offer Validity extension - Buyer and L1 sellers can mutually extend the offer validity online, 4. LifeCyle Extension - Buyer can extend the Lifecycle upto 730 Days after uploading approval from CA. 5. Cancel Bid - Buyer has an option to cancel the Bid before award of bid CancelBid Seek Offer Validity Extension | Need to Negotiate with L-1? Negotiation Request Summary Post Submission of Revised/Negotiated Offer Buyer to shall be shown the Revised Reduced Total value as below",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 81,
+      "original_text": "Financial Bid Detail Seller Name ; KYOCERA DOCUMENT SOLUTIONS INDIA PRIVATE LIMITED Category Quantity Unit Price Total Price 1 % 1330000,000 = 1330000.00 Sub Total AMC Formula: L1 evaluation will be done using this formula C+C*( A1/100) + C*(A2/100) so on Al & A2 AMC percentage, n Is product warranty of years & C is product price",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 82,
+      "original_text": "5 vies 1 \"GST / Tax invoice to be raised in the name of - Buyer Product Details Price | (Inctusive # term Description Category Model H5N Code Unit keee of all Duties nome Tume(Deys) and Taxes in INR) Product Warme Univ arced BOO Brand NA Brand Type | Urtrance Catetogue State Catwogue fut verted by tv Setlieg Aa feserer ty OEM Product Name  Unt Brand NA Brand Type. Urtew Cataiogue Status ra] Selling Aa mec Product Name  Lint Brand : NA Brand Type) rer Catalogue Statue | Cateogue not vertind by Of Selling Aa leecher rot verted by OFM Total Onder Viatue (in INR",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 83,
+      "original_text": "rs GeM Government e Marketplace ___. Efficient * Transparent  Inclusive eM All rights reserved. Vol. 1.0.B",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    }
+  ]
+}
