@@ -200,29 +200,6 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-
-# Render logo + centered title
-st.markdown(
-    f"""
-    <div class="app-header">
-        <img src="{LOGO_URL}" alt="Kerala IT Mission Logo">
-        <h1>📑 Government Order Semantic Search</h1>
-        <p><em>Empowering Governance through Accessible Information</em></p>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
-
-
-# Display the logo above the title
-st.markdown(f'<div class="center-logo"><img src="{LOGO_URL}" alt="Kerala IT Mission Logo"></div>', unsafe_allow_html=True)
-
-st.title("Government Order Semantic Search – Final (Silent + Smart)")
-st.markdown(
-    "Search across Government Orders with instant summaries from preprocessed JSON files. "
-    "Manifest loading and JSON matching are now fully automatic and silent."
-)
-
 query = st.text_input("Enter your search query (English):", "")
 top_k = st.slider("Number of results:", 1, 10, 5)
 
