@@ -11,6 +11,8 @@ from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lex_rank import LexRankSummarizer
 import nltk
+
+# Ensure tokenizer data is present
 try:
     nltk.data.find("tokenizers/punkt")
 except LookupError:
@@ -22,11 +24,12 @@ except LookupError:
 # =========================================
 MODEL_NAME = "all-MiniLM-L6-v2"
 JSDELIVR_BASE = "https://cdn.jsdelivr.net/gh/rydrbot/go-search-app-final@main/pdfs"
+LOCAL_PDF_FOLDER = "pdfs"  # if you also keep local copies
 INDEX_PATH = "go_index_v2.faiss"
 META_PATH = "metadata_v2.json"
 
 # =========================================
-# LOAD COMPONENTS
+# LOAD INDEX + MODEL
 # =========================================
 @st.cache_resource
 def load_components():
@@ -64,38 +67,57 @@ def search(query, top_k=5):
     return results
 
 # =========================================
-# FACTUAL (LEXRANK) SUMMARIZER
+# FACTUAL SUMMARY (LEXRANK)
 # =========================================
-def factual_summary(text, sentence_count=5):
+def summarize_pdf(pdf_name, sentence_count=7):
+    """Read a PDF (local or via CDN) and produce a factual summary."""
+    text = ""
+    local_path = os.path.join(LOCAL_PDF_FOLDER, pdf_name)
+    if os.path.exists(local_path):
+        reader = PdfReader(local_path)
+        for page in reader.pages:
+            page_text = page.extract_text()
+            if page_text:
+                text += page_text + "\n"
+    else:
+        # Optional: download from jsDelivr temporarily
+        import requests, io
+        try:
+            url = f"{JSDELIVR_BASE}/{urllib.parse.quote(pdf_name)}"
+            response = requests.get(url)
+            if response.status_code == 200:
+                reader = PdfReader(io.BytesIO(response.content))
+                for page in reader.pages:
+                    page_text = page.extract_text()
+                    if page_text:
+                        text += page_text + "\n"
+        except Exception as e:
+            st.warning(f"Could not fetch PDF: {e}")
+            return "⚠️ Unable to access PDF content for summary."
+
+    if not text.strip():
+        return "⚠️ No text could be extracted from this PDF."
+
     parser = PlaintextParser.from_string(text, Tokenizer("english"))
     summarizer = LexRankSummarizer()
     summary_sentences = summarizer(parser.document, sentence_count)
-    return " ".join(str(s) for s in summary_sentences)
+    return " ".join(str(s) for s in summary_sentences) if summary_sentences else text[:800]
 
 # =========================================
 # STREAMLIT UI
 # =========================================
-st.set_page_config(page_title="GO Search (v6)", layout="wide")
+st.set_page_config(page_title="GO Search (v7)", layout="wide")
 
-st.title("📑 Government Order Semantic Search (v6)")
-st.write("Search across Government Orders — accurate results, factual summaries, and instant updates.")
+st.title("📑 Government Order Semantic Search (v7)")
+st.write("Search across Government Orders and generate instant summaries from the actual PDF text.")
 
 query = st.text_input("Enter your search query (English):", "")
 top_k = st.slider("Number of results:", 1, 10, 3)
 
 # Sidebar placeholder
 st.sidebar.header("📄 Document Summary")
-st.sidebar.info("Click '🧠 Summarize' under a result to view its factual summary here.")
+st.sidebar.info("Click '🧠 Summarize PDF' to read and summarize the actual file.")
 
-# Session state
-if "selected_doc" not in st.session_state:
-    st.session_state.selected_doc = None
-if "summary_text" not in st.session_state:
-    st.session_state.summary_text = ""
-
-# =========================================
-# SEARCH RESULTS + INTERACTION
-# =========================================
 if query:
     results = search(query, top_k=top_k)
     st.write(f"### 🔎 Results for: `{query}`")
@@ -105,16 +127,11 @@ if query:
             st.markdown(f"**📄 {i}. File:** [{r['file_name']}]({r['pdf_link']})")
             st.markdown(f"**Page:** {r['page_number']} | **Similarity:** {r['similarity']:.4f}")
 
-            if st.button(f"🧠 Summarize {r['file_name']}", key=f"btn_{i}"):
-                st.session_state.selected_doc = r['file_name']
-                doc_chunks = [d for d in metadata if d["file_name"] == r["file_name"]]
-                combined_text = " ".join(
-                    [t.get("text", "") or t.get("translated_text", "") or "" for t in doc_chunks]
-                )
-
-                st.session_state.summary_text = factual_summary(combined_text)
-                st.sidebar.markdown(f"### {r['file_name']}")
-                st.sidebar.write(st.session_state.summary_text)
+            if st.button(f"🧠 Summarize PDF: {r['file_name']}", key=f"btn_{i}"):
+                with st.spinner("Reading and summarizing PDF..."):
+                    summary = summarize_pdf(r["file_name"])
+                    st.sidebar.markdown(f"### {r['file_name']}")
+                    st.sidebar.write(summary)
 
             st.markdown(f"[📎 Open PDF]({r['pdf_link']})")
             st.markdown("---")
@@ -147,7 +164,6 @@ if uploaded_pdf is not None:
         index.add(new_vecs)
         faiss.write_index(index, INDEX_PATH)
         metadata.extend(new_meta)
-
         with open(META_PATH, "w", encoding="utf-8") as f:
             json.dump(metadata, f, ensure_ascii=False, indent=2)
 
