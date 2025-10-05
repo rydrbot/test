@@ -5,15 +5,16 @@ import numpy as np
 import faiss
 import urllib.parse
 from sentence_transformers import SentenceTransformer
-from transformers import pipeline
 from PyPDF2 import PdfReader
 from tqdm import tqdm
+from sumy.parsers.plaintext import PlaintextParser
+from sumy.nlp.tokenizers import Tokenizer
+from sumy.summarizers.lex_rank import LexRankSummarizer
 
 # =========================================
 # CONFIG
 # =========================================
 MODEL_NAME = "all-MiniLM-L6-v2"
-SUMMARY_MODEL = "facebook/bart-large-cnn"
 JSDELIVR_BASE = "https://cdn.jsdelivr.net/gh/rydrbot/go-search-app-final@main/pdfs"
 INDEX_PATH = "go_index_v2.faiss"
 META_PATH = "metadata_v2.json"
@@ -27,10 +28,9 @@ def load_components():
     with open(META_PATH, "r", encoding="utf-8") as f:
         metadata = json.load(f)
     model = SentenceTransformer(MODEL_NAME)
-    summarizer = pipeline("summarization", model=SUMMARY_MODEL)
-    return index, metadata, model, summarizer
+    return index, metadata, model
 
-index, metadata, model, summarizer = load_components()
+index, metadata, model = load_components()
 
 # =========================================
 # SEARCH FUNCTION
@@ -57,48 +57,29 @@ def search(query, top_k=5):
         })
     return results
 
-
 # =========================================
-# SEMANTIC SUMMARIZER
+# FACTUAL (LEXRANK) SUMMARIZER
 # =========================================
-def semantic_summary(text, summarizer, max_tokens=800):
-    # Split long text into manageable chunks (~1000 tokens each)
-    parts = []
-    sentences = text.split(". ")
-    chunk, count = "", 0
-    for s in sentences:
-        chunk += s + ". "
-        count += len(s.split())
-        if count > 600:
-            parts.append(chunk)
-            chunk, count = "", 0
-    if chunk:
-        parts.append(chunk)
-
-    summaries = []
-    for part in parts[:3]:  # Limit to 3 chunks for performance
-        try:
-            summary = summarizer(part, max_length=130, min_length=40, do_sample=False)[0]["summary_text"]
-            summaries.append(summary)
-        except Exception as e:
-            continue
-    return " ".join(summaries) if summaries else text[:600]
-
+def factual_summary(text, sentence_count=5):
+    parser = PlaintextParser.from_string(text, Tokenizer("english"))
+    summarizer = LexRankSummarizer()
+    summary_sentences = summarizer(parser.document, sentence_count)
+    return " ".join(str(s) for s in summary_sentences)
 
 # =========================================
 # STREAMLIT UI
 # =========================================
-st.set_page_config(page_title="GO Search (v5)", layout="wide")
+st.set_page_config(page_title="GO Search (v6)", layout="wide")
 
-st.title("📑 Government Order Semantic Search (v5)")
-st.write("Search across Government Orders — with semantic summaries and dynamic sidebar context.")
+st.title("📑 Government Order Semantic Search (v6)")
+st.write("Search across Government Orders — accurate results, factual summaries, and instant updates.")
 
 query = st.text_input("Enter your search query (English):", "")
 top_k = st.slider("Number of results:", 1, 10, 3)
 
 # Sidebar placeholder
 st.sidebar.header("📄 Document Summary")
-st.sidebar.info("Click '🧠 Summarize' under a result to view its summary here.")
+st.sidebar.info("Click '🧠 Summarize' under a result to view its factual summary here.")
 
 # Session state
 if "selected_doc" not in st.session_state:
@@ -124,13 +105,13 @@ if query:
                 combined_text = " ".join(
                     [t.get("text", "") or t.get("translated_text", "") or "" for t in doc_chunks]
                 )
-                st.session_state.summary_text = semantic_summary(combined_text, summarizer)
+
+                st.session_state.summary_text = factual_summary(combined_text)
                 st.sidebar.markdown(f"### {r['file_name']}")
                 st.sidebar.write(st.session_state.summary_text)
 
             st.markdown(f"[📎 Open PDF]({r['pdf_link']})")
             st.markdown("---")
-
 
 # =========================================
 # UPLOAD + INCREMENTAL UPDATE
@@ -156,15 +137,11 @@ if uploaded_pdf is not None:
                 "text": text.strip()
             })
 
-        # Generate embeddings
         new_vecs = model.encode(texts, convert_to_numpy=True, normalize_embeddings=True).astype("float32")
-
-        # Append to FAISS index
         index.add(new_vecs)
         faiss.write_index(index, INDEX_PATH)
-
-        # Append to metadata
         metadata.extend(new_meta)
+
         with open(META_PATH, "w", encoding="utf-8") as f:
             json.dump(metadata, f, ensure_ascii=False, indent=2)
 
