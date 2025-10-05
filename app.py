@@ -10,6 +10,7 @@ from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lex_rank import LexRankSummarizer
 import nltk
+from difflib import get_close_matches
 
 # =========================================
 # INITIAL SETUP
@@ -25,32 +26,31 @@ except LookupError:
 # =========================================
 MODEL_NAME = "all-MiniLM-L6-v2"
 
-# --- Update these two if you move repos later ---
+# Your GitHub setup
 GITHUB_USER = "rydrbot"
-GITHUB_REPO = "test"   # repo where file_manifest.json and json_files live
-PDF_REPO = "go-search-app-final"  # repo hosting PDFs for jsDelivr links
-# -------------------------------------------------
+GITHUB_REPO = "test"               # repo where file_manifest.json + json_files live
+PDF_REPO = "go-search-app-final"   # repo hosting PDFs for jsDelivr access
 
-# URLs auto-adjust for main/master branch
 BASE_RAW = f"https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}"
+BASE_API = f"https://api.github.com/repos/{GITHUB_USER}/{GITHUB_REPO}/contents/json_files"
 JSDELIVR_BASE = f"https://cdn.jsdelivr.net/gh/{GITHUB_USER}/{PDF_REPO}@main/pdfs"
 
 INDEX_PATH = "go_index_v2.faiss"
 META_PATH = "metadata_v2.json"
 
 # =========================================
-# LOAD MANIFEST SAFELY
+# LOAD MANIFEST
 # =========================================
 def load_manifest():
-    """Try to load file_manifest.json from main or master branch."""
+    """Try to load file_manifest.json from main or master."""
     for branch in ["main", "master"]:
         url = f"{BASE_RAW}/{branch}/file_manifest.json"
         r = requests.get(url)
         if r.status_code == 200:
             st.sidebar.success(f"✅ Loaded manifest from {branch} branch.")
             return r.json()
-    st.sidebar.error("⚠️ Could not load file_manifest.json from GitHub.\n"
-                     "Check that the repo is public and the file is in the root.")
+    st.sidebar.error("⚠️ Could not load file_manifest.json from GitHub. "
+                     "Check that the repo is public and the file is in the root directory.")
     return {}
 
 # =========================================
@@ -89,20 +89,24 @@ def search(query, top_k=5):
     return results
 
 # =========================================
-# LOAD TEXT FROM JSON USING MANIFEST
+# LOAD TEXT FROM JSON USING MANIFEST + FALLBACK
 # =========================================
 def get_text_from_manifest(file_name):
+    """Fetch JSON text via manifest; fall back to fuzzy GitHub match if needed."""
     if not manifest:
         return None, "⚠️ Manifest not loaded."
 
-    # Match PDF name to manifest entry
     entry = next((v for v in manifest.values() if v["pdf"].lower() == file_name.lower()), None)
-    if not entry or not entry.get("json"):
-        return None, f"⚠️ No JSON linked for '{file_name}' in manifest."
+    if not entry:
+        return None, f"⚠️ No manifest entry for '{file_name}'"
 
-    # Build JSON URL and try both branches
+    expected_json = entry.get("json")
+    if not expected_json:
+        return None, f"⚠️ No JSON name listed for '{file_name}' in manifest."
+
+    # Try main and master branches
     for branch in ["main", "master"]:
-        json_url = f"{BASE_RAW}/{branch}/json_files/{urllib.parse.quote(entry['json'])}"
+        json_url = f"{BASE_RAW}/{branch}/json_files/{urllib.parse.quote(expected_json)}"
         resp = requests.get(json_url)
         if resp.status_code == 200:
             try:
@@ -113,12 +117,34 @@ def get_text_from_manifest(file_name):
                     for p in pages if p.get("translated_text") or p.get("original_text")
                 ])
                 if not combined_text.strip():
-                    return None, "⚠️ JSON found, but contains no readable text."
-                return combined_text.strip(), f"✅ Using JSON: {entry['json']}"
+                    return None, "⚠️ JSON found but contains no readable text."
+                return combined_text.strip(), f"✅ Using JSON: {expected_json}"
             except Exception as e:
                 return None, f"⚠️ JSON parsing error: {e}"
 
-    return None, f"⚠️ JSON file for '{file_name}' not found on GitHub."
+    # Fallback: fuzzy match JSON filename using GitHub API
+    alt_resp = requests.get(BASE_API)
+    if alt_resp.status_code == 200:
+        try:
+            json_list = [item["name"] for item in alt_resp.json() if item["name"].endswith(".json")]
+            matches = get_close_matches(expected_json.lower(), [j.lower() for j in json_list], n=1, cutoff=0.5)
+            if matches:
+                matched_name = next(j for j in json_list if j.lower() == matches[0])
+                for branch in ["main", "master"]:
+                    alt_url = f"{BASE_RAW}/{branch}/json_files/{urllib.parse.quote(matched_name)}"
+                    r2 = requests.get(alt_url)
+                    if r2.status_code == 200:
+                        data = json.loads(r2.text)
+                        pages = data.get("pages", [])
+                        combined_text = " ".join([
+                            p.get("translated_text", "") or p.get("original_text", "")
+                            for p in pages if p.get("translated_text") or p.get("original_text")
+                        ])
+                        return combined_text.strip(), f"✅ Matched JSON: {matched_name}"
+        except Exception as e:
+            return None, f"⚠️ Fallback JSON fetch failed: {e}"
+
+    return None, f"⚠️ JSON not found for '{file_name}' (tried {expected_json})"
 
 # =========================================
 # SUMMARIZER
@@ -133,12 +159,12 @@ def summarize_text(text, sentence_count=7):
 # =========================================
 # STREAMLIT UI
 # =========================================
-st.set_page_config(page_title="GO Search – Final (Auto Manifest)", layout="wide")
+st.set_page_config(page_title="GO Search – Final (Auto-Fix JSON)", layout="wide")
 
-st.title("📑 Government Order Semantic Search – Auto Manifest")
+st.title("📑 Government Order Semantic Search – Smart JSON Matching")
 st.markdown(
-    "Search across Government Orders with instant, factual summaries using preprocessed JSON files. "
-    "The app automatically detects the correct GitHub branch for your data repository."
+    "Search across Government Orders with instant summaries from preprocessed JSON files. "
+    "Automatically finds correct JSON even if filenames differ slightly."
 )
 
 query = st.text_input("Enter your search query (English):", "")
