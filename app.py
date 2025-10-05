@@ -170,9 +170,35 @@ def summarize_text(text, sentence_count=7):
 # =========================================
 # STREAMLIT UI
 # =========================================
-st.set_page_config(page_title="GO Search – Clean Final", layout="wide")
+st.set_page_config(page_title="GO Search", layout="wide")
 
-st.title("📑 Government Order Semantic Search – Final (Silent + Smart)")
+# =========================================
+# HEADER WITH LOGO
+# =========================================
+LOGO_URL = "https://itmission.kerala.gov.in/themes/ksitm/logo.png"
+
+# Custom CSS for centering the logo
+st.markdown(
+    """
+    <style>
+    .center-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0.5rem;
+    }
+    .center-logo img {
+        height: 80px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+# Display the logo above the title
+st.markdown(f'<div class="center-logo"><img src="{LOGO_URL}" alt="Kerala IT Mission Logo"></div>', unsafe_allow_html=True)
+
+st.title("Government Order Semantic Search – Final (Silent + Smart)")
 st.markdown(
     "Search across Government Orders with instant summaries from preprocessed JSON files. "
     "Manifest loading and JSON matching are now fully automatic and silent."
