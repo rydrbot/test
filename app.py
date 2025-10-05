@@ -1,4 +1,5 @@
 import os
+import io
 import json
 import streamlit as st
 import numpy as np
@@ -12,11 +13,14 @@ from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lex_rank import LexRankSummarizer
 import nltk
 import pytesseract
-from pdf2image import convert_from_path
+from pdf2image import convert_from_bytes, convert_from_path
 from langdetect import detect
-from googletrans import Translator
+from deep_translator import GoogleTranslator
+import requests
 
-# Ensure tokenizer data is present
+# =========================================
+# INITIAL SETUP
+# =========================================
 try:
     nltk.data.find("tokenizers/punkt")
 except LookupError:
@@ -61,7 +65,6 @@ def search(query, top_k=5):
         pdf_file = doc.get("file_name", "").replace("_raw.txt", ".pdf")
         pdf_file_encoded = urllib.parse.quote(pdf_file)
         pdf_link = f"{JSDELIVR_BASE}/{pdf_file_encoded}"
-
         results.append({
             "file_name": pdf_file,
             "page_number": doc.get("page_number", ""),
@@ -71,81 +74,85 @@ def search(query, top_k=5):
     return results
 
 # =========================================
-# OCR + FACTUAL SUMMARY
+# OCR + TRANSLATION + SUMMARY
 # =========================================
 def summarize_pdf(pdf_name, sentence_count=7):
     """Extract text (OCR if needed), translate if Malayalam, and summarize."""
-    import io, requests
     text = ""
+    pdf_bytes = None
 
     # Try local copy first
     local_path = os.path.join(LOCAL_PDF_FOLDER, pdf_name)
-    pdf_bytes = None
     if os.path.exists(local_path):
-        pdf_bytes = open(local_path, "rb").read()
+        with open(local_path, "rb") as f:
+            pdf_bytes = f.read()
     else:
+        # Try fetching from CDN
         url = f"{JSDELIVR_BASE}/{urllib.parse.quote(pdf_name)}"
-        try:
-            response = requests.get(url)
-            if response.status_code == 200:
-                pdf_bytes = response.content
-        except Exception as e:
-            st.warning(f"⚠️ Could not fetch PDF: {e}")
-            return "⚠️ Unable to access PDF for summary."
+        resp = requests.get(url)
+        if resp.status_code == 200:
+            pdf_bytes = resp.content
+        else:
+            return f"⚠️ Unable to fetch {pdf_name} from source."
 
-    if not pdf_bytes:
-        return "⚠️ PDF not found locally or online."
-
-    # Extract text
-    reader = PdfReader(io.BytesIO(pdf_bytes))
-    for page in reader.pages:
-        page_text = page.extract_text()
-        if page_text:
-            text += page_text + "\n"
-
-    # If no text, do OCR
-    if not text.strip():
-        st.info("Performing OCR on scanned PDF pages... This may take a moment.")
-        try:
-            images = convert_from_path(local_path) if os.path.exists(local_path) else convert_from_path(io.BytesIO(pdf_bytes))
-            for img in images:
-                ocr_text = pytesseract.image_to_string(img, lang="eng+mal")
-                text += ocr_text + "\n"
-        except Exception as e:
-            return f"⚠️ OCR failed: {e}"
-
-    # Detect language and translate if Malayalam
+    # Extract text layer
     try:
-        lang = detect(text[:500])
-        if lang == "ml":
-            st.info("Detected Malayalam text — translating to English for summarization.")
-            translator = Translator()
-            text = translator.translate(text, src="ml", dest="en").text
+        reader = PdfReader(io.BytesIO(pdf_bytes))
+        for page in reader.pages:
+            t = page.extract_text()
+            if t:
+                text += t + "\n"
     except Exception:
         pass
 
+    # OCR fallback
     if not text.strip():
-        return "⚠️ No readable content found in this PDF."
+        st.info("Performing OCR on scanned PDF pages... Please wait ⏳")
+        try:
+            images = convert_from_bytes(pdf_bytes)
+            for i, img in enumerate(images, start=1):
+                ocr_text = pytesseract.image_to_string(img, lang="eng+mal")
+                text += ocr_text + "\n"
+                st.progress(i / len(images))
+        except Exception as e:
+            return f"⚠️ OCR failed: {e}"
 
-    # Summarize
-    parser = PlaintextParser.from_string(text, Tokenizer("english"))
-    summarizer = LexRankSummarizer()
-    summary_sentences = summarizer(parser.document, sentence_count)
-    return " ".join(str(s) for s in summary_sentences) if summary_sentences else text[:800]
+    if not text.strip():
+        return "⚠️ No readable text extracted from this PDF."
+
+    # Detect and translate Malayalam
+    try:
+        lang = detect(text[:500])
+        if lang == "ml":
+            st.info("Detected Malayalam — translating to English for summarization.")
+            translator = GoogleTranslator(source="auto", target="en")
+            text = translator.translate(text)
+    except Exception:
+        pass
+
+    # Summarize with LexRank
+    try:
+        parser = PlaintextParser.from_string(text, Tokenizer("english"))
+        summarizer = LexRankSummarizer()
+        summary_sentences = summarizer(parser.document, sentence_count)
+        summary = " ".join(str(s) for s in summary_sentences)
+        return summary if summary else text[:800]
+    except Exception as e:
+        return f"⚠️ Summarization failed: {e}"
 
 # =========================================
 # STREAMLIT UI
 # =========================================
-st.set_page_config(page_title="GO Search (v8)", layout="wide")
+st.set_page_config(page_title="GO Search (v9)", layout="wide")
 
-st.title("📑 Government Order Semantic Search (v8)")
-st.write("Search across Government Orders — with OCR & Malayalam translation support.")
+st.title("📑 Government Order Semantic Search (v9)")
+st.write("Search across Government Orders — with OCR + Malayalam translation support and factual summaries.")
 
 query = st.text_input("Enter your search query (English):", "")
 top_k = st.slider("Number of results:", 1, 10, 3)
 
 st.sidebar.header("📄 Document Summary")
-st.sidebar.info("Click '🧠 Summarize PDF' to read, OCR, translate, and summarize the actual file.")
+st.sidebar.info("Click 🧠 to summarize the selected PDF (works even on scanned or Malayalam files).")
 
 if query:
     results = search(query, top_k=top_k)
@@ -157,10 +164,43 @@ if query:
             st.markdown(f"**Page:** {r['page_number']} | **Similarity:** {r['similarity']:.4f}")
 
             if st.button(f"🧠 Summarize PDF: {r['file_name']}", key=f"btn_{i}"):
-                with st.spinner("Extracting text (OCR if needed)..."):
+                with st.spinner("Extracting text, OCR if needed..."):
                     summary = summarize_pdf(r["file_name"])
                     st.sidebar.markdown(f"### {r['file_name']}")
                     st.sidebar.write(summary)
 
             st.markdown(f"[📎 Open PDF]({r['pdf_link']})")
             st.markdown("---")
+
+# =========================================
+# UPLOAD + INCREMENTAL UPDATE
+# =========================================
+st.subheader("📤 Add New Document to Index")
+
+uploaded_pdf = st.file_uploader("Upload a new PDF document", type=["pdf"])
+if uploaded_pdf is not None:
+    with st.spinner("Processing uploaded PDF..."):
+        reader = PdfReader(uploaded_pdf)
+        texts, new_meta = [], []
+
+        for i, page in enumerate(tqdm(reader.pages)):
+            text = page.extract_text()
+            if not text or len(text.strip()) < 50:
+                continue
+            texts.append(text.strip())
+            new_meta.append({
+                "file_name": uploaded_pdf.name,
+                "category": "uploaded",
+                "page_number": i + 1,
+                "language": "en",
+                "text": text.strip()
+            })
+
+        new_vecs = model.encode(texts, convert_to_numpy=True, normalize_embeddings=True).astype("float32")
+        index.add(new_vecs)
+        faiss.write_index(index, INDEX_PATH)
+        metadata.extend(new_meta)
+        with open(META_PATH, "w", encoding="utf-8") as f:
+            json.dump(metadata, f, ensure_ascii=False, indent=2)
+
+    st.success(f"✅ {uploaded_pdf.name} added to index successfully!")
