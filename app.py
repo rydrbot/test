@@ -170,14 +170,13 @@ def summarize_text(text, sentence_count=7):
 # =========================================
 # STREAMLIT UI
 # =========================================
-st.set_page_config(page_title="GO Search", layout="wide")
+st.set_page_config(page_title="GO Search – Kerala IT Mission", layout="wide")
 
 # =========================================
 # HEADER: CENTERED LOGO + TITLE
 # =========================================
 LOGO_URL = "https://itmission.kerala.gov.in/themes/ksitm/logo.png"
 
-# Custom CSS for centering both logo and title
 st.markdown(
     """
     <style>
@@ -196,19 +195,38 @@ st.markdown(
         font-weight: 700;
         margin-bottom: 0;
     }
+    .app-header p {
+        font-size: 1rem;
+        color: #555;
+        margin-top: -5px;
+    }
     </style>
     """,
     unsafe_allow_html=True,
 )
+
+st.markdown(
+    f"""
+    <div class="app-header">
+        <a href="https://itmission.kerala.gov.in" target="_blank">
+            <img src="{LOGO_URL}" alt="Kerala IT Mission Logo">
+        </a>
+        <h1>📑 Government Order Semantic Search</h1>
+        <p><em>Empowering Governance through Accessible Information</em></p>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
+
+# =========================================
+# MAIN APP CONTENT
+# =========================================
 query = st.text_input("Enter your search query (English):", "")
 top_k = st.slider("Number of results:", 1, 10, 5)
 
 st.sidebar.header("📄 Document Summary")
 st.sidebar.info("Click 🧠 to generate instant summary from linked JSON text.")
 
-# =========================================
-# MAIN FLOW
-# =========================================
 if query:
     results = search(query, top_k=top_k)
     st.write(f"### 🔎 Results for: `{query}`")
