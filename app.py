@@ -11,6 +11,10 @@ from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lex_rank import LexRankSummarizer
 import nltk
+import pytesseract
+from pdf2image import convert_from_path
+from langdetect import detect
+from googletrans import Translator
 
 # Ensure tokenizer data is present
 try:
@@ -24,12 +28,12 @@ except LookupError:
 # =========================================
 MODEL_NAME = "all-MiniLM-L6-v2"
 JSDELIVR_BASE = "https://cdn.jsdelivr.net/gh/rydrbot/go-search-app-final@main/pdfs"
-LOCAL_PDF_FOLDER = "pdfs"  # if you also keep local copies
+LOCAL_PDF_FOLDER = "pdfs"
 INDEX_PATH = "go_index_v2.faiss"
 META_PATH = "metadata_v2.json"
 
 # =========================================
-# LOAD INDEX + MODEL
+# LOAD COMPONENTS
 # =========================================
 @st.cache_resource
 def load_components():
@@ -67,37 +71,63 @@ def search(query, top_k=5):
     return results
 
 # =========================================
-# FACTUAL SUMMARY (LEXRANK)
+# OCR + FACTUAL SUMMARY
 # =========================================
 def summarize_pdf(pdf_name, sentence_count=7):
-    """Read a PDF (local or via CDN) and produce a factual summary."""
+    """Extract text (OCR if needed), translate if Malayalam, and summarize."""
+    import io, requests
     text = ""
+
+    # Try local copy first
     local_path = os.path.join(LOCAL_PDF_FOLDER, pdf_name)
+    pdf_bytes = None
     if os.path.exists(local_path):
-        reader = PdfReader(local_path)
-        for page in reader.pages:
-            page_text = page.extract_text()
-            if page_text:
-                text += page_text + "\n"
+        pdf_bytes = open(local_path, "rb").read()
     else:
-        # Optional: download from jsDelivr temporarily
-        import requests, io
+        url = f"{JSDELIVR_BASE}/{urllib.parse.quote(pdf_name)}"
         try:
-            url = f"{JSDELIVR_BASE}/{urllib.parse.quote(pdf_name)}"
             response = requests.get(url)
             if response.status_code == 200:
-                reader = PdfReader(io.BytesIO(response.content))
-                for page in reader.pages:
-                    page_text = page.extract_text()
-                    if page_text:
-                        text += page_text + "\n"
+                pdf_bytes = response.content
         except Exception as e:
-            st.warning(f"Could not fetch PDF: {e}")
-            return "⚠️ Unable to access PDF content for summary."
+            st.warning(f"⚠️ Could not fetch PDF: {e}")
+            return "⚠️ Unable to access PDF for summary."
+
+    if not pdf_bytes:
+        return "⚠️ PDF not found locally or online."
+
+    # Extract text
+    reader = PdfReader(io.BytesIO(pdf_bytes))
+    for page in reader.pages:
+        page_text = page.extract_text()
+        if page_text:
+            text += page_text + "\n"
+
+    # If no text, do OCR
+    if not text.strip():
+        st.info("Performing OCR on scanned PDF pages... This may take a moment.")
+        try:
+            images = convert_from_path(local_path) if os.path.exists(local_path) else convert_from_path(io.BytesIO(pdf_bytes))
+            for img in images:
+                ocr_text = pytesseract.image_to_string(img, lang="eng+mal")
+                text += ocr_text + "\n"
+        except Exception as e:
+            return f"⚠️ OCR failed: {e}"
+
+    # Detect language and translate if Malayalam
+    try:
+        lang = detect(text[:500])
+        if lang == "ml":
+            st.info("Detected Malayalam text — translating to English for summarization.")
+            translator = Translator()
+            text = translator.translate(text, src="ml", dest="en").text
+    except Exception:
+        pass
 
     if not text.strip():
-        return "⚠️ No text could be extracted from this PDF."
+        return "⚠️ No readable content found in this PDF."
 
+    # Summarize
     parser = PlaintextParser.from_string(text, Tokenizer("english"))
     summarizer = LexRankSummarizer()
     summary_sentences = summarizer(parser.document, sentence_count)
@@ -106,17 +136,16 @@ def summarize_pdf(pdf_name, sentence_count=7):
 # =========================================
 # STREAMLIT UI
 # =========================================
-st.set_page_config(page_title="GO Search (v7)", layout="wide")
+st.set_page_config(page_title="GO Search (v8)", layout="wide")
 
-st.title("📑 Government Order Semantic Search (v7)")
-st.write("Search across Government Orders and generate instant summaries from the actual PDF text.")
+st.title("📑 Government Order Semantic Search (v8)")
+st.write("Search across Government Orders — with OCR & Malayalam translation support.")
 
 query = st.text_input("Enter your search query (English):", "")
 top_k = st.slider("Number of results:", 1, 10, 3)
 
-# Sidebar placeholder
 st.sidebar.header("📄 Document Summary")
-st.sidebar.info("Click '🧠 Summarize PDF' to read and summarize the actual file.")
+st.sidebar.info("Click '🧠 Summarize PDF' to read, OCR, translate, and summarize the actual file.")
 
 if query:
     results = search(query, top_k=top_k)
@@ -128,43 +157,10 @@ if query:
             st.markdown(f"**Page:** {r['page_number']} | **Similarity:** {r['similarity']:.4f}")
 
             if st.button(f"🧠 Summarize PDF: {r['file_name']}", key=f"btn_{i}"):
-                with st.spinner("Reading and summarizing PDF..."):
+                with st.spinner("Extracting text (OCR if needed)..."):
                     summary = summarize_pdf(r["file_name"])
                     st.sidebar.markdown(f"### {r['file_name']}")
                     st.sidebar.write(summary)
 
             st.markdown(f"[📎 Open PDF]({r['pdf_link']})")
             st.markdown("---")
-
-# =========================================
-# UPLOAD + INCREMENTAL UPDATE
-# =========================================
-st.subheader("📤 Add New Document to Index")
-
-uploaded_pdf = st.file_uploader("Upload a new PDF document", type=["pdf"])
-if uploaded_pdf is not None:
-    with st.spinner("Processing uploaded PDF..."):
-        reader = PdfReader(uploaded_pdf)
-        texts, new_meta = [], []
-
-        for i, page in enumerate(tqdm(reader.pages)):
-            text = page.extract_text()
-            if not text or len(text.strip()) < 50:
-                continue
-            texts.append(text.strip())
-            new_meta.append({
-                "file_name": uploaded_pdf.name,
-                "category": "uploaded",
-                "page_number": i + 1,
-                "language": "en",
-                "text": text.strip()
-            })
-
-        new_vecs = model.encode(texts, convert_to_numpy=True, normalize_embeddings=True).astype("float32")
-        index.add(new_vecs)
-        faiss.write_index(index, INDEX_PATH)
-        metadata.extend(new_meta)
-        with open(META_PATH, "w", encoding="utf-8") as f:
-            json.dump(metadata, f, ensure_ascii=False, indent=2)
-
-    st.success(f"✅ {uploaded_pdf.name} added to index successfully!")
