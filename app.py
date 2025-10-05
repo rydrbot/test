@@ -68,27 +68,32 @@ def search(query, top_k=5):
 # LOAD JSON FOR SELECTED DOCUMENT
 # =========================================
 def get_text_from_json(file_name):
-    """Fetches all text from the corresponding JSON file."""
-    json_path = None
-    for file in os.listdir(JSON_FOLDER):
-        if file_name.lower().replace(".pdf", "") in file.lower():
-            json_path = os.path.join(JSON_FOLDER, file)
-            break
+    """Fetch text from JSON stored on GitHub (remote)."""
+    base_url = "https://raw.githubusercontent.com/rydrbot/go-search-app-final/main/json_files"
+    file_base = file_name.lower().replace(".pdf", "")
 
-    if not json_path:
-        return None, f"⚠️ JSON file for '{file_name}' not found."
+    import requests
 
-    try:
-        with open(json_path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        pages = data.get("pages", [])
-        combined_text = " ".join([
-            p.get("translated_text", "") or p.get("original_text", "")
-            for p in pages if p.get("translated_text") or p.get("original_text")
-        ])
-        return combined_text.strip(), None
-    except Exception as e:
-        return None, f"⚠️ Error reading JSON: {e}"
+    # Try to find a matching JSON file remotely
+    possible_url = f"{base_url}/{urllib.parse.quote(file_name.replace('.pdf', '.json'))}"
+    alt_url = f"{base_url}/{urllib.parse.quote(file_base)}.json"
+
+    for url in [possible_url, alt_url]:
+        resp = requests.get(url)
+        if resp.status_code == 200:
+            try:
+                data = json.loads(resp.text)
+                pages = data.get("pages", [])
+                combined_text = " ".join([
+                    p.get("translated_text", "") or p.get("original_text", "")
+                    for p in pages if p.get("translated_text") or p.get("original_text")
+                ])
+                return combined_text.strip(), None
+            except Exception as e:
+                return None, f"⚠️ JSON parsing error: {e}"
+
+    return None, f"⚠️ JSON file for '{file_name}' not found at {base_url}."
+
 
 # =========================================
 # LEXRANK FACTUAL SUMMARY
