@@ -8,3 +8,7 @@ PyPDF2
 sumy
 nltk
 requests
+pytesseract
+pdf2image
+langdetect
+googletrans==4.0.0-rc1
