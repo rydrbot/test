@@ -1,0 +1,402 @@
+{
+  "GO001": {
+    "pdf": "AADHAAR ENROLMENT INFORMATION.pdf",
+    "json": "AADHAAR ENROLMENT INFORMATION.json"
+  },
+  "GO002": {
+    "pdf": "Amendment of Stores Purchase Manual (SPM).pdf",
+    "json": "Amendment of Stores Purchase Manual (SPM).json"
+  },
+  "GO003": {
+    "pdf": "BOQ - GeM Guidelines.pdf",
+    "json": "BOQ - GeM Guidelines.json"
+  },
+  "GO004": {
+    "pdf": "CIRCULAR -IT CELL-1-129-2020-ITD.PDF",
+    "json": "circular_itb1_128_2017_itd.json"
+  },
+  "GO005": {
+    "pdf": "CIRCULAR.pdf",
+    "json": "CIRCULAR.json"
+  },
+  "GO006": {
+    "pdf": "Circular No IT Cell2 132 2022 ITD VPN guidelines_2.pdf",
+    "json": "Circular No IT Cell2 132 2022 ITD VPN guidelines_2.json"
+  },
+  "GO007": {
+    "pdf": "Cloud Hosting FAQ_1.pdf",
+    "json": "Cloud Hosting FAQ_1.json"
+  },
+  "GO008": {
+    "pdf": "DSC Empanelment-Orders Issued.pdf",
+    "json": "DSC Empanelment-Orders Issued.json"
+  },
+  "GO009": {
+    "pdf": "E&ITD - G.O.(Rt) No. 3-E&ITD.pdf",
+    "json": "E&ITD - G.O.(Rt) No. 3-E&ITD.json"
+  },
+  "GO010": {
+    "pdf": "For attestation of documents for Aadhaar Enrolment or Update purposes only-List of Gazetted Officers.pdf",
+    "json": "For attestation of documents for Aadhaar Enrolment or Update purposes only-List of Gazetted Officers-pages.json"
+  },
+  "GO011": {
+    "pdf": "G.O & Subsidy Manual.pdf",
+    "json": "G.O & Subsidy Manual.json"
+  },
+  "GO012": {
+    "pdf": "G.O(Ms)No.24-E&IT.pdf",
+    "json": "G.O(Ms)No.24-E&IT.json"
+  },
+  "GO013": {
+    "pdf": "G.O(Ms)No.26-E&ITD.pdf",
+    "json": "G.O(Ms)No.26-E&ITD.json"
+  },
+  "GO014": {
+    "pdf": "G.O(Rt) No.170-E.pdf",
+    "json": "G.O(Rt) No.170-E.json"
+  },
+  "GO015": {
+    "pdf": "G.O.(Ms) No. 1-E&ITD.pdf",
+    "json": "G.O.(Ms) No. 1-E&ITD.json"
+  },
+  "GO016": {
+    "pdf": "G.O.(Ms) No. 17-E&ITD.pdf",
+    "json": "G.O.(Ms) No. 17-E&ITD.json"
+  },
+  "GO017": {
+    "pdf": "G.O.(Ms) No. 18-E&ITD.pdf",
+    "json": "G.O.(Ms) No. 18-E&ITD.json"
+  },
+  "GO018": {
+    "pdf": "G.O.(Ms) No. 20-E&ITD.pdf",
+    "json": "G.O.(Ms) No. 20-E&ITD.json"
+  },
+  "GO019": {
+    "pdf": "G.O.(Ms) No. 25-E&ITD.pdf",
+    "json": "G.O.(Ms) No. 25-E&ITD.json"
+  },
+  "GO020": {
+    "pdf": "G.O.(Ms) No. 32-E&ITD.pdf",
+    "json": "G.O.(Ms) No. 32-E&ITD.json"
+  },
+  "GO021": {
+    "pdf": "G.O.(Ms) No. 6-E&ITD.pdf",
+    "json": "G.O.(Ms) No. 6-E&ITD.json"
+  },
+  "GO022": {
+    "pdf": "G.O.(Ms) No. 9-E&ITD.pdf",
+    "json": "G.O.(Ms) No. 9-E&ITD.json"
+  },
+  "GO023": {
+    "pdf": "G.O.(Ms)No.3-2000-ITD-AMC-TERMS.pdf",
+    "json": "G.O.(Ms)No.3-2000-ITD-AMC-TERMS.json"
+  },
+  "GO024": {
+    "pdf": "G.O.(Rt) No. 117-E&ITD.pdf",
+    "json": "G.O.(Rt) No. 117-E&ITD.json"
+  },
+  "GO025": {
+    "pdf": "G.O.(Rt) No. 128-E&ITD.pdf",
+    "json": "G.O.(Rt) No. 128-E&ITD.json"
+  },
+  "GO026": {
+    "pdf": "G.O.(Rt) No. 155-E&ITD.pdf",
+    "json": "G.O.(Rt) No. 155-E&ITD.json"
+  },
+  "GO027": {
+    "pdf": "G.O.(Rt) No. 227-E&ITD.pdf",
+    "json": "G.O.(Rt) No. 227-E&ITD.json"
+  },
+  "GO028": {
+    "pdf": "G.O.(Rt) No. 23-E&ITD.pdf",
+    "json": "G.O.(Rt) No. 23-E&ITD.json"
+  },
+  "GO029": {
+    "pdf": "G.O.(Rt) No. 230-E&ITD.pdf",
+    "json": "G.O.(Rt) No. 230-E&ITD.json"
+  },
+  "GO030": {
+    "pdf": "G.O.(Rt) No. 236-E&ITD.pdf",
+    "json": "G.O.(Rt) No. 236-E&ITD.json"
+  },
+  "GO031": {
+    "pdf": "G.O.(Rt) No. 247-E&ITD.pdf",
+    "json": "G.O.(Rt) No. 247-E&ITD.json"
+  },
+  "GO032": {
+    "pdf": "G.O.(Rt) No. 49-E&ITD.pdf",
+    "json": "G.O.(Rt) No. 49-E&ITD.json"
+  },
+  "GO033": {
+    "pdf": "G.O.(Rt) No. 73-E&ITD.pdf",
+    "json": "G.O.(Rt) No. 73-E&ITD.json"
+  },
+  "GO034": {
+    "pdf": "G.O.(Rt) No. 88-E&ITD.pdf",
+    "json": "G.O.(Rt) No. 88-E&ITD.json"
+  },
+  "GO035": {
+    "pdf": "G.O..pdf",
+    "json": "G.O.json"
+  },
+  "GO036": {
+    "pdf": "G.O.pdf",
+    "json": "G.O.json"
+  },
+  "GO037": {
+    "pdf": "G.O_0.pdf",
+    "json": "G.O_0.json"
+  },
+  "GO038": {
+    "pdf": "GAD Circular_COVID 19.pdf",
+    "json": "GAD Circular_COVID 19.json"
+  },
+  "GO039": {
+    "pdf": "GO (Ms) No. 10-2010-ITD dt. 05-03-2010 [BackupPolicy].pdf",
+    "json": "GO (Ms) No. 10-2010-ITD dt. 05-03-2010 [BackupPolicy].json"
+  },
+  "GO040": {
+    "pdf": "GO - Biometric.pdf",
+    "json": "GO - Biometric_removed.json"
+  },
+  "GO041": {
+    "pdf": "GO Ms No 21 2021 ITD-Concurrence on IT Projects (1) (1).pdf",
+    "json": "GO Ms No 21 2021 ITD-Concurrence on IT Projects (1) (1).json"
+  },
+  "GO042": {
+    "pdf": "GO Ms No 26 2011 ITD.pdf",
+    "json": "GO Ms No 26 2011 ITD.json"
+  },
+  "GO043": {
+    "pdf": "GO Ms No 5 2019 ITD PGDeG.pdf",
+    "json": "GO Ms No 5 2019 ITD PGDeG.json"
+  },
+  "GO044": {
+    "pdf": "GO(Ms)No 16-2009-ITD dt 10 07 2009.pdf",
+    "json": "GO(Ms)No 16-2009-ITD dt 10 07 2009.json"
+  },
+  "GO045": {
+    "pdf": "GO(Ms)No.13-2000-ITD dt. 23.07-2000.pdf",
+    "json": "GO(Ms)No.13-2000-ITD dt. 23.07-2000.json"
+  },
+  "GO046": {
+    "pdf": "GO(P) No 324-2015-Fin dated 30-07-2015.pdf",
+    "json": "GO(P) No 324-2015-Fin dated 30-07-2015.json"
+  },
+  "GO047": {
+    "pdf": "GO(P) No 429-2015-Fin dated 28-09-2015.pdf",
+    "json": "GO(P) No 429-2015-Fin dated 28-09-2015.json"
+  },
+  "GO048": {
+    "pdf": "GO(P)-No.-24-2009-ITD-dt-29.09.2009.pdf",
+    "json": "GO(P)-No.-24-2009-ITD-dt-29.09.2009.json"
+  },
+  "GO049": {
+    "pdf": "GO(P)No.26_2005_ITD.pdf",
+    "json": "GO(P)No.26_2005_ITD.json"
+  },
+  "GO050": {
+    "pdf": "GO(RT) 144-2019.pdf",
+    "json": "GO(RT) 144-2019.json"
+  },
+  "GO051": {
+    "pdf": "GO(RT) 164-2019.pdf",
+    "json": "GO(RT) 164-2019.json"
+  },
+  "GO052": {
+    "pdf": "GO(Rt) No 73-2020-ITD dated 24-06-2020.pdf",
+    "json": "GO(Rt) No 73-2020-ITD dated 24-06-2020.json"
+  },
+  "GO053": {
+    "pdf": "GO(Rt) No 73-2020-ITD dated 24-06-2020_0.pdf",
+    "json": "GO(Rt) No 73-2020-ITD dated 24-06-2020_0.json"
+  },
+  "GO054": {
+    "pdf": "GO-ITD-Concurrence ITD (2).pdf",
+    "json": "GO-ITD-Concurrence ITD (2).json"
+  },
+  "GO055": {
+    "pdf": "GO-Ms-No20-2018-ITD-dated-15-08-2018.pdf",
+    "json": "GO-Ms-No20-2018-ITD-dated-15-08-2018.json"
+  },
+  "GO056": {
+    "pdf": "GO. P. No. 350-2008-Fin dt. 06.08.2008.pdf",
+    "json": "GO. P. No. 350-2008-Fin dt. 06.08.2008.json"
+  },
+  "GO057": {
+    "pdf": "GO_ Rt_ no34_2021_ITD DTD 19-02-2021.pdf",
+    "json": "GO_ Rt_ no34_2021_ITD DTD 19-02-2021.json"
+  },
+  "GO058": {
+    "pdf": "GO_0.pdf",
+    "json": "G.O_0.json"
+  },
+  "GO059": {
+    "pdf": "GO_1.pdf",
+    "json": "GO_1.json"
+  },
+  "GO060": {
+    "pdf": "GO_2.pdf",
+    "json": "GO_2.json"
+  },
+  "GO061": {
+    "pdf": "GO_Ms_No_30_2021_ITD_Modified_Scrapping_Guidelines (1).pdf",
+    "json": "GO_Ms_No_30_2021_ITD_Modified_Scrapping_Guidelines (1).json"
+  },
+  "GO062": {
+    "pdf": "GuideLine for QCBS Process.pdf",
+    "json": "GuideLine for QCBS Process.json"
+  },
+  "GO063": {
+    "pdf": "Guideline of Government of Kerala Websites CMF.pdf",
+    "json": "Guideline of Government of Kerala Websites CMF.json"
+  },
+  "GO064": {
+    "pdf": "Guidelines for Indian Government Websites.pdf",
+    "json": "Guidelines for Indian Government Websites.json"
+  },
+  "GO065": {
+    "pdf": "Guidelines issued. - G.O.(Rt) No. 203-E&ITD.pdf",
+    "json": "Guidelines issued. - G.O.(Rt) No. 203-E&ITD.json"
+  },
+  "GO066": {
+    "pdf": "Harware Dispoasal GO (3).pdf",
+    "json": "Harware Dispoasal GO (3).json"
+  },
+  "GO067": {
+    "pdf": "Hosting Protocol for State Data Centre Services.pdf",
+    "json": "Hosting Protocol for State Data Centre Services.json"
+  },
+  "GO068": {
+    "pdf": "Hosting-Security-Audit.pdf",
+    "json": "Hosting-Security-Audit.json"
+  },
+  "GO069": {
+    "pdf": "IT Subpolicies and Guidelines 2017-English Version.pdf",
+    "json": "IT Subpolicies and Guidelines 2017-English Version.json"
+  },
+  "GO070": {
+    "pdf": "IT Subpolicies and Guidelines 2017-Malayalam Version.pdf",
+    "json": "IT Subpolicies and Guidelines 2017-English Version.json"
+  },
+  "GO071": {
+    "pdf": "IT cell-1-106-E&ITD.pdf",
+    "json": "IT cell-1-106-E&ITD.json"
+  },
+  "GO072": {
+    "pdf": "List od District Head Quarters.pdf",
+    "json": "List od District Head Quarters.json"
+  },
+  "GO073": {
+    "pdf": "List of Block Head Quarters.pdf",
+    "json": "List of Block Head Quarters.json"
+  },
+  "GO074": {
+    "pdf": "List of MINI POPS.pdf",
+    "json": "List of MINI POPS.json"
+  },
+  "GO075": {
+    "pdf": "MEITY Letter 1.0.pdf",
+    "json": "MEITY Letter 1.0.json"
+  },
+  "GO076": {
+    "pdf": "MMS.pdf",
+    "json": "MMS.json"
+  },
+  "GO077": {
+    "pdf": "No. IT-B1-69-E&ITD.pdf",
+    "json": "No. IT-B1-69-E&ITD.json"
+  },
+  "GO078": {
+    "pdf": "Nodal Officers_KSITM.pdf",
+    "json": "Nodal Officers_KSITM.json"
+  },
+  "GO079": {
+    "pdf": "PGDeG 2024-25 Selection list.pdf",
+    "json": "PGDeG 2024-25 Selection list.json"
+  },
+  "GO080": {
+    "pdf": "Proceedings.pdf",
+    "json": "Proceedings.json"
+  },
+  "GO081": {
+    "pdf": "Revised Proceedings.pdf",
+    "json": "Revised Proceedings.json"
+  },
+  "GO082": {
+    "pdf": "Scrapping - govtorder1810202111 32 37.pdf",
+    "json": "Scrapping - govtorder1810202111 32 37.json"
+  },
+  "GO083": {
+    "pdf": "Startup Policy.pdf",
+    "json": "Startup Policy.json"
+  },
+  "GO084": {
+    "pdf": "TECHNICAL-SPECIFICATION-OF-CPRCS .pdf",
+    "json": "TECHNICAL-SPECIFICATION-OF-CPRCS .json"
+  },
+  "GO085": {
+    "pdf": "cert-k alert.pdf",
+    "json": "cert-k alert.json"
+  },
+  "GO086": {
+    "pdf": "circular_itb1_128_2017_itd.pdf",
+    "json": "circular_itb1_128_2017_itd.json"
+  },
+  "GO087": {
+    "pdf": "download.pdf",
+    "json": "download.json"
+  },
+  "GO088": {
+    "pdf": "e-District- Acceptance of Digitally Signed Certificate_0.pdf",
+    "json": "e-District- Acceptance of Digitally Signed Certificate_0.json"
+  },
+  "GO089": {
+    "pdf": "e-waste-policy.pdf",
+    "json": "e-waste-policy.json"
+  },
+  "GO090": {
+    "pdf": "empaneled_agencies.pdf",
+    "json": "empaneled_agencies.json"
+  },
+  "GO091": {
+    "pdf": "eprocurement - online payment .pdf",
+    "json": "eprocurement - online payment .json"
+  },
+  "GO092": {
+    "pdf": "go-ms-no-27-2018-itd-scrapping-guidelines.pdf",
+    "json": "go-ms-no-27-2018-itd-scrapping-guidelines.json"
+  },
+  "GO093": {
+    "pdf": "goms322013itd-dated26102013.pdf",
+    "json": "goms322013itd-dated26102013.json"
+  },
+  "GO094": {
+    "pdf": "government_order_2019_20.pdf",
+    "json": "government_order_2019_20.json"
+  },
+  "GO095": {
+    "pdf": "proceedings1.pdf",
+    "json": "proceedings_1.json"
+  },
+  "GO096": {
+    "pdf": "proceedings_0.pdf",
+    "json": "proceedings_0.json"
+  },
+  "GO097": {
+    "pdf": "proceedings_1.pdf",
+    "json": "proceedings_1.json"
+  },
+  "GO098": {
+    "pdf": "purchase committee-Proceedings.pdf",
+    "json": "purchase committee-Proceedings.json"
+  },
+  "GO099": {
+    "pdf": "ransomware_attack_prevention_and_recovery_measures1.pdf",
+    "json": "ransomware_attack_prevention_and_recovery_measures1-pages.json"
+  },
+  "GO100": {
+    "pdf": "row.pdf",
+    "json": "row.json"
+  }
+}
