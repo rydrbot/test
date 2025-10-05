@@ -211,7 +211,7 @@ st.markdown(
         <a href="https://itmission.kerala.gov.in" target="_blank">
             <img src="{LOGO_URL}" alt="Kerala IT Mission Logo">
         </a>
-        <h1> Government Order Search </h1>
+        <h1>   Government Order Search </h1>
         <p>Empowering Governance through Accessible Information</p>
     </div>
     """,
