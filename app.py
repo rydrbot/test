@@ -68,17 +68,34 @@ def search(query, top_k=5):
 # LOAD JSON FOR SELECTED DOCUMENT
 # =========================================
 def get_text_from_json(file_name):
-    """Fetch text from JSON stored on GitHub (remote)."""
+    """Find and load JSON file from GitHub json_files folder (flexible matching)."""
     base_url = "https://raw.githubusercontent.com/rydrbot/go-search-app-final/main/json_files"
-    file_base = file_name.lower().replace(".pdf", "")
-
     import requests
 
-    # Try to find a matching JSON file remotely
-    possible_url = f"{base_url}/{urllib.parse.quote(file_name.replace('.pdf', '.json'))}"
-    alt_url = f"{base_url}/{urllib.parse.quote(file_base)}.json"
+    # Sanitize input
+    file_stem = file_name.lower().replace(".pdf", "").replace("copy of", "").strip()
+    file_stem = file_stem.replace("  ", " ")
 
-    for url in [possible_url, alt_url]:
+    # Try direct
+    urls_to_try = [
+        f"{base_url}/{urllib.parse.quote(file_name.replace('.pdf', '.json'))}",
+        f"{base_url}/{urllib.parse.quote(file_stem)}.json"
+    ]
+
+    # Optionally fetch list of all JSON files to fuzzy match
+    try:
+        repo_api = "https://api.github.com/repos/rydrbot/go-search-app-final/contents/json_files"
+        response = requests.get(repo_api)
+        if response.status_code == 200:
+            json_list = [item["name"] for item in response.json() if item["name"].endswith(".json")]
+            match = next((j for j in json_list if file_stem in j.lower()), None)
+            if match:
+                urls_to_try.append(f"{base_url}/{urllib.parse.quote(match)}")
+    except Exception:
+        pass
+
+    # Try all possible URLs
+    for url in urls_to_try:
         resp = requests.get(url)
         if resp.status_code == 200:
             try:
@@ -92,8 +109,7 @@ def get_text_from_json(file_name):
             except Exception as e:
                 return None, f"⚠️ JSON parsing error: {e}"
 
-    return None, f"⚠️ JSON file for '{file_name}' not found at {base_url}."
-
+    return None, f"⚠️ No matching JSON found for '{file_name}'. Tried: {urls_to_try[-1]}"
 
 # =========================================
 # LEXRANK FACTUAL SUMMARY
