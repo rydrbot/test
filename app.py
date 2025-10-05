@@ -211,7 +211,7 @@ st.markdown(
         <a href="https://itmission.kerala.gov.in" target="_blank">
             <img src="{LOGO_URL}" alt="Kerala IT Mission Logo">
         </a>
-        <h1>📑 Government Order Semantic Search</h1>
+        <h1>📑 Government Order Search </h1>
         <p><em>Empowering Governance through Accessible Information</em></p>
     </div>
     """,
@@ -225,7 +225,6 @@ query = st.text_input("Enter your search query (English):", "")
 top_k = st.slider("Number of results:", 1, 10, 5)
 
 st.sidebar.header("📄 Document Summary")
-st.sidebar.info("Click 🧠 to generate instant summary from linked JSON text.")
 
 if query:
     results = search(query, top_k=top_k)
