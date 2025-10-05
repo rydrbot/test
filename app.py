@@ -173,27 +173,46 @@ def summarize_text(text, sentence_count=7):
 st.set_page_config(page_title="GO Search", layout="wide")
 
 # =========================================
-# HEADER WITH LOGO
+# HEADER: CENTERED LOGO + TITLE
 # =========================================
 LOGO_URL = "https://itmission.kerala.gov.in/themes/ksitm/logo.png"
 
-# Custom CSS for centering the logo
+# Custom CSS for centering both logo and title
 st.markdown(
     """
     <style>
-    .center-logo {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .app-header {
+        text-align: center;
+        padding-bottom: 0.2rem;
+        border-bottom: 1px solid #ddd;
+    }
+    .app-header img {
+        height: 85px;
         margin-bottom: 0.5rem;
     }
-    .center-logo img {
-        height: 80px;
+    .app-header h1 {
+        font-size: 1.9rem;
+        color: #1f4e79;
+        font-weight: 700;
+        margin-bottom: 0;
     }
     </style>
     """,
     unsafe_allow_html=True,
 )
+
+# Render logo + centered title
+st.markdown(
+    f"""
+    <div class="app-header">
+        <img src="{LOGO_URL}" alt="Kerala IT Mission Logo">
+        <h1>📑 Government Order Semantic Search</h1>
+        <p><em>Empowering Governance through Accessible Information</em></p>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
+
 
 # Display the logo above the title
 st.markdown(f'<div class="center-logo"><img src="{LOGO_URL}" alt="Kerala IT Mission Logo"></div>', unsafe_allow_html=True)
