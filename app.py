@@ -24,11 +24,34 @@ except LookupError:
 # CONFIG
 # =========================================
 MODEL_NAME = "all-MiniLM-L6-v2"
-JSDELIVR_BASE = "https://cdn.jsdelivr.net/gh/rydrbot/go-search-app-final@main/pdfs"
-MANIFEST_URL = "https://raw.githubusercontent.com/rydrbot/test/main/file_manifest.json"
-JSON_BASE_URL = "https://raw.githubusercontent.com/rydrbot/go-search-app-final/main/json_files"
+
+# --- Update these two if you move repos later ---
+GITHUB_USER = "rydrbot"
+GITHUB_REPO = "test"   # repo where file_manifest.json and json_files live
+PDF_REPO = "go-search-app-final"  # repo hosting PDFs for jsDelivr links
+# -------------------------------------------------
+
+# URLs auto-adjust for main/master branch
+BASE_RAW = f"https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}"
+JSDELIVR_BASE = f"https://cdn.jsdelivr.net/gh/{GITHUB_USER}/{PDF_REPO}@main/pdfs"
+
 INDEX_PATH = "go_index_v2.faiss"
 META_PATH = "metadata_v2.json"
+
+# =========================================
+# LOAD MANIFEST SAFELY
+# =========================================
+def load_manifest():
+    """Try to load file_manifest.json from main or master branch."""
+    for branch in ["main", "master"]:
+        url = f"{BASE_RAW}/{branch}/file_manifest.json"
+        r = requests.get(url)
+        if r.status_code == 200:
+            st.sidebar.success(f"✅ Loaded manifest from {branch} branch.")
+            return r.json()
+    st.sidebar.error("⚠️ Could not load file_manifest.json from GitHub.\n"
+                     "Check that the repo is public and the file is in the root.")
+    return {}
 
 # =========================================
 # LOAD CORE COMPONENTS
@@ -39,12 +62,7 @@ def load_components():
     with open(META_PATH, "r", encoding="utf-8") as f:
         metadata = json.load(f)
     model = SentenceTransformer(MODEL_NAME)
-    # Load manifest
-    resp = requests.get(MANIFEST_URL)
-    if resp.status_code != 200:
-        st.error("⚠️ Could not load file_manifest.json from GitHub.")
-        return index, metadata, model, {}
-    manifest = resp.json()
+    manifest = load_manifest()
     return index, metadata, model, manifest
 
 index, metadata, model, manifest = load_components()
@@ -74,28 +92,33 @@ def search(query, top_k=5):
 # LOAD TEXT FROM JSON USING MANIFEST
 # =========================================
 def get_text_from_manifest(file_name):
-    # Find manifest entry matching this PDF
+    if not manifest:
+        return None, "⚠️ Manifest not loaded."
+
+    # Match PDF name to manifest entry
     entry = next((v for v in manifest.values() if v["pdf"].lower() == file_name.lower()), None)
     if not entry or not entry.get("json"):
         return None, f"⚠️ No JSON linked for '{file_name}' in manifest."
 
-    json_url = f"{JSON_BASE_URL}/{urllib.parse.quote(entry['json'])}"
-    resp = requests.get(json_url)
-    if resp.status_code != 200:
-        return None, f"⚠️ Could not fetch JSON from {json_url}"
+    # Build JSON URL and try both branches
+    for branch in ["main", "master"]:
+        json_url = f"{BASE_RAW}/{branch}/json_files/{urllib.parse.quote(entry['json'])}"
+        resp = requests.get(json_url)
+        if resp.status_code == 200:
+            try:
+                data = json.loads(resp.text)
+                pages = data.get("pages", [])
+                combined_text = " ".join([
+                    p.get("translated_text", "") or p.get("original_text", "")
+                    for p in pages if p.get("translated_text") or p.get("original_text")
+                ])
+                if not combined_text.strip():
+                    return None, "⚠️ JSON found, but contains no readable text."
+                return combined_text.strip(), f"✅ Using JSON: {entry['json']}"
+            except Exception as e:
+                return None, f"⚠️ JSON parsing error: {e}"
 
-    try:
-        data = json.loads(resp.text)
-        pages = data.get("pages", [])
-        combined_text = " ".join([
-            p.get("translated_text", "") or p.get("original_text", "")
-            for p in pages if p.get("translated_text") or p.get("original_text")
-        ])
-        if not combined_text.strip():
-            return None, "⚠️ JSON found, but contains no readable text."
-        return combined_text.strip(), f"✅ Using JSON: {entry['json']}"
-    except Exception as e:
-        return None, f"⚠️ JSON parsing error: {e}"
+    return None, f"⚠️ JSON file for '{file_name}' not found on GitHub."
 
 # =========================================
 # SUMMARIZER
@@ -110,12 +133,12 @@ def summarize_text(text, sentence_count=7):
 # =========================================
 # STREAMLIT UI
 # =========================================
-st.set_page_config(page_title="GO Search – Final", layout="wide")
+st.set_page_config(page_title="GO Search – Final (Auto Manifest)", layout="wide")
 
-st.title("📑 Government Order Semantic Search (Final Version)")
+st.title("📑 Government Order Semantic Search – Auto Manifest")
 st.markdown(
-    "Search across Government Orders with instant, factual summaries loaded from preprocessed JSON files. "
-    "No OCR or translation delay."
+    "Search across Government Orders with instant, factual summaries using preprocessed JSON files. "
+    "The app automatically detects the correct GitHub branch for your data repository."
 )
 
 query = st.text_input("Enter your search query (English):", "")
