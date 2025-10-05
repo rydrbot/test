@@ -1,0 +1,24 @@
+{
+  "file_name": "List od District Head Quarters.pdf",
+  "category": "text_english",
+  "pages": [
+    {
+      "page_number": 1,
+      "original_text": "DETAILS OF KSWAN DISTRICT HEAD QUARTERS SL NO DISTRICT POPS DHQ NAME ADDRESS DISTRICT INCHARGE CONTACT DETAILS 1 THIRUVANANTHAPURAM Trivandrum DHQ Public Office Building, Trivandrum, Kerala Sreekuttan C 7034888337 2 KOLLAM Kollam DHQ District Collectorate, Kollam, Kerala Jyothi Raj 8086272642 3 PATHANAMTHITTA Pathanamthitta DHQ District Collectorate, Pathanamthitta, Kerala Nibu Mathew Abraham 7034060544 4 ALAPPUZHA Alappuzha DHQ District Collectorate, Alappuzha, Kerala Joby Philip 7034588831 5 KOTTAYAM Kottayam DHQ District Collectorate, Kottayam, Kerala Ratheesh Sivan 9496697010 6 IDUKKI Idukki DHQ District Collectorate, Idukki, Kerala Vishnu Sali 7034388832 7 ERNAKULAM Ernakulam DHQ District Collectorate , Ernakulam, Kerala Shanoop Abubaker 7034288859 8 THRISSUR Thrissur DHQ District Collectorate, Thrissur, Kerala Rajesh K 7034013443",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 2,
+      "original_text": "DETAILS OF KSWAN DISTRICT HEAD QUARTERS 9 PALAKKAD Palakkad DHQ District Collectorate, Palakkad, Kerala Amal KS 7034688809 10 MALAPPURAM Malappuram DHQ District Collectorate, Malappuram, Kerala Muhammed Shihab 8589821133 11 KOZHIKODE Kozhikode DHQ District Collectorate, Kozhikode, Kerala Jithesh P 7034036588 12 WAYANAD Wayanad DHQ District Collectorate, Wayanad, Kerala Ajesh MP 7034087544 13 KANNUR Kannur DHQ District Collectorate, Kannur, Kerala Athul A 8589821177 14 KASARGODE Kasargode DHQ District Collectorate, Kasargod, Kerala Mahesh Kumar M 7034034427",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    }
+  ]
+}

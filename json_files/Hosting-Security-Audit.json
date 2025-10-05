@@ -1,0 +1,46 @@
+{
+  "file_name": "Hosting-Security-Audit.pdf",
+  "category": "image_english",
+  "pages": [
+    {
+      "page_number": 1,
+      "original_text": "ROR 2 i0\\! < lly el 7 GOVERNMENT O OF KERALA a Abstract Information Technology Department  Hosting of websites in State Data Centre after security auditing  Guidelines - Approved  Orders issued. Information Technology (IT Cell) Department G.O.(Ms) No. 43/2015ATD Dated, Thiruvananthapuram, 01.10.2015. Read: - 1. G.O.(P) No.24/2009/ITD dated 29.09. 2009. 2. G.O.(Rt) No.17/2011ITD dated 24.01.2011. - 3. Minutes of the meeting of the Apex Committee on &-Govemance held on 16.07.2015. ORDER More than 50 websites under Government of Kerala were defaced in the month of April, 2015. Statistics clearly shows that hackers all over the world are targeting websites of various Governments and India stands among the top in the list of affected nations. Since the Government of Kerala is quite advanced in e- Governance and set a role model for other States in India, continuous defacements of websites show the Government in poor light in terms of security of its &-Governance domain. 2. While analyzing the defaced websites, it is found that all of them are. hosted outside the State Data Centres and majority of these are developed using. Joomla and other open source Content Management Framework. Mostly, the attacks are a result of the security patches for the software platform and framework not being updated on the servers. Security vulnerabilities in a'website/application hosted in a co-hosting server at State Data Centre may adversely affect other applications hosted on the same server which may lead to mass defacement. . 3. Due to the increase in the number of defacement of Government websites, Safe to Host Security Audit certificate has been mandated for hosting websites/applications in State Data Centres under Kerala State IT Mission. At both - State Data Centres, different levels of security measures have been implemented at both server and network layer which has significantly helped reduce security threats.",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 2,
+      "original_text": "However, it is noticed that certain departments host their websites outside State Data Centre to bypass security audits.  . 4. - The Apex Committee on e-Governance held on 16.07.2015 has recommended to host all Government websites at State Data Centre subject to the condition that expense required for the technology upgradation for the purpose of | hosting at State Data Centre should be met by the Department concerned and to get website security audit done before even if it is outside State Data Centre. 5. Government have examined the matter in detail and orders that the - following guidelines should be followed by. all departments and application . development/ maintenance teams: ; | i. Government web applications shall be hosted at the State Data Cenitre (spc) . that provides hosting services with adequate security controls at minimal charges. The State Data Centres are ISO 27001 certified in relation to Information Security. Hence, the Departments shall avail SDC facility in | hosting any web applications rather than incurring charges. for external hosting service providers not certified for any ISO security standards. ii. The expense required for the technology upgradation for the purpose of hosting at State Data Centre shall be met by the Department concerned. . mate CERT-K under Kerala State IT Mission. does Security Audits for Government websites. Security auditing of the application by CERT-K. or any CERT-IN ili. empanelled agency has to be catried out in the hosting environment. A copy of the Security certificate shall be provided to the hosting service provider. The hosting service provider should allow hosting on production servers only after receiving security audit certificates which needs to be maintained in records. iv. Any Hosting Service Provider that hosts Government web sites should have sufficient credentials to provide a secure hosting environment along with . | capabilities for ensuring Reliability, Availability, Scalability, Data Retention",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 3,
+      "original_text": "Vi. and Backup, Redundancy and Disaster Recovery. The Data Centre should have multiple levels of security measures and controls implemented and should be audited once in a -year by Third Party Auditors for Information Security against global standards such as ISO 27001. _+ . Security audit certificate also needs to be submitted along with Sub-domains . registration requests to Information & Public Relations Department. Director, Kerala State IT Mission is authorized to order de-allocation of the domain name and pull down Government web sites if security audit has not been done or if security level of the site is found to be insufficient at any point of time. vii.Once audited and hosted, the department shall inform the hosting service provider of any. subsequent changes to, the application. The provider. shall verify the technical changes and evaluate if a subsequent security audit is required before the changes are deployed on the production server. If changes to the application have been deployed without intimation to the hosting service provider and without: a subsequent security audit, Director, Kerala State IT Mission reserves the right to de- allocate domain name and pull down the web site. viii, Periodic security auditing is also necessary; the department should get the. sites audited once in every 2 years by a CERT-IN empanelled agency. Hence, when work order is given to a CERT-IN empanelled agency, it may consider multiple audits over the years to. be included. ix. Contents of the websites/applications shall not be against the interest and reputation of Government of Kerala. x. The websites in Government. domain should follow various security | guidelines/standards as specified by State or Government of India.",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 4,
+      "original_text": "& xi. The department is required to submit any application logs and dumps that are required by CERT-K for any analysis. xii.A Government website that has been defaced shall be shut down. Further, it shall be enabled in production only after a subsequent Security Audit is done and the audit certificate submitted to the hosting service provider. | (By Order of the Governor), a PH KURIAN Principal Secretary to Government - To oe fa Re The Director, Kerala State IT Mission, Vellayambalam, Thiruvananthapuram   All Departments in Government Secretariat / Head of the Departments/ District Collectors  - Dee TE . - The State Informatics Officer, National Informatics Centre, Vellayambalam, Thiruvananthapuram  re The Director, Standardisation Testing and: Quality Certification, Akkulam, Sreekariyam Road, Sreekariyam, Thiruvananthapuram - 695 017 The Director, C-DAC, Vellayambalam, Thiruvananthapuram _ The Registrar, C-DIT, Thiruvallam, Thiruvananthapuram The Information & Public Relations Department . The Principal Accountant General (Audit) Kerala, Thiruvananthapuram The Principal Accountant General (A & E) Kerala, Thiruvananthapuram The Web & New Media, Information & Public Relations Department SF/OC. | oO o 8 a Forwarded / By Order | SV. Section Officer...",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "ocr",
+        "cleanup"
+      ]
+    }
+  ]
+}

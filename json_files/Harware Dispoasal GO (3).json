@@ -1,0 +1,51 @@
+{
+  "file_name": "Harware Dispoasal GO (3).pdf",
+  "category": "text_english",
+  "pages": [
+    {
+      "page_number": 1,
+      "original_text": "G.O.(Ms)No.27/2018/ITD Dated,Thiruvananthapuram, 28/10/2018 GOVERNMENT OF KERALA Abstract Electronics & Information Technology Department  Condemnation / Scrapping / Disposal of Electronics & IT equipment  Guidelines - Approved - Orders issued. ELECTRONICS & INFORMATION TECHNOLOGY (IT CELL) DEPARTMENT ORDER After the computerization of Government Departments in Kerala, a number of unusable, irreparable or redundant IT and Electronics equipment are lying in the stores of various Departments. Since, there is no guideline for Condemnation / Scrapping / Disposal of such equipment for the State, Departments are following different procedure for its disposal. Hence, a common guideline is necessary for Condemnation / Scrapping / Disposal of Electronics & IT equipment. 2. In the above circumstances, Government are pleased to issue following guidelines for Condemnation / Scrapping / Disposal of Electronics & IT equipment lying in various departments/institutions: 1 . Applicability These guidelines will be applicable to all Electronics & IT equipment installed in the offices under Government of Kerala and include following items: Servers Desktop Computers Laptop / Note Book / Tablet Printers Scanners Mobile Phones Pen DrivesFile No.ITCell-2/209/2018-ITD",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 2,
+      "original_text": "External Hard Disk Drives (HDD) Data Communication Equipment / LAN Switches / Routers FAX, EPABX Electronic Attendance Systems Digital Cameras DVD Players TVs, LCDs, LEDs Other Electronic items etc. 2 . Life of equipment The following table may be used for classifying the equipment for replacement / disposal: Category Name of Equipment Life of equipment I . Immediate Obsolescence Printing Consumables (Ink, Toners, Cartridges) DVDs, CDs, Floppies UPS Batteries As per usage II . Fast Obsolescence Laptops, Notebooks, Tablets Mobile Phones Pen Drives External Hard Disk Drives (HDD) 4 years III . Medium Obsolescence Servers, Desktop Computers Printers, Scanners, Copiers Multi-Functional Devices Projectors UPS Systems (excluding battery) All Networking items (Active Devices) 5 yearsFile No.ITCell-2/209/2018-ITD",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 3,
+      "original_text": "IV . Slow Obsolescence FAX, EPABX Electronic Attendance Systems Digital Cameras DVD Players TVs, LCDs, LEDs Other Electronic items 7 years Note : The above table describes only the average life of an equipment, however, all these items (except items under Category-I) can be used beyond the mentioned / specified life till the time these items continue to serve the purpose . 3 . Grounds for Condemnation / Scrapping The IT equipment can be condemned / scrapped on following grounds: a . In case, any equipment gives frequent problems before attaining its minimum recommended life or goes badly out of order and repair / maintenance cost is not economical. b . Equipment which have become obsolete technology-wise and cant be upgraded and support from vendor either paid or unpaid does not exist and their use may result in security threat / unauthorized access to data. c . Beyond economical repair : In case, any equipment gives frequent problems before attaining its minimum recommended life or goes badly out of order and repair / maintenance is considered too high, such items can also be disposed off with the recommendation of the Technical Committee constituted as per GO (Ms) No. 18/2017/ITD dated 23.07.2017. d . Equipment that has been damaged due to fire or any other unforeseen reason and have been certified as beyond repair by the authorized service agency and agreed upon by the IT Cell / Wing of the Department. 4 . Procedure a . IT Cell / Division of the Department will be the Nodal Section for all the IT equipment procured. File No.ITCell-2/209/2018-ITD",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 4,
+      "original_text": "b . The Nodal Section should maintain a register (manual / digital) with details of products (Make, Model, Serial Number, Asset ID, Purchase Order number & Date, Warranty details etc.). c . Proposal for Scrapping / condemnation will be initiated by the Nodal Section. d . The Departmental Technical Committee constituted as per GO (Ms) No. 18/2017/ITD dated 23.07.2017 should vet the scrapping proposal before the approval of the competent authority. The Head of the Department / Office, is competent to approve scrapping proposal. e . The Nodal Section should maintain a register for entering details of scrapped items in the format given as annexure. 5 . Disposal Once, the equipment has been condemned / scrapped, it should be removed from the office, strictly following directions from Government regarding disposal of e-waste from time to time. Department should also ensure removal of service and inventory labels from such equipment. AMC, if any for such equipment / items should be stopped with the effective date of scrapping. All data including operating system must be removed after taking proper backup and preserved by user of the equipment. (By order of the Governor) M. SIVASANKAR SECRETARY To: All Departments in Secretariat All Heads of the Departments All Heads of the Corporations/ Boards/ Societies/ Public Sector Undertakings/Unversities/ Autonomous Institutions/ Local Bodies The Director, Kerala State IT Mission The Principal Accountant General (Audit) Kerala The Principal Accountant General (A & E) Kerala The Web & New Media, Information & Public Relations Department Stock File / Office copy Annexure FORMAT OF SCRAP REGISTERFile No.ITCell-2/209/2018-ITD",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    },
+    {
+      "page_number": 5,
+      "original_text": "Sl. No. Item Type Manufacturer Model No. Sl. No. of the item Asset Id (if exists) Scrap Order No and date Remarks File No.ITCell-2/209/2018-ITD",
+      "translated_text": "",
+      "language_detected": "en",
+      "processing_steps": [
+        "cleanup"
+      ]
+    }
+  ]
+}
