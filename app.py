@@ -43,19 +43,25 @@ META_PATH = "metadata_v2.json"
 # =========================================
 def load_manifest():
     """Silently load file_manifest.json from main or master branch."""
+    manifest_data = None
     for branch in ["main", "master"]:
         url = f"{BASE_RAW}/{branch}/file_manifest.json"
         r = requests.get(url)
         if r.status_code == 200:
-            # print to console (for logs) instead of Streamlit sidebar
+            # Log to console (visible only in logs, not Streamlit UI)
             print(f"✅ Loaded manifest from {branch} branch.")
-            return r.json()
-    # Only show a visible warning if it fails
-    st.sidebar.error(
-        "⚠️ Could not load file_manifest.json from GitHub.\n"
-        "Check that the repo is public and the file is in the root directory."
-    )
-    return {}
+            manifest_data = r.json()
+            break
+
+    if not manifest_data:
+        # Only show error if manifest failed to load
+        st.sidebar.error(
+            "⚠️ Could not load file_manifest.json from GitHub.\n"
+            "Check that the repo is public and that file_manifest.json is in the repo root."
+        )
+        manifest_data = {}
+
+    return manifest_data
 
 # =========================================
 # LOAD CORE COMPONENTS
