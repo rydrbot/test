@@ -1,98 +1,93 @@
-# ===========================================
-# app_v2_with_links.py
-# ===========================================
-# Streamlit app for intelligent GO Search
-# Hugging Face Embeddings + FAISS + PDF Links
-# ===========================================
-
-import streamlit as st
-import faiss
-import json
-import numpy as np
-from sentence_transformers import SentenceTransformer
 import os
+import json
+import streamlit as st
+import numpy as np
+import faiss
+import urllib.parse
+from sentence_transformers import SentenceTransformer
 
-# ========== CONFIGURATION ==========
+# =========================================
+# CONFIG
+# =========================================
+MODEL_NAME = "all-MiniLM-L6-v2"
+
+# ✅ Update your jsDelivr base link (same as old setup)
+JSDELIVR_BASE = "https://cdn.jsdelivr.net/gh/rydrbot/go-search-app-final@main/pdfs"
+
 INDEX_PATH = "go_index_v2.faiss"
 META_PATH = "metadata_v2.json"
-MODEL_NAME = "all-MiniLM-L6-v2"
-PDF_FOLDER = "pdfs"  # local folder containing the PDF files
-GITHUB_BASE = "https://cdn.jsdelivr.net/gh/rydrbot/go-search-app-final/pdf/"  # optional GitHub link base
 
-# ========== LOAD COMPONENTS ==========
+# =========================================
+# LOAD INDEX + MODEL
+# =========================================
 @st.cache_resource
-def load_components():
+def load_index():
+    # Load FAISS index
     index = faiss.read_index(INDEX_PATH)
+
+    # Load metadata
     with open(META_PATH, "r", encoding="utf-8") as f:
-        metadata = json.load(f)
+        documents = json.load(f)
+
+    # Load embedding model
     model = SentenceTransformer(MODEL_NAME)
-    return index, metadata, model
 
-index, metadata, model = load_components()
+    return documents, index, model
 
-# ========== STREAMLIT UI ==========
-st.set_page_config(page_title="Intelligent GO Search", layout="wide")
-st.title("📘 Intelligent GO Search (v2 - Hugging Face + PDF Links)")
-st.markdown("Search across Government Orders with embedded PDF access 🔗")
+documents, index, model = load_index()
 
-query = st.text_input("🔍 Enter your search query:")
-num_results = st.slider("Number of results", 1, 15, 5)
+# =========================================
+# SEARCH FUNCTION
+# =========================================
+def search(query, top_k=5):
+    # Encode query
+    query_emb = model.encode([query], convert_to_numpy=True, normalize_embeddings=True)
+    query_emb = query_emb / np.linalg.norm(query_emb, axis=1, keepdims=True)
 
-with st.expander("🎚️ Advanced Filters"):
-    file_filter = st.text_input("Filter by File Name (optional)").strip()
-    category_filter = st.text_input("Filter by Category (optional)").strip()
-    lang_filter = st.text_input("Filter by Language (optional)").strip()
-
-# ========== SEARCH ENGINE ==========
-if query:
-    st.markdown("### ⏳ Searching... Please wait.")
-    q_vec = model.encode([query], convert_to_numpy=True, normalize_embeddings=True).astype("float32")
-    distances, indices = index.search(q_vec, num_results * 2)
+    # Search FAISS
+    similarities, indices = index.search(query_emb.astype("float32"), top_k)
 
     results = []
-    for dist, idx in zip(distances[0], indices[0]):
-        if idx >= len(metadata):
+    for idx, sim in zip(indices[0], similarities[0]):
+        if idx >= len(documents):
             continue
-        meta = metadata[idx]
+        doc = documents[idx]
 
-        # Apply filters
-        if file_filter and file_filter.lower() not in meta["file_name"].lower():
-            continue
-        if category_filter and category_filter.lower() not in meta["category"].lower():
-            continue
-        if lang_filter and lang_filter.lower() not in meta["language"].lower():
-            continue
+        # Derive file name and encode for URL safety
+        pdf_file = doc.get("file_name", "").replace("_raw.txt", ".pdf")
+        pdf_file_encoded = urllib.parse.quote(pdf_file)
 
-        # PDF link logic
-        file_name = meta["file_name"]
-        local_path = os.path.join(PDF_FOLDER, file_name)
-        if os.path.exists(local_path):
-            pdf_link = f"./{PDF_FOLDER}/{file_name}"
-        else:
-            # fallback to GitHub CDN link if hosted
-            pdf_link = f"{GITHUB_BASE}{file_name.replace(' ', '%20')}"
+        # Build jsDelivr link
+        pdf_link = f"{JSDELIVR_BASE}/{pdf_file_encoded}"
 
         results.append({
-            "score": float(dist),
-            "file_name": file_name,
-            "category": meta["category"],
-            "page_number": meta["page_number"],
-            "language": meta["language"],
+            "file_name": pdf_file,
+            "category": doc.get("category", ""),
+            "page_number": doc.get("page_number", ""),
+            "language": doc.get("language", ""),
+            "similarity": round(float(sim), 4),
             "pdf_link": pdf_link
         })
+    return results
 
-        if len(results) >= num_results:
-            break
+# =========================================
+# STREAMLIT UI
+# =========================================
+st.set_page_config(page_title="GO Search (v2)", layout="wide")
 
-    # ========== DISPLAY RESULTS ==========
-    if results:
-        st.success(f"✅ Found {len(results)} relevant results for your query.")
-        for i, res in enumerate(results, 1):
-            st.markdown(f"### {i}. [{res['file_name']}]({res['pdf_link']})")
-            st.markdown(f"- **Category:** {res['category']}")
-            st.markdown(f"- **Page:** {res['page_number']}")
-            st.markdown(f"- **Language:** {res['language']}")
-            st.markdown(f"- **Similarity:** {round(res['score'], 4)}")
-            st.divider()
-    else:
-        st.warning("No matching results found. Try another query or adjust filters.")
+st.title("📑 Government Order Semantic Search (v2)")
+st.write("Search across Government Orders with accurate semantic search and working PDF links.")
+
+query = st.text_input("Enter your search query (English):", "")
+top_k = st.slider("Number of results:", 1, 10, 3)
+
+if query:
+    results = search(query, top_k=top_k)
+    st.write(f"### 🔎 Results for: `{query}`")
+
+    for r in results:
+        with st.container():
+            st.markdown(f"**📄 File:** {r['file_name']} | **Page:** {r['page_number']}")
+            st.markdown(f"**Language:** {r['language']} | **Similarity:** {r['similarity']}")
+            st.markdown(f"[📎 Open PDF]({r['pdf_link']})")
+            st.markdown("---")
