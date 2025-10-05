@@ -73,10 +73,10 @@ def search(query, top_k=5):
 # =========================================
 # STREAMLIT UI
 # =========================================
-st.set_page_config(page_title="GO Search (v2)", layout="wide")
+st.set_page_config(page_title="GO Search", layout="wide")
 
-st.title("📑 Government Order Semantic Search (v2)")
-st.write("Search across Government Orders with accurate semantic search and working PDF links.")
+st.title("📑 Government Order Search ")
+st.write("Kerala State IT MIssion")
 
 query = st.text_input("Enter your search query (English):", "")
 top_k = st.slider("Number of results:", 1, 10, 3)
