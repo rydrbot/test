@@ -13,7 +13,7 @@ from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lex_rank import LexRankSummarizer
 import nltk
 import pytesseract
-from pdf2image import convert_from_bytes, convert_from_path
+from pdf2image import convert_from_bytes
 from langdetect import detect
 from deep_translator import GoogleTranslator
 import requests
@@ -74,14 +74,14 @@ def search(query, top_k=5):
     return results
 
 # =========================================
-# OCR + TRANSLATION + SUMMARY
+# OCR + TRANSLATION + SUMMARY (ERROR SAFE)
 # =========================================
 def summarize_pdf(pdf_name, sentence_count=7):
     """Extract text (OCR if needed), translate if Malayalam, and summarize."""
     text = ""
     pdf_bytes = None
 
-    # Try local copy first
+    # Try local copy
     local_path = os.path.join(LOCAL_PDF_FOLDER, pdf_name)
     if os.path.exists(local_path):
         with open(local_path, "rb") as f:
@@ -95,7 +95,7 @@ def summarize_pdf(pdf_name, sentence_count=7):
         else:
             return f"⚠️ Unable to fetch {pdf_name} from source."
 
-    # Extract text layer
+    # Try extracting text normally
     try:
         reader = PdfReader(io.BytesIO(pdf_bytes))
         for page in reader.pages:
@@ -105,22 +105,31 @@ def summarize_pdf(pdf_name, sentence_count=7):
     except Exception:
         pass
 
-    # OCR fallback
+    # OCR fallback if no text
     if not text.strip():
         st.info("Performing OCR on scanned PDF pages... Please wait ⏳")
         try:
             images = convert_from_bytes(pdf_bytes)
+            total_pages = len(images)
             for i, img in enumerate(images, start=1):
                 ocr_text = pytesseract.image_to_string(img, lang="eng+mal")
                 text += ocr_text + "\n"
-                st.progress(i / len(images))
+                st.progress(i / total_pages)
         except Exception as e:
-            return f"⚠️ OCR failed: {e}"
+            # Poppler not installed or OCR failed
+            if "poppler" in str(e).lower() or "page count" in str(e).lower():
+                return ("⚠️ OCR unavailable: Poppler is not installed.\n\n"
+                        "➡️ To enable OCR:\n"
+                        "- **Colab/Ubuntu:** `sudo apt-get install poppler-utils`\n"
+                        "- **Streamlit Cloud:** create a `packages.txt` file with `poppler-utils`\n"
+                        "- **Windows:** install Poppler and add to PATH.\n")
+            else:
+                return f"⚠️ OCR failed: {e}"
 
     if not text.strip():
         return "⚠️ No readable text extracted from this PDF."
 
-    # Detect and translate Malayalam
+    # Detect language and translate if Malayalam
     try:
         lang = detect(text[:500])
         if lang == "ml":
@@ -130,7 +139,7 @@ def summarize_pdf(pdf_name, sentence_count=7):
     except Exception:
         pass
 
-    # Summarize with LexRank
+    # Summarize using LexRank
     try:
         parser = PlaintextParser.from_string(text, Tokenizer("english"))
         summarizer = LexRankSummarizer()
@@ -143,16 +152,16 @@ def summarize_pdf(pdf_name, sentence_count=7):
 # =========================================
 # STREAMLIT UI
 # =========================================
-st.set_page_config(page_title="GO Search (v9)", layout="wide")
+st.set_page_config(page_title="GO Search (v10)", layout="wide")
 
-st.title("📑 Government Order Semantic Search (v9)")
-st.write("Search across Government Orders — with OCR + Malayalam translation support and factual summaries.")
+st.title("📑 Government Order Semantic Search (v10)")
+st.write("Search across Government Orders — with OCR, Malayalam translation & factual summaries.")
 
 query = st.text_input("Enter your search query (English):", "")
 top_k = st.slider("Number of results:", 1, 10, 3)
 
 st.sidebar.header("📄 Document Summary")
-st.sidebar.info("Click 🧠 to summarize the selected PDF (works even on scanned or Malayalam files).")
+st.sidebar.info("Click 🧠 to summarize selected PDF (works for scanned or Malayalam files).")
 
 if query:
     results = search(query, top_k=top_k)
@@ -164,7 +173,7 @@ if query:
             st.markdown(f"**Page:** {r['page_number']} | **Similarity:** {r['similarity']:.4f}")
 
             if st.button(f"🧠 Summarize PDF: {r['file_name']}", key=f"btn_{i}"):
-                with st.spinner("Extracting text, OCR if needed..."):
+                with st.spinner("Extracting text (OCR if needed)..."):
                     summary = summarize_pdf(r["file_name"])
                     st.sidebar.markdown(f"### {r['file_name']}")
                     st.sidebar.write(summary)
