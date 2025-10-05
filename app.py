@@ -152,10 +152,10 @@ def summarize_pdf(pdf_name, sentence_count=7):
 # =========================================
 # STREAMLIT UI
 # =========================================
-st.set_page_config(page_title="GO Search (v10)", layout="wide")
+st.set_page_config(page_title="GO Search", layout="wide")
 
-st.title("📑 Government Order Semantic Search (v10)")
-st.write("Search across Government Orders — with OCR, Malayalam translation & factual summaries.")
+st.title("📑 Government Order Search")
+st.write("Kerala State IT Mission")
 
 query = st.text_input("Enter your search query (English):", "")
 top_k = st.slider("Number of results:", 1, 10, 3)
