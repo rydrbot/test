@@ -173,46 +173,64 @@ def summarize_text(text, sentence_count=7):
 st.set_page_config(page_title="GO Search – Kerala IT Mission", layout="wide")
 
 # =========================================
-# HEADER: CENTERED LOGO + TITLE
+# HEADER: OFFICIAL KERALA IT MISSION STYLE
 # =========================================
 LOGO_URL = "https://itmission.kerala.gov.in/themes/ksitm/logo.png"
 
 st.markdown(
     """
     <style>
+    /* --- Header Container --- */
     .app-header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border-bottom: 1px solid #ddd;
-        padding-bottom: 0.5rem;
-        margin-bottom: 0.5rem;
-    }
-    .header-row {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 15px;
+        gap: 25px;
+        padding: 0.8rem 0 0.6rem 0;
+        border-bottom: 1px solid #ccc;
+        flex-wrap: wrap;
     }
-    .header-row img {
-        height: 75px;
+
+    /* --- Logo --- */
+    .app-header img {
+        height: 90px;
+        margin-bottom: 0;
     }
-    .header-text h1 {
+
+    /* --- Title Section --- */
+    .header-title {
+        text-align: left;
+    }
+    .header-title h1 {
         font-size: 1.9rem;
         color: #1f4e79;
         font-weight: 800;
         margin: 0;
     }
-    .header-text p {
+    .header-title p {
         font-size: 1rem;
-        color: #444;
-        margin-top: 0.1rem;
+        color: #555;
+        margin: 0.1rem 0 0 0;
     }
+
+    /* --- Tagline --- */
     .tagline {
-        font-size: 1rem;
-        color: #666;
+        width: 100%;
         text-align: center;
-        margin-top: 0.3rem;
+        font-size: 1rem;
+        color: #555;
+        margin-top: 0.4rem;
+    }
+
+    /* --- Responsive behavior --- */
+    @media (max-width: 768px) {
+        .app-header {
+            flex-direction: column;
+            text-align: center;
+        }
+        .header-title {
+            text-align: center;
+        }
     }
     </style>
     """,
@@ -222,21 +240,19 @@ st.markdown(
 st.markdown(
     f"""
     <div class="app-header">
-        <div class="header-row">
-            <a href="https://itmission.kerala.gov.in" target="_blank">
-                <img src="{LOGO_URL}" alt="Kerala IT Mission Logo">
-            </a>
-            <div class="header-text">
-                <h1>Government Order Search</h1>
-                <p>Kerala State IT Mission<br>
-                Department of Electronics & Information Technology</p>
-            </div>
+        <a href="https://itmission.kerala.gov.in" target="_blank">
+            <img src="{LOGO_URL}" alt="Kerala IT Mission Logo">
+        </a>
+        <div class="header-title">
+            <h1>Government Order Search</h1>
+            <p>Empowering Governance through Accessible Information</p>
         </div>
-        <div class="tagline">Empowering Governance through Accessible Information</div>
+        <div class="tagline"></div>
     </div>
     """,
     unsafe_allow_html=True,
 )
+
 # =========================================
 # MAIN APP CONTENT
 # =========================================
