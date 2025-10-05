@@ -25,7 +25,7 @@ except LookupError:
 # =========================================
 MODEL_NAME = "all-MiniLM-L6-v2"
 JSDELIVR_BASE = "https://cdn.jsdelivr.net/gh/rydrbot/go-search-app-final@main/pdfs"
-MANIFEST_URL = "https://raw.githubusercontent.com/rydrbot/go-search-app-final/main/file_manifest.json"
+MANIFEST_URL = "MANIFEST_URL = "https://raw.githubusercontent.com/rydrbot/test/main/file_manifest.json"
 JSON_BASE_URL = "https://raw.githubusercontent.com/rydrbot/go-search-app-final/main/json_files"
 INDEX_PATH = "go_index_v2.faiss"
 META_PATH = "metadata_v2.json"
