@@ -4,6 +4,5 @@ faiss-cpu
 numpy
 tqdm
 json5
-protobuf
-watchdog
 PyPDF2
+sumy
