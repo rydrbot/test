@@ -173,63 +173,55 @@ def summarize_text(text, sentence_count=7):
 st.set_page_config(page_title="GO Search – Kerala IT Mission", layout="wide")
 
 # =========================================
-# HEADER: OFFICIAL KERALA IT MISSION STYLE
+# HEADER: CENTERED STACKED LOGO + TITLE (ALIGNED)
 # =========================================
 LOGO_URL = "https://itmission.kerala.gov.in/themes/ksitm/logo.png"
 
 st.markdown(
     """
     <style>
-    /* --- Header Container --- */
     .app-header {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 25px;
-        padding: 0.8rem 0 0.6rem 0;
+        text-align: center;
         border-bottom: 1px solid #ccc;
-        flex-wrap: wrap;
+        padding: 0.8rem 0 0.6rem 0;
     }
 
-    /* --- Logo --- */
+    /* Logo styling */
     .app-header img {
         height: 90px;
-        margin-bottom: 0;
+        margin-bottom: 0.4rem;
     }
 
-    /* --- Title Section --- */
-    .header-title {
-        text-align: left;
-    }
-    .header-title h1 {
+    /* Main title styling */
+    .app-header h1 {
         font-size: 1.9rem;
-        color: #1f4e79;
         font-weight: 800;
+        color: #1f4e79;
         margin: 0;
-    }
-    .header-title p {
-        font-size: 1rem;
-        color: #555;
-        margin: 0.1rem 0 0 0;
+        line-height: 1.2;
     }
 
-    /* --- Tagline --- */
-    .tagline {
-        width: 100%;
-        text-align: center;
+    /* Tagline styling */
+    .app-header p {
         font-size: 1rem;
-        color: #555;
+        color: #444;
         margin-top: 0.4rem;
     }
 
-    /* --- Responsive behavior --- */
+    /* Make it look consistent on mobile */
     @media (max-width: 768px) {
-        .app-header {
-            flex-direction: column;
-            text-align: center;
+        .app-header img {
+            height: 70px;
         }
-        .header-title {
-            text-align: center;
+        .app-header h1 {
+            font-size: 1.6rem;
+        }
+        .app-header p {
+            font-size: 0.95rem;
         }
     }
     </style>
@@ -237,17 +229,15 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+# Render the header
 st.markdown(
     f"""
     <div class="app-header">
         <a href="https://itmission.kerala.gov.in" target="_blank">
             <img src="{LOGO_URL}" alt="Kerala IT Mission Logo">
         </a>
-        <div class="header-title">
-            <h1>Government Order Search</h1>
-            <p>Empowering Governance through Accessible Information</p>
-        </div>
-        <div class="tagline"></div>
+        <h1>Government Order Search</h1>
+        <p>Empowering Governance through Accessible Information</p>
     </div>
     """,
     unsafe_allow_html=True,
